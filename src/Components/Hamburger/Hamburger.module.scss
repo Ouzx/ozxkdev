@@ -1,3 +1,5 @@
+@use "../../app/globals.scss" as global;
+
 .hamburger {
   position: relative;
   z-index: 100;
@@ -14,6 +16,8 @@
 
   &.active {
     .hamburger__line {
+      background-color: #fff;
+
       &:first-child {
         transform: rotate(45deg) translate(4px, 4px);
       }
@@ -24,6 +28,50 @@
 
       &:last-child {
         transform: rotate(-45deg) translate(8px, -8px);
+      }
+    }
+  }
+}
+
+.menu {
+  $width: 24rem;
+  position: fixed;
+  z-index: 99;
+  transition: 1s;
+  top: 0;
+  right: -$width * 2;
+  height: 100vh;
+  width: $width;
+
+  &.active {
+    background-color: global.$black;
+    // move the menu from right to the left
+    transform: translateX(-200%);
+
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      margin: 1rem 0;
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      color: #fff;
+      transition: 0.3s;
+
+      &:hover {
+        color: global.$accent;
       }
     }
   }

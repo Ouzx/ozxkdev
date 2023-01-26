@@ -2,26 +2,23 @@ $black: #3f3f3f;
 $main: #8d8d8d;
 $accent: #47c9e5;
 
-* {
+.app * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
 
-html,
-body {
   max-width: 100vw;
   overflow-x: hidden;
   font-family: var(--font-montserrat);
 }
 
-div,
-p,
-span {
+.app div,
+.app p,
+.app span {
   font-family: var(--font-raleway);
 }
 
-a {
+.app a {
   color: inherit;
   text-decoration: none;
 }
