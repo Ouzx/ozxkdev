@@ -1,9 +1,17 @@
 @use "../../app/globals.scss" as global;
+@use "../../app/screens.scss" as screen;
+
+.hamburger__menu {
+  // TODO: Change this to lg
+  display: block;
+  @include screen.lg {
+    display: none;
+  }
+}
 
 .hamburger {
   position: relative;
   z-index: 100;
-  margin-right: 20px;
   cursor: pointer;
 
   .hamburger__line {
@@ -67,12 +75,12 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.2rem;
-      color: #fff;
+      // color: #fff;
       transition: 0.3s;
 
-      &:hover {
-        color: global.$accent;
-      }
+      // &:hover {
+      //   color: global.$accent;
+      // }
     }
   }
 }

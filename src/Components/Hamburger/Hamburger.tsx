@@ -7,7 +7,7 @@ const Hamburger = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div>
+    <div className={styles.hamburger__menu}>
       <div
         className={`${styles.hamburger} ${isOpen && styles.active}`}
         onClick={() => setIsOpen(!isOpen)}

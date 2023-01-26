@@ -1,7 +1,11 @@
 @use "../../app/screens.scss" as screen;
 
-.nav {
-  display: flex;
+.menu {
+  display: none;
+  @include screen.lg {
+    display: block;
+  }
+
   ul {
     list-style-type: none;
     display: flex;
@@ -11,12 +15,6 @@
       &:last-child {
         margin-right: 0;
       }
-    }
-  }
-
-  .hamburger {
-    @include screen.sm {
-      display: none;
     }
   }
 }
