@@ -1,0 +1,30 @@
+.hamburger {
+  position: relative;
+  z-index: 100;
+  margin-right: 20px;
+  cursor: pointer;
+
+  .hamburger__line {
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    transition: 0.4s;
+    margin: 5px 0;
+  }
+
+  &.active {
+    .hamburger__line {
+      &:first-child {
+        transform: rotate(45deg) translate(4px, 4px);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:last-child {
+        transform: rotate(-45deg) translate(8px, -8px);
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use "../screens.scss" as screens;
+
+.header {
+  background-color: transparent;
+  // color: #fff;
+  height: 6.25rem;
+  border: 1px solid #000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
