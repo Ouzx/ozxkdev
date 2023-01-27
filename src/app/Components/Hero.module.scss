@@ -1,0 +1,24 @@
+@use "../screens.scss" as screens;
+
+.hero {
+  display: grid;
+  grid-template-areas: "stack";
+  justify-content: center;
+  align-items: center;
+
+  // TODO: Make this responsive
+  .hero__image {
+    grid-area: stack;
+    object-fit: cover;
+  }
+
+  .hero__text {
+    grid-area: stack;
+    text-align: center;
+    color: #fff;
+
+    h1 {
+      margin-bottom: 0.5rem;
+    }
+  }
+}

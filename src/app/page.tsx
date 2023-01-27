@@ -1,10 +1,10 @@
-import Image from "next/image";
+import Hero from "./Components/Hero";
 import styles from "./page.module.scss";
 
 export default function Home() {
   return (
     <main className={""}>
-      <p>Hello World!</p>
+      <Hero />
     </main>
   );
 }

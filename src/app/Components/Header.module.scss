@@ -1,8 +1,11 @@
 @use "../screens.scss" as screens;
 
 .header {
+  position: absolute;
+  width: 100%;
+
   background-color: transparent;
-  // color: #fff;
+  color: #fff;
   height: 6.25rem;
   // border: 1px solid #000;
 

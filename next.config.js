@@ -6,6 +6,15 @@ const nextConfig = {
       { loader: "@next/font/google", options: { subsets: ["latin"] } },
     ],
   },
+  images: {
+    remotePatterns: [
+      // {
+      //   protocol: "https",
+      //   host: "cdn.jevelin.shufflehound.com",
+      //   pathname: "/wp-content/**/**",
+      // },
+    ],
+  },
 };
 
 module.exports = nextConfig;
