@@ -1,4 +1,4 @@
-@use "../../app/screens.scss" as screen;
+@use "../../../screens.scss" as screen;
 
 .menu {
   display: none;
@@ -12,6 +12,7 @@
 
     li {
       margin: 0 10px;
+      font-weight: 600;
       &:last-child {
         margin-right: 0;
       }

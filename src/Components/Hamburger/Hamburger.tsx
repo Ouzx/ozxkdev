@@ -1,5 +1,5 @@
 "use client";
-import Nav from "@/app/Components/Nav";
+import Nav from "@/app/Components/Header/Nav";
 import React, { useState } from "react";
 import styles from "./Hamburger.module.scss";
 

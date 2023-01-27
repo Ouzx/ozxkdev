@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "./Hero.module.scss";
 
-import hero from "../../assets/hero.jpg";
+import hero from "../../../assets/hero.jpg";
 const Hero = () => {
   return (
     <div className={styles.hero}>

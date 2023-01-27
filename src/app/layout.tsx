@@ -1,5 +1,5 @@
 import { montserrat, raleway } from "./fonts";
-import Header from "./Components/Header";
+import Header from "./Components/Header/Header";
 
 import "./globals.scss";
 
