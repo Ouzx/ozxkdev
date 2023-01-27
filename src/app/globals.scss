@@ -22,3 +22,10 @@ $accent: #47c9e5;
   color: inherit;
   text-decoration: none;
 }
+
+.layout {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr auto;
+}

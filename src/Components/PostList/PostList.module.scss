@@ -1,0 +1,16 @@
+@use "../../app/screens.scss" as *;
+
+.post_list {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(300px, 27rem));
+  margin: 2rem 0;
+  @include sm {
+    margin: 4rem 0;
+    grid-template-columns: repeat(2, minmax(10rem, 27rem));
+  }
+
+  gap: 2rem;
+  justify-content: center;
+
+  transition: 0.3s;
+}
