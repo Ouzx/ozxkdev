@@ -7,7 +7,7 @@ import postImage from "../../../../assets/post-template.jpg";
 
 const PostCard = () => {
   return (
-    <div className={styles.post_card}>
+    <a href="/post" className={styles.post_card}>
       <Image
         className={styles.post_card__image}
         alt="Post Image"
@@ -30,7 +30,7 @@ const PostCard = () => {
         <a href="#1">People</a>
         <a href="#2">Travel</a>
       </div>
-    </div>
+    </a>
   );
 };
 
