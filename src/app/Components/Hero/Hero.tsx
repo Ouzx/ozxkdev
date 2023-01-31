@@ -6,6 +6,7 @@ import hero from "../../../assets/hero.jpg";
 const Hero = () => {
   return (
     <div className={styles.hero}>
+      {/* TODO: Make this image parallax also relative to bigger screen sizes */}
       <Image className={styles.hero__image} alt="hero" src={hero} />
       <div className={styles.hero__text}>
         <h1 className={styles.hero__title}>Blog</h1>
