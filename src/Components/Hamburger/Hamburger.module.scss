@@ -2,7 +2,6 @@
 @use "../../app/screens.scss" as screen;
 
 .hamburger__menu {
-  // TODO: Change this to lg
   display: block;
   @include screen.lg {
     display: none;
