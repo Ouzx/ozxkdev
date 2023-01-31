@@ -1,0 +1,7 @@
+@use "../../globals.scss" as *;
+.logo {
+  transition: 0.3s;
+  &:hover {
+    color: $accent;
+  }
+}

@@ -1,12 +1,15 @@
 @use "../../screens.scss" as screens;
+@use "../../globals.scss" as *;
 
 .header {
-  position: absolute;
   width: 100%;
+  // drop shadow bottom
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
+
+  position: relative;
   .header__wrapper {
-    color: #fff;
+    color: $black;
     height: 6.25rem;
-    // border: 1px solid #000;
 
     display: flex;
     justify-content: space-between;

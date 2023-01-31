@@ -9,16 +9,27 @@
   }
 }
 
+@mixin hamburger-line-color($line-color) {
+  .hamburger__line {
+    background-color: $line-color;
+  }
+}
+
 .hamburger {
   position: relative;
   z-index: 100;
   cursor: pointer;
+  @include hamburger-line-color(global.$black);
   .hamburger__line {
     width: 30px;
     height: 4px;
-    background-color: global.$black;
+
     transition: 0.4s;
     margin: 4px 0;
+  }
+
+  &:hover {
+    @include hamburger-line-color(global.$accent);
   }
 
   &.active {
