@@ -13,19 +13,18 @@
   position: relative;
   z-index: 100;
   cursor: pointer;
-
   .hamburger__line {
     width: 30px;
-    height: 3px;
+    height: 4px;
     background-color: #fff;
     transition: 0.4s;
-    margin: 5px 0;
+    margin: 4px 0;
   }
 
   &.active {
     .hamburger__line {
       &:first-child {
-        transform: rotate(45deg) translate(4px, 4px);
+        transform: rotate(45deg) translate(5px, 5px);
       }
 
       &:nth-child(2) {
@@ -33,7 +32,7 @@
       }
 
       &:last-child {
-        transform: rotate(-45deg) translate(8px, -8px);
+        transform: rotate(-45deg) translate(6px, -6px);
       }
     }
   }
