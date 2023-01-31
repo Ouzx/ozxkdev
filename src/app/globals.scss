@@ -8,6 +8,12 @@ $accent: #47c9e5;
   // padding: 0;
   margin: 0;
 
+  // change selection color to accent
+  ::selection {
+    background: $accent;
+    color: $black-bg;
+  }
+
   max-width: 100vw;
   overflow-x: hidden;
   font-family: var(--font-montserrat);
