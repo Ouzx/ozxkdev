@@ -49,9 +49,10 @@
   height: 100vh;
   height: 100dvh;
   width: $width;
+  // overflow: hidden;
 
   &.active {
-    background-color: global.$black;
+    background-color: global.$black-bg;
     // move the menu from right to the left
     transform: translateX(-200%);
 
@@ -80,6 +81,29 @@
       // &:hover {
       //   color: global.$accent;
       // }
+    }
+  }
+
+  .social {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    a {
+      margin: 0 1rem;
+      font-size: 1.5rem;
+      color: #fff;
+      transition: 0.3s;
+
+      &:hover {
+        color: global.$accent;
+      }
     }
   }
 }

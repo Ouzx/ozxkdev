@@ -1,0 +1,17 @@
+@use "../../globals.scss" as *;
+@use "../../../Components/PostList/PostList.module.scss" as *;
+.footer {
+  background-color: $black-bg;
+  color: #fff;
+  padding: 4rem;
+
+  p {
+    line-height: 1.5em;
+    letter-spacing: 0.04em;
+  }
+
+  .social {
+    margin-top: 1rem;
+  }
+  @extend .post_list;
+}

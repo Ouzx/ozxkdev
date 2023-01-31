@@ -3,13 +3,14 @@
 .menu {
   display: none;
   @include screen.lg {
-    display: block;
+    display: flex;
+    align-items: center;
   }
 
   ul {
     list-style-type: none;
     display: flex;
-
+    margin-right: 20px;
     li {
       margin: 0 10px;
       font-weight: 600;

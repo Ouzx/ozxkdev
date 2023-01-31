@@ -1,5 +1,6 @@
 "use client";
 import Nav from "@/app/Components/Header/Nav";
+import Social from "@/app/Components/Social/Social";
 import React, { useState } from "react";
 import styles from "./Hamburger.module.scss";
 
@@ -18,6 +19,9 @@ const Hamburger = () => {
       </div>
 
       <div className={`${styles.menu} ${isOpen && styles.active}`}>
+        <div className={styles.social}>
+          <Social />
+        </div>
         <Nav />
       </div>
     </div>
