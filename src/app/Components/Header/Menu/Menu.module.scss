@@ -1,4 +1,5 @@
 @use "../../../screens.scss" as screen;
+@use "../../../globals.scss" as *;
 
 .menu {
   display: none;
@@ -14,8 +15,13 @@
     li {
       margin: 0 10px;
       font-weight: 600;
+      cursor: pointer;
       &:last-child {
         margin-right: 0;
+      }
+
+      &:hover {
+        color: $accent;
       }
     }
   }
