@@ -3,11 +3,11 @@ import Image from "next/image";
 
 import styles from "./PostCard.module.scss";
 
-import postImage from "../../../../assets/post-template.jpg";
+import postImage from "@/assets/post-template.jpg";
 
 const PostCard = () => {
   return (
-    <a href="/post" className={styles.post_card}>
+    <div className={styles.post_card}>
       <Image
         className={styles.post_card__image}
         alt="Post Image"
@@ -30,7 +30,7 @@ const PostCard = () => {
         <a href="#1">People</a>
         <a href="#2">Travel</a>
       </div>
-    </a>
+    </div>
   );
 };
 
