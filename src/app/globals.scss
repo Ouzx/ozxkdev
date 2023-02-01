@@ -41,13 +41,13 @@ $light-bg: #f2f2f2;
 }
 
 @mixin width-maker($lg: 80%, $xl: 1024px) {
+  margin-left: auto;
+  margin-right: auto;
   @include screens.lg {
     max-width: $lg;
-    margin: 0 auto;
   }
 
   @include screens.xl {
     max-width: $xl;
-    margin: 0 auto;
   }
 }

@@ -1,5 +1,6 @@
 @use "../../globals.scss" as *;
-@use "../../../Components/PostList/PostList.module.scss" as *;
+@use "../../screens.scss" as *;
+// @use "../../../Components/PostList/PostList.module.scss" as *;
 .footer {
   background-color: $black-bg;
   color: #fff;
@@ -13,5 +14,18 @@
   .social {
     margin-top: 1rem;
   }
-  @extend .post_list;
+  .wrapper {
+    @include width-maker;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(300px, 27rem));
+    @include md {
+      margin: 1rem auto;
+      grid-template-columns: repeat(2, minmax(10rem, 27rem));
+    }
+    gap: 2rem;
+    justify-content: center;
+    padding-bottom: 2rem;
+    transition: 0.3s;
+  }
+  // @extend .post_list;
 }

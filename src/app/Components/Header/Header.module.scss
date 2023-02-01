@@ -20,12 +20,6 @@
 
     transition: 0.4s;
 
-    @include screens.lg {
-      max-width: 80%;
-    }
-
-    @include screens.xl {
-      max-width: 70%;
-    }
+    @include width-maker(80%, 1200px);
   }
 }

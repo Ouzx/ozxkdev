@@ -4,9 +4,7 @@
 .post {
   margin: 4rem auto;
   padding: 2rem;
-  @include lg {
-    max-width: 80%;
-  }
+  @include width-maker;
   color: $black;
   .image {
     height: auto;
