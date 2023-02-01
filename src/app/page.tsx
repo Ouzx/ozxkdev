@@ -11,7 +11,7 @@ export default function Home() {
       <div className={styles.content}>
         <Pool />
         <PostList />
-        <Contact />
+        {/* <Contact /> */}
       </div>
     </main>
   );

@@ -2,7 +2,7 @@
 
 .contact {
   color: $black;
-  @include width-maker;
+  @include width-maker(768px);
   form {
     padding: 2rem;
     .formGroup {
