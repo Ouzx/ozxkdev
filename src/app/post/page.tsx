@@ -47,7 +47,7 @@ const page = () => {
       <Tags />
       <div className={styles.seperator} />
 
-      <h2>Related</h2>
+      <h2>Related Posts</h2>
       <Related />
     </div>
   );

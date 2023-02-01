@@ -5,6 +5,8 @@ const Related = () => {
   return (
     <div className={styles.related}>
       <Card />
+      <Card />
+      <Card />
     </div>
   );
 };
