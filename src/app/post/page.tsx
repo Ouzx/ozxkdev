@@ -3,6 +3,7 @@ import styles from "./page.module.scss";
 import Image from "next/image";
 import Tags from "./Components/Tags/Tags";
 import postImage from "../../assets/post.jpg";
+import Related from "./Components/Related/Related";
 const page = () => {
   return (
     <div className={styles.post}>
@@ -44,6 +45,10 @@ const page = () => {
 
       <h2>Tags</h2>
       <Tags />
+      <div className={styles.seperator} />
+
+      <h2>Related</h2>
+      <Related />
     </div>
   );
 };
