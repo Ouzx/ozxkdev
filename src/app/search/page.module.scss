@@ -1,0 +1,8 @@
+@use "../globals.scss" as *;
+.search {
+  h1 {
+    text-align: center;
+    margin-top: 2rem;
+    color: $black;
+  }
+}

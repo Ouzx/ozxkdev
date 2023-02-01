@@ -7,7 +7,7 @@ const SearchBar = () => {
     <div className={styles.search_bar}>
       <input type="text" name="search" id="search" placeholder="Search ..." />
 
-      <Link href="#">
+      <Link href="/search">
         <div className={styles.icon}>
           <BsSearch />
         </div>
