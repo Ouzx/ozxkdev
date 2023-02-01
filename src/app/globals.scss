@@ -3,6 +3,9 @@ $black-bg: #262626;
 $main: #8d8d8d;
 $accent: #47c9e5;
 $light-bg: #f2f2f2;
+
+@use "./screens.scss" as screens;
+
 .app * {
   box-sizing: border-box;
   // padding: 0;
@@ -35,4 +38,16 @@ $light-bg: #f2f2f2;
   min-height: 100vh;
   min-height: 100dvh;
   grid-template-rows: auto 1fr auto;
+}
+
+@mixin width-maker($lg: 80%, $xl: 1024px) {
+  @include screens.lg {
+    max-width: $lg;
+    margin: 0 auto;
+  }
+
+  @include screens.xl {
+    max-width: $xl;
+    margin: 0 auto;
+  }
 }
