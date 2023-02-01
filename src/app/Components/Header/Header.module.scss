@@ -16,10 +16,13 @@
     align-items: center;
 
     padding: 0 1.5rem !important;
+    @include screens.xl {
+      padding: 0 !important;
+    }
     margin: 0 auto;
 
     transition: 0.4s;
 
-    @include width-maker(80%, 1200px);
+    @include width-maker(1200px);
   }
 }
