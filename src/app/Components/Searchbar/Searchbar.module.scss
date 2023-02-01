@@ -1,0 +1,44 @@
+@use "../../globals.scss" as *;
+
+.search_bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  max-width: fit-content;
+  margin: 2rem auto;
+  color: $black;
+  border-radius: 0.5rem;
+  transition: 0.3s;
+
+  input {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    color: $black;
+
+    &::placeholder {
+      color: $main;
+    }
+  }
+
+  .icon {
+    color: $black;
+    background: $light-bg;
+    height: 3rem;
+    width: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:focus-within {
+    box-shadow: 0 0 1rem 0.2rem rgba(0, 0, 0, 0.1);
+  }
+  &:not(:focus-within) {
+    box-shadow: 0 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+}
