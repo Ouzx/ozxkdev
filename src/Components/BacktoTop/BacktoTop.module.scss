@@ -1,0 +1,23 @@
+@use "../../app/globals.scss" as *;
+@use "../../app/rounded.scss" as *;
+.backto_top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: $light-bg;
+  color: $black;
+  cursor: pointer;
+  @extend %full;
+  border: none;
+  box-shadow: 0 5px 10px #ccc;
+  z-index: 1000;
+  transition: 0.3s;
+
+  width: 3rem;
+  height: 3rem;
+
+  &:hover {
+    background: $accent;
+    color: #fff;
+  }
+}
