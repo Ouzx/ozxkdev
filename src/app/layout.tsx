@@ -1,7 +1,7 @@
 import { montserrat, raleway } from "./fonts";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
-
+import Bottom from "./Components/Footer/Bottom/Bottom";
 import "./globals.scss";
 
 export default function RootLayout({
@@ -24,6 +24,7 @@ export default function RootLayout({
           <Header />
           <div>{children}</div>
           <Footer />
+          <Bottom />
         </div>
       </body>
     </html>
