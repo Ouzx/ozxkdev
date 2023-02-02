@@ -14,8 +14,14 @@ $border-color: #e6e6e6;
   transition: 0.3s;
   &:hover {
     background: $accent;
-    font-weight: 600;
     color: #fff;
     border-color: $accent;
   }
+}
+
+.selected {
+  background: $accent;
+  font-weight: 600;
+  color: #fff;
+  border-color: $accent;
 }

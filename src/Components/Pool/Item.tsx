@@ -12,7 +12,11 @@ const Item = ({
   onClick: () => void;
 }) => {
   return (
-    <button className={styles.item} name={title} onClick={onClick}>
+    <button
+      className={`${styles.item} ${selected && styles.selected}`}
+      name={title}
+      onClick={onClick}
+    >
       {title}
     </button>
   );
