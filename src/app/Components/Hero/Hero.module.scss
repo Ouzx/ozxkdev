@@ -5,14 +5,20 @@
   grid-template-areas: "stack";
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  z-index: -12;
+  // position: relative;
 
-  // TODO: Make this responsive
   .hero__image {
     grid-area: stack;
     object-fit: cover;
   }
 
   .hero__text {
+    padding-top: 5rem;
+    @include screens.sm {
+      padding-top: 0;
+    }
     grid-area: stack;
     text-align: center;
     color: #fff;
