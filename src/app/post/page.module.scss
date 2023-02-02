@@ -56,7 +56,7 @@
       display: inline-flex;
     }
     justify-self: start;
-    gap: 0.5rem;
+    gap: 1rem;
     align-items: center;
     margin-bottom: 1rem;
 
@@ -79,5 +79,9 @@
       grid-template-columns: 1fr auto;
     }
     align-items: center;
+  }
+
+  .related {
+    margin-bottom: 1rem;
   }
 }

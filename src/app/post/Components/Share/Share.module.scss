@@ -4,7 +4,9 @@
   gap: 1rem;
   align-items: center;
   .share {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   .title {

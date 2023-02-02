@@ -52,7 +52,7 @@ const page = () => {
         <Share />
       </div>
       <div className={styles.seperator} />
-      <h2>Related Posts</h2>
+      <h2 className={styles.related}>Related Posts</h2>
       <Related />
     </div>
   );
