@@ -7,6 +7,10 @@
   border-radius: 16px;
   margin: 1rem;
   cursor: pointer;
+  transition: 0.4s;
+  &:hover {
+    box-shadow: 0 0 3rem 0.7rem rgba(0, 0, 0, 0.2);
+  }
   .post_card__image {
     width: 100%;
     height: auto;
