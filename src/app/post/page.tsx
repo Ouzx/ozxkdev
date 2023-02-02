@@ -44,10 +44,13 @@ const page = () => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </p>
 
-      <h2>Tags</h2>
-      <Tags />
-      <div className={styles.seperator} />
-      <Share />
+      <div className={styles.bottom_wrapper}>
+        <div className={styles.tags}>
+          <h2>Tags</h2>
+          <Tags />
+        </div>
+        <Share />
+      </div>
       <div className={styles.seperator} />
       <h2>Related Posts</h2>
       <Related />

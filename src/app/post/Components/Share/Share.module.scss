@@ -1,4 +1,5 @@
 .container {
+  justify-self: end;
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -7,8 +8,8 @@
   }
 
   .title {
-    margin: 0 !important;
-    margin-bottom: 0.5rem !important;
+    margin: 0;
+    margin-bottom: 0.5rem;
     display: inline-block;
   }
 }
