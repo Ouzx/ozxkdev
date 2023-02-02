@@ -8,4 +8,9 @@
   max-width: fit-content;
   padding: 0.5rem 1rem;
   @extend %lg;
+
+  &:hover {
+    background-color: $accent;
+    color: #fff;
+  }
 }
