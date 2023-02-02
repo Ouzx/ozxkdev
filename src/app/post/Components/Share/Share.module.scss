@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  .share {
+    display: inline-block;
+  }
+
+  .title {
+    margin: 0 !important;
+    margin-bottom: 0.5rem !important;
+    display: inline-block;
+  }
+}
