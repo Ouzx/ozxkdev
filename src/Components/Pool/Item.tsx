@@ -11,6 +11,7 @@ const Item = ({
   selected: boolean;
   onClick: () => void;
 }) => {
+  // TODO: Add link tag
   return (
     <button
       className={`${styles.item} ${selected && styles.selected}`}

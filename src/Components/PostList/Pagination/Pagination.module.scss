@@ -1,0 +1,65 @@
+@use "../../../app/globals.scss" as *;
+@use "../../../app/rounded.scss" as *;
+@use "../../../app/screens.scss" as screens;
+.wrapper {
+  color: $main;
+  text-align: center;
+
+  %center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  %hov {
+    cursor: pointer;
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  .pagination {
+    @extend %center;
+    margin-top: 1rem;
+    background-color: $light-bg;
+    @include screens.md {
+      max-width: max-content;
+    }
+    width: 100%;
+
+    @extend %full;
+    margin: 0 auto;
+    padding: 1rem;
+    overflow: visible;
+  }
+
+  .page {
+    margin: 0 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+
+    @extend %center;
+    @extend %hov;
+  }
+
+  .active {
+    color: #fff;
+    background-color: $accent;
+    @extend %full;
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .next {
+    min-width: fit-content;
+    cursor: pointer;
+  }
+
+  .previous {
+    cursor: pointer;
+
+    min-width: fit-content;
+  }
+}
