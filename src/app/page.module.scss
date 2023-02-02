@@ -2,4 +2,13 @@
   padding: 1.25rem;
   background-color: #fff;
   position: relative;
+
+  background-image: url("../assets/bg.svg");
+  // no repeat, center center, cover
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  // background width 100
+  // background-attachment: fixed;
+  background-size: cover;
 }
