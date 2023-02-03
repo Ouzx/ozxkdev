@@ -1,30 +1,44 @@
 // next-seo.config.ts
 import type { NextSeoProps } from "next-seo";
 
+// TODO: Add images
 export const NEXT_SEO_DEFAULT: NextSeoProps = {
-  title: "Title A",
-  description: "Description A",
+  title: "ozxk's Adventures in Code",
+  description:
+    "Get an inside look at the world of software development through ozxk's eyes",
   openGraph: {
     type: "website",
     locale: "en_IE",
-    url: "https://www.url.ie/a",
-    title: "Open Graph Title A",
-    description: "Open Graph Description A",
+    url: "https://ozxk.dev",
+    title:
+      "ozxk's Adventures in Code - Exploring the World of Software Development",
+    description:
+      "Get an inside look at the world of software development through ozxk's eyes",
     images: [
       {
-        url: "https://www.test.ie/og-image-a-01.jpg",
+        url: "https://ozxk.dev/og-image.jpg",
         width: 800,
         height: 600,
-        alt: "Og Image Alt A",
+        alt: "ozxk's Dev Blog header image",
         type: "image/jpeg",
-        secureUrl: "https://www.test.ie/secure-og-image-a-01.jpg",
+        secureUrl: "https://ozxk.dev/secure-og-image.jpg",
       },
     ],
-    siteName: "SiteName A",
+    siteName: "ozxk's Adventures in Code",
   },
   twitter: {
-    handle: "@handlea",
-    site: "@sitea",
+    handle: "@ozxkdev",
+    site: "@ozxkdev",
     cardType: "summary_large_image",
   },
+  additionalMetaTags: [
+    {
+      name: "robots",
+      content: "index, follow",
+    },
+    {
+      name: "keywords",
+      content: "software development, code, ozxk, blog",
+    },
+  ],
 };

@@ -12,11 +12,13 @@ const Social = ({ className }: { className?: string }) => {
         Icon={AiFillLinkedin}
         link="https://www.linkedin.com/in/ozxk/"
         userName="ozxk"
+        name="Linkedin"
       />
       <SocialButton
         Icon={AiFillGithub}
         link="https://github.com/Ouzx"
         userName="Ouzx"
+        name="Github"
       />
     </div>
   );
