@@ -5,6 +5,7 @@ import Tags from "./Components/Tags/Tags";
 import postImage from "../../assets/post.jpg";
 import Related from "./Components/Related/Related";
 import Share from "./Components/Share/Share";
+import NextPrev from "./Components/NextPrev/NextPrev";
 const page = () => {
   return (
     <div className={styles.post}>
@@ -51,6 +52,8 @@ const page = () => {
         </div>
         <Share />
       </div>
+      <div className={styles.seperator} />
+      <NextPrev />
       <div className={styles.seperator} />
       <h2 className={styles.related}>Related Posts</h2>
       <Related />
