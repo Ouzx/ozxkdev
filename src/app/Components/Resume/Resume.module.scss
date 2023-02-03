@@ -1,0 +1,45 @@
+@use "../../globals.scss" as *;
+@use "../../rounded.scss" as *;
+
+.resume {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: $light-bg;
+  color: $black;
+  cursor: pointer;
+  @extend %full;
+  border: none;
+  box-shadow: 0 5px 10px $accent;
+  z-index: 1000;
+  transition: 0.3s;
+  overflow: hidden;
+
+  width: 3rem;
+  height: 3rem;
+
+  &:hover {
+    background: $accent;
+    color: #fff;
+  }
+
+  .pp {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &:hover {
+      // spin fast
+      animation: spin 0.3s linear;
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+}

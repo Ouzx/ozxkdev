@@ -2,6 +2,7 @@ import { montserrat, raleway } from "./fonts";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Bottom from "./Components/Footer/Bottom/Bottom";
+import Resume from "./Components/Resume/Resume";
 import BacktoTop from "@/Components/BacktoTop/BacktoTop";
 import "./globals.scss";
 
@@ -27,6 +28,7 @@ export default function RootLayout({
           <Footer />
           <Bottom />
         </div>
+        <Resume />
         <BacktoTop />
       </body>
     </html>
