@@ -9,8 +9,8 @@ const Hero = () => {
     <div className={styles.hero}>
       <Image className={styles.hero__image} alt="hero" src={hero} />
       <div className={styles.hero__text}>
-        <h1 className={styles.hero__title}>Blog</h1>
-        <p className={styles.hero__subtitle}>A blog about web development</p>
+        <h1 className={styles.hero__title}>ozxk.dev</h1>
+        <p className={styles.hero__subtitle}>My development journey</p>
         <Searchbar />
       </div>
     </div>
