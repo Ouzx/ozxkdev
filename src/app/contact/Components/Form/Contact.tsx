@@ -3,7 +3,6 @@ import styles from "./Contact.module.scss";
 const Contact = () => {
   return (
     <div className={styles.contact}>
-      <h2>Contact</h2>
       <form action="" method="post" about="contact">
         <div className={styles.formGroup}>
           <label htmlFor="name">Name</label>

@@ -1,12 +1,20 @@
 import React from "react";
-
+import Link from "next/link";
 const Nav = () => {
   return (
     <ul>
-      <li>Home</li>
+      <li>
+        <Link href={"/"}>Home</Link>
+      </li>
       <li>Projects</li>
-      <li>Contact</li>
-      <li>Portfolio</li>
+      <li>
+        <Link href={"/contact"}>Contact</Link>
+      </li>
+      <li>
+        <Link href={"https://portfolio.ozxk.dev"} target="_blank">
+          Portfolio
+        </Link>
+      </li>
     </ul>
   );
 };

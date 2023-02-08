@@ -1,8 +1,9 @@
-@use "../../globals.scss" as *;
+@use "../../../globals.scss" as *;
 
 .contact {
   color: $black;
   @include width-maker(768px);
+  margin-left: 0 !important;
   form {
     padding: 2rem;
     .formGroup {
@@ -20,6 +21,11 @@
         padding: 0.5rem;
         border: 1px solid gray;
         border-radius: 0.25rem;
+
+        &:focus {
+          outline: none;
+          border-color: $accent;
+        }
       }
 
       button[type="submit"] {

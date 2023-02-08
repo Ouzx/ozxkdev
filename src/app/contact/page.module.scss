@@ -1,0 +1,22 @@
+@use "../globals.scss" as *;
+.container {
+  @include width-maker();
+
+  padding: 1rem;
+
+  p {
+    margin-top: 1rem;
+  }
+
+  p a {
+    margin: 0 0.5rem;
+    font-weight: bold;
+
+    &:hover {
+      color: $accent;
+      text-decoration: underline;
+    }
+  }
+
+  padding-top: 2rem;
+}
