@@ -10,8 +10,17 @@
   // position: relative;
 
   .hero__image {
+    $max-height: 50vh;
     grid-area: stack;
     object-fit: cover;
+
+    max-height: $max-height;
+    max-height: $max-height;
+
+    // if lanscape
+    @media screen and (orientation: landscape) {
+      max-height: $max-height * 1.5;
+    }
   }
 
   .hero__text {
