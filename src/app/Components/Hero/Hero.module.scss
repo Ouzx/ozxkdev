@@ -8,12 +8,13 @@
   overflow: hidden;
   z-index: -12;
   // position: relative;
+  background-color: #000;
 
   .hero__image {
     $max-height: 50vh;
     grid-area: stack;
     object-fit: cover;
-
+    opacity: 0.8;
     max-height: $max-height;
     max-height: $max-height;
 
@@ -28,10 +29,11 @@
     @include screens.sm {
       padding-top: 0;
     }
+
     grid-area: stack;
     text-align: center;
     color: #fff;
-
+    z-index: 1;
     h1 {
       margin-bottom: 0.5rem;
     }
