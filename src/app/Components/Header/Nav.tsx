@@ -4,10 +4,9 @@ const Nav = () => {
   return (
     <ul>
       <li>Home</li>
-      <li>People</li>
-      <li>Design</li>
-      <li>Travel</li>
-      <li>Commercial</li>
+      <li>Projects</li>
+      <li>Contact</li>
+      <li>Portfolio</li>
     </ul>
   );
 };
