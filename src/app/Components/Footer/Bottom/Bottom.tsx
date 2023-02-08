@@ -3,7 +3,7 @@ import styles from "./Bottom.module.scss";
 const Bottom = () => {
   return (
     <div className={styles.container}>
-      <p>Oguzhan Kandakoglu, Personal Blog, 2022</p>
+      <p>Copyright © 2022 Oguzhan Kandakoglu. All rights reserved.</p>
     </div>
   );
 };
