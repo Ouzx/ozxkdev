@@ -1,0 +1,34 @@
+@use "../../rounded.scss" as *;
+@use "../../globals.scss" as *;
+
+$border-color: #e6e6e6;
+.item {
+  cursor: pointer;
+
+  @extend %not-selected;
+
+  transition: 0.3s;
+  &:hover {
+    background: $accent;
+    color: #fff;
+    border-color: $accent;
+  }
+}
+
+// TODO: When user selects a pool, the pool should be highlighted try to solve it via suspense
+
+%not-selected {
+  background: #fff;
+  color: $main;
+
+  border: 1px solid $border-color;
+  @extend %full;
+  padding: 0.75rem 1rem;
+}
+
+.selected {
+  background: $accent;
+  font-weight: 600;
+  color: #fff;
+  border-color: $accent;
+}
