@@ -17,7 +17,7 @@ const data = [
 const Pool = () => {
   // TODO: add forwardRef or redux state
   const [selected, setSelected] = useState("All");
-  console.log(selected);
+
   let items = data.map((item) => (
     <Item
       title={item}
