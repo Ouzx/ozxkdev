@@ -1,3 +1,6 @@
+"use client";
+import { SessionProvider } from "next-auth/react";
+
 import { montserrat, raleway } from "./fonts";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
@@ -22,12 +25,14 @@ export default function RootLayout({
       */}
       <head />
       <body>
-        <div className="layout">
-          <Header />
-          <div>{children}</div>
-          <Footer />
-          <Bottom />
-        </div>
+        <SessionProvider>
+          <div className="layout">
+            <Header />
+            <div>{children}</div>
+            <Footer />
+            <Bottom />
+          </div>
+        </SessionProvider>
         <Resume />
         <BacktoTop />
       </body>
