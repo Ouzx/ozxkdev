@@ -1,5 +1,5 @@
-@use "../../../globals.scss" as *;
-@use "../../../rounded.scss" as *;
+@use "../../../../globals.scss" as *;
+@use "../../../../rounded.scss" as *;
 .container {
   display: flex;
   align-items: center;
@@ -29,4 +29,8 @@
 
 .reverse {
   flex-direction: row-reverse;
+}
+
+.hidden {
+  display: none;
 }

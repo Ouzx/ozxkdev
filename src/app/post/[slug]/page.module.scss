@@ -1,5 +1,5 @@
-@use "../screens.scss" as *;
-@use "../globals.scss" as *;
+@use "../../screens.scss" as *;
+@use "../../globals.scss" as *;
 
 .post {
   margin: 4rem auto;
@@ -51,6 +51,10 @@
     margin-bottom: 1rem;
   }
 
+  .content {
+    margin-bottom: 2rem;
+  }
+
   .tags {
     @include md {
       display: inline-flex;
@@ -79,9 +83,5 @@
       grid-template-columns: 1fr auto;
     }
     align-items: center;
-  }
-
-  .related {
-    margin-bottom: 2rem;
   }
 }

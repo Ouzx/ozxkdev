@@ -14,7 +14,11 @@ export default function Home({
       <div className={styles.content}>
         {/* @ts-expect-error Server Component */}
         <Pool selected={searchParams?.category} />
-        <PostList />
+        {/* @ts-expect-error Server Component */}
+        <PostList
+          category={searchParams?.category}
+          pageIndex={searchParams?.page}
+        />
         {/* <Contact /> */}
       </div>
     </main>

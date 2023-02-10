@@ -2,14 +2,25 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { PostMini } from "@/types";
+
 import styles from "./PostCard.module.scss";
 
 import postImage from "@/assets/post-template.jpg";
 
-const PostCard = () => {
+const PostCard = ({ postData }: { postData: PostMini }) => {
+  let tags = postData.tags.map((tag) => {
+    const key = Math.random().toString(36).substring(7);
+    return (
+      <Link href={`#`} key={key}>
+        {tag}
+      </Link>
+    );
+  });
+
   return (
     <div className={styles.post_card}>
-      <Link href="/post" scroll>
+      <Link href={`/post/${postData.urlSuffix}`} scroll>
         <Image
           className={styles.post_card__image}
           alt="Post Image"
@@ -17,22 +28,15 @@ const PostCard = () => {
         />
         <div className={styles.post_card__content}>
           <p className={styles.post_card__info}>
-            by Oguzhan Kandakoglu January 27, 2023
+            {/* by Oguzhan Kandakoglu January 27, 2023 */}
+            {`by ${postData.user}, ${postData.createdAt}`}
           </p>
-          <h2>Trip that you'll never ever forget</h2>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. A quae
-            eaque, quos possimus veniam unde fugiat cum ullam similique incidunt
-            voluptatem accusamus porro qui aliquam. Ipsum quia doloribus saepe?
-            Ab!
-          </p>
+          <h2>{postData.title}</h2>
+          <p>{postData.shortContent}</p>
         </div>
       </Link>
       {/* <hr /> */}
-      <div className={styles.categories}>
-        <Link href="#">People</Link>
-        <Link href={"#"}>Travel</Link>
-      </div>
+      <div className={styles.categories}>{tags}</div>
     </div>
   );
 };

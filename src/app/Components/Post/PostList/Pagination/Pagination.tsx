@@ -1,8 +1,20 @@
+"use client";
 import React from "react";
 import ReactPaginate from "react-paginate";
 import styles from "./Pagination.module.scss";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
-const Pagination = () => {
+const ITEMS_PER_PAGE = 10;
+
+const Pagination = ({
+  category,
+  postCount,
+}: {
+  category: string | string[] | undefined;
+  postCount: number;
+}) => {
+  const router = useRouter();
   return (
     <div className={styles.wrapper}>
       <ReactPaginate
@@ -11,7 +23,7 @@ const Pagination = () => {
         previousLabel="Previous"
         pageRangeDisplayed={3}
         marginPagesDisplayed={1}
-        pageCount={10}
+        pageCount={postCount / ITEMS_PER_PAGE}
         renderOnZeroPageCount={() => {}}
         className={styles.pagination}
         pageClassName={styles.page}
@@ -19,7 +31,10 @@ const Pagination = () => {
         previousClassName={styles.previous}
         nextClassName={styles.next}
         breakLinkClassName={styles.break}
-        // forcePage={0}
+        onClick={(e) => {
+          router.push(`/?category=${category}&page=${e.selected}`);
+          router.refresh();
+        }}
       />
     </div>
   );
