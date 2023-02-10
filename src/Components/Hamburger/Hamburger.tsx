@@ -3,7 +3,7 @@ import Nav from "@/app/Components/Header/Nav";
 import Social from "@/app/Components/Social/Social";
 import React, { useState } from "react";
 import styles from "./Hamburger.module.scss";
-
+import CMSMenu from "@/app/cms/Components/Menu/Menu";
 const Hamburger = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,6 +22,7 @@ const Hamburger = () => {
         <div className={styles.social}>
           <Social />
         </div>
+        <CMSMenu />
         <Nav />
       </div>
     </div>
