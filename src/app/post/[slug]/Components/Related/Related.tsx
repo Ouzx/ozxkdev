@@ -1,4 +1,4 @@
-import { PostMini } from "@/types";
+import { PostMini } from "@/types/Post";
 import React from "react";
 import Card from "./Card/Card";
 import styles from "./Related.module.scss";

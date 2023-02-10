@@ -1,5 +1,5 @@
 import "server-only";
-import { Posts, PostMain, Post } from "@/types";
+import { Posts, PostMain, Post } from "@/types/Post";
 
 const link = process.env.API;
 

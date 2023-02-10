@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { PostMini } from "@/types";
+import { PostMini } from "@/types/Post";
 
 import styles from "./PostCard.module.scss";
 

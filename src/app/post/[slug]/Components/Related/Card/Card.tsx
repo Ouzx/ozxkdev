@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineTag } from "react-icons/ai";
 import card from "@/assets/card.jpg";
-import { PostMini } from "@/types";
+import { PostMini } from "@/types/Post";
 
 const Card = ({ post }: { post: PostMini }) => {
   return (
