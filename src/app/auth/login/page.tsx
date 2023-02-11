@@ -49,6 +49,7 @@ const page = ({
           type="password"
           ref={password}
           label="Password"
+          onOff
         />
         <button type="submit">Login</button>
       </form>
