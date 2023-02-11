@@ -8,6 +8,7 @@ interface Props {
   label: string;
   type: string;
   onOff?: boolean;
+  required?: boolean;
 }
 
 const TextBox = React.forwardRef<
@@ -19,7 +20,12 @@ const TextBox = React.forwardRef<
     <div className={styles.container}>
       <label htmlFor={props.id}>{props.label}</label>
       <div className={styles.text}>
-        <input type={show ? "text" : props.type} id={props.id} ref={ref} />
+        <input
+          type={show ? "text" : props.type}
+          id={props.id}
+          ref={ref}
+          required={props.required}
+        />
         {props.onOff && (
           <div className={styles.icon} onClick={() => setShow(!show)}>
             {!show ? <AiFillEyeInvisible /> : <AiFillEye />}
