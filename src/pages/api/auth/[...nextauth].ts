@@ -11,7 +11,6 @@ export const authOptions: NextAuthOptions = {
         username: {
           label: "Username",
           type: "text",
-          placeholder: "jsmith",
         },
         password: {
           label: "Password",
@@ -20,42 +19,45 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials, req) {
         const { username, password } = credentials as any;
-        const res = await fetch("http://localhost:8000/auth/login", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            username,
-            password,
-          }),
-        });
+        try {
+          const res = await fetch("http://localhost:8000/auth/login", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              username,
+              password,
+            }),
+          });
 
-        const user = await res.json();
+          const user = await res.json();
 
-        console.log({ user });
-
-        if (res.ok && user) {
-          return user;
-        } else return null;
+          if (res.ok && user) {
+            return user;
+          } else throw new Error("Invalid username or password");
+        } catch (e) {
+          console.log(e);
+        }
       },
     }),
   ],
 
   callbacks: {
     async jwt({ token, user }) {
-      return { ...token, ...user };
+      // TODO: Add role to backend and fetch it here
+      return { ...token, ...user, ...{ role: "admin" } };
     },
     async session({ session, token, user }) {
       // Send properties to the client, like an access_token from a provider.
       session.user = token;
-
       return session;
     },
   },
 
   pages: {
     signIn: "/auth/login",
+    error: "/auth/login",
   },
 };
 

@@ -1,0 +1,31 @@
+@use "../../globals.scss" as *;
+
+.login {
+  .form_group {
+    h1 {
+      margin-bottom: 1rem;
+    }
+    div {
+      display: flex;
+      gap: 0.5rem;
+      flex-direction: column;
+      margin-bottom: 1rem;
+    }
+    margin: 2rem auto;
+
+    max-width: 20rem;
+
+    button {
+      width: 100%;
+      background-color: $black;
+      border: 0;
+      color: white;
+      padding: 0.5rem;
+      cursor: pointer;
+      &:hover {
+        background-color: $accent;
+        color: $black;
+      }
+    }
+  }
+}
