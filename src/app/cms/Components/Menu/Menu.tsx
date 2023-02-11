@@ -1,6 +1,7 @@
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import React from "react";
 import Link from "next/link";
+import styles from "./Menu.module.scss";
 const Menu = () => {
   const { data: session } = useSession();
   return (
@@ -14,7 +15,14 @@ const Menu = () => {
             <Link href={"/"}>Create Post 📝</Link>
           </li>
           <li>
-            <Link href={"/"}>Sign Out 🚪</Link>
+            <button
+              className={styles.signOut}
+              onClick={() => {
+                signOut();
+              }}
+            >
+              Sign Out 🚪
+            </button>
           </li>
         </ul>
       )}

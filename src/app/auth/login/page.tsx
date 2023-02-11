@@ -3,7 +3,11 @@ import React, { useRef } from "react";
 import styles from "./page.module.scss";
 import { signIn } from "next-auth/react";
 
-const page = () => {
+const page = ({
+  searchParams,
+}: {
+  searchParams?: { [key: string]: string | string[] | undefined };
+}) => {
   const userName = useRef<HTMLInputElement>(null);
   const password = useRef<HTMLInputElement>(null);
 
