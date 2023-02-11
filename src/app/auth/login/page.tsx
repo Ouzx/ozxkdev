@@ -23,7 +23,7 @@ const page = ({
       username: userNameValue,
       password: passwordValue,
       redirect: true,
-      callbackUrl: "/",
+      callbackUrl: "/cms",
     });
   };
 
