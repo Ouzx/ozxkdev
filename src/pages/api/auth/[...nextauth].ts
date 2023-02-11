@@ -37,7 +37,8 @@ export const authOptions: NextAuthOptions = {
             return user;
           } else throw new Error("Invalid username or password");
         } catch (e) {
-          console.log(e);
+          // console.log(e);
+          return null;
         }
       },
     }),

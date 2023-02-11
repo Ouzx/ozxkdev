@@ -5,12 +5,7 @@
     h1 {
       margin-bottom: 1rem;
     }
-    div {
-      display: flex;
-      gap: 0.5rem;
-      flex-direction: column;
-      margin-bottom: 1rem;
-    }
+
     margin: 2rem auto;
 
     max-width: 20rem;
@@ -27,5 +22,14 @@
         color: $black;
       }
     }
+  }
+
+  .error {
+    // text-red-700 bg-red-100 py-2 px-5 rounded-md"
+    color: red;
+    background-color: #fdd;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border-radius: 0.25rem;
   }
 }
