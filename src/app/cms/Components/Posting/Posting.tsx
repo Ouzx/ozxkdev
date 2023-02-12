@@ -8,6 +8,7 @@ import styles from "./Posting.module.scss";
 
 import { getThumbnail, getContent, getShortContent } from "../Editor/Editor";
 import Switch from "../Switch/Switch";
+import Button from "../Button/Button";
 const EditorBlock = dynamic(() => import("../Editor/Editor"), {
   ssr: false,
 });
@@ -21,6 +22,8 @@ const Posting = () => {
   const [tags, setTags] = useState<string[]>([]);
   const [keyword, setKeyword] = useState<string>();
   const [shared, setShared] = useState<boolean>(false);
+
+  const onSubmit = () => {};
 
   return (
     <div className={styles.container}>
@@ -42,6 +45,7 @@ const Posting = () => {
             trueText="Public"
             falseText="Private"
           />
+          <Button title={"Create"} onClick={onSubmit} />
         </div>
       </div>
     </div>

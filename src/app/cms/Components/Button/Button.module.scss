@@ -1,0 +1,20 @@
+@use "../../../globals.scss" as *;
+.container {
+  background-color: $accent;
+  color: #fff;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  cursor: pointer;
+  &:focus {
+    outline: 1px solid #ccc;
+    outline-offset: 2px;
+  }
+  &:hover {
+    background-color: $black;
+    color: #fff;
+  }
+}
