@@ -2,9 +2,11 @@
 import React, { useReducer, useState } from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
-import { useSession } from "next-auth/react";
 import { Post } from "@/types/CMS";
+
 import styles from "./Posting.module.scss";
+
+import useAccessToken from "@/hooks/useAccessToken";
 
 import TextBox from "../TextBox/TextBox";
 import Switch from "../Switch/Switch";
@@ -15,6 +17,7 @@ import { getThumbnail, getContent, getShortContent } from "../Editor/Editor";
 const EditorBlock = dynamic(() => import("../Editor/Editor"), {
   ssr: false,
 });
+
 interface PostState {
   title: string;
   content: OutputData | undefined;
@@ -33,8 +36,10 @@ const Posting = ({
   Submit: (post: Post, token: string) => Promise<Post>;
 }) => {
   const router = useRouter();
-  const { data: session } = useSession();
+  const [token] = useAccessToken();
+
   const [isLoading, setIsLoading] = useState(false);
+
   const [post, updatePost] = useReducer(
     (state: PostState, newState: Partial<PostState>) => ({
       ...state,
@@ -56,9 +61,7 @@ const Posting = ({
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (isLoading) return;
-
     setIsLoading(true);
-    const token = session?.user?.accessToken;
 
     // convert post: PostState to post: Post
     const postData: Post = {
