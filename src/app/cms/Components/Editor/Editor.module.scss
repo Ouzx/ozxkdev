@@ -1,0 +1,17 @@
+@use "../../../globals.scss" as *;
+@use "../../../screens.scss" as *;
+// flex-shrink: 0;
+.label {
+  font-weight: bold;
+}
+.editor {
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  padding: 1rem 2.5rem 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.editorContainer {
+  flex: 1;
+}

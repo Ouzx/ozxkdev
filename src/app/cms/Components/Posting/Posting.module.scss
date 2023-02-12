@@ -1,6 +1,33 @@
 @use "../../../globals.scss" as *;
+@use "../../../screens.scss" as *;
 .container {
   @include width-maker();
   margin-top: 2rem;
-  overflow: visible !important;
+  margin-bottom: 2rem;
+  padding: 1rem 2rem;
+  @include xl {
+    padding: 4rem 8rem;
+  }
+  transition: 0.3s;
+  overflow-x: visible !important;
+  //drop shadow
+  box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.2);
+
+  .info {
+    max-width: 100%;
+    @include lg {
+      max-width: 25%;
+    }
+  }
+
+  .main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-direction: column;
+    @include lg {
+      flex-direction: row;
+    }
+  }
 }

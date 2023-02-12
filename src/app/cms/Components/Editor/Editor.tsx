@@ -60,6 +60,13 @@ const EditorBlock = ({
       }
     };
   }, []);
-  return <div id="editor" />;
+  return (
+    <div className={styles.editorContainer}>
+      <label className={styles.label} htmlFor="editor">
+        Content
+      </label>
+      <div className={styles.editor} id="editor" />
+    </div>
+  );
 };
 export default memo(EditorBlock);
