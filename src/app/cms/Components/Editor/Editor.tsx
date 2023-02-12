@@ -3,39 +3,63 @@
 import React, { memo, useEffect, useRef } from "react";
 import EditorJS, { OutputData } from "@editorjs/editorjs";
 import configuration from "./configuration";
-import tools from "./tools";
 import styles from "./Editor.module.scss";
 
-type Props = {
+export const getThumbnail = (editorData: OutputData) => {
+  for (let i = 0; i < editorData?.blocks?.length; i++) {
+    if (
+      editorData.blocks[i].type == "image" &&
+      editorData.blocks[i].data.file.url
+    ) {
+      return editorData.blocks[i].data.file.url;
+    }
+  }
+  return "";
+};
+
+export const getContent = (editorData: OutputData) => {
+  if (!editorData) return "";
+  // copy editorData.blocks remove title
+  let blocks = Object.assign(editorData.blocks);
+  for (let i = 0; i < blocks.length; i++) {
+    if (blocks[i].type == "header") {
+      blocks.splice(i, 1);
+      break;
+    }
+  }
+  // TODO: Add MD Parser
+  // return parse(blocks);
+  return "";
+};
+
+export const getShortContent = (content: string) => content.substring(0, 100);
+
+const EditorBlock = ({
+  data,
+  onChange,
+}: {
   data?: OutputData;
   onChange(val: OutputData): void;
-  holder: string;
-};
-const EditorBlock = ({ data, onChange, holder }: Props) => {
-  //add a reference to editor
+}) => {
   const ref = useRef<EditorJS>();
-  //initialize editorjs
   useEffect(() => {
-    //initialize editor if we don't have a reference
     if (!ref.current) {
       const editor = new EditorJS({
-        holder: holder,
-        tools: tools,
+        ...configuration,
         data,
-        async onChange(api, event) {
+        async onChange(api) {
           const data = await api.saver.save();
           onChange(data);
         },
       });
       ref.current = editor;
     }
-    //add a return function handle cleanup
     return () => {
       if (ref.current && ref.current.destroy) {
         ref.current.destroy();
       }
     };
   }, []);
-  return <div className={styles.wrapper} id={holder} />;
+  return <div id="editor" />;
 };
 export default memo(EditorBlock);

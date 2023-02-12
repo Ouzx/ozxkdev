@@ -9,10 +9,14 @@ const EditorBlock = dynamic(() => import("../Editor/Editor"), {
   ssr: false,
 });
 
+// TODO:Add getSLug
+
 const Posting = () => {
   const [data, setData] = useState<OutputData>();
   return (
-    <EditorBlock data={data} onChange={setData} holder="editorjs-container" />
+    <div className={styles.container}>
+      <EditorBlock data={data} onChange={setData} />
+    </div>
   );
 };
 

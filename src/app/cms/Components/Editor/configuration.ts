@@ -6,7 +6,7 @@ const configuration: EditorConfig = {
   autofocus: true,
   placeholder: "Let`s write an awesome story!",
   inlineToolbar: true,
-  defaultBlock: "header",
+  // defaultBlock: "header",
   logLevel: "ERROR" as LogLevels,
 };
 
