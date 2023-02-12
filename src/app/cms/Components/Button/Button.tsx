@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Button.module.scss";
-const Button = ({ title, onClick }: { title: string; onClick(): void }) => {
+const Button = ({ title }: { title: string }) => {
   return (
     <input
       className={styles.container}
@@ -8,7 +8,6 @@ const Button = ({ title, onClick }: { title: string; onClick(): void }) => {
       value={title}
       name={title}
       id={title}
-      onClick={() => onClick()}
     />
   );
 };
