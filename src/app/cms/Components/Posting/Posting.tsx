@@ -7,6 +7,7 @@ import TextBox from "../TextBox/TextBox";
 import styles from "./Posting.module.scss";
 
 import { getThumbnail, getContent, getShortContent } from "../Editor/Editor";
+import Switch from "../Switch/Switch";
 const EditorBlock = dynamic(() => import("../Editor/Editor"), {
   ssr: false,
 });
@@ -19,6 +20,7 @@ const Posting = () => {
   const [category, setCategory] = useState<string>();
   const [tags, setTags] = useState<string[]>([]);
   const [keyword, setKeyword] = useState<string>();
+  const [shared, setShared] = useState<boolean>(false);
 
   return (
     <div className={styles.container}>
@@ -33,6 +35,13 @@ const Posting = () => {
             onChange={(val) => setTags(val.split(","))}
           />
           <TextBox title="Keyword" data={keyword} onChange={setKeyword} />
+          <Switch
+            onChange={setShared}
+            title="Status"
+            data={shared}
+            trueText="Public"
+            falseText="Private"
+          />
         </div>
       </div>
     </div>
