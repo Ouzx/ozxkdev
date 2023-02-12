@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useReducer } from "react";
+import React, { useReducer } from "react";
 import dynamic from "next/dynamic";
 import { OutputData } from "@editorjs/editorjs";
 import TextBox from "../TextBox/TextBox";
