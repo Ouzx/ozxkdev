@@ -47,9 +47,10 @@ const Posting = () => {
   const onSubmit = () => {};
 
   return (
-    <div className={styles.container}>
+    <form className={styles.container}>
       <TextBox
         title="Title"
+        required
         data={post.title}
         onChange={(val) =>
           updatePost({
@@ -72,11 +73,13 @@ const Posting = () => {
         <div className={styles.info}>
           <TextBox
             title="Category"
+            required
             data={post.category}
             onChange={(val) => updatePost({ category: val })}
           />
           <TextBox
             title="Tags"
+            required
             data={post.tags.join(",")}
             onChange={(val) =>
               updatePost({ tags: val.split(",").map((v) => v.trim()) })
@@ -84,6 +87,7 @@ const Posting = () => {
           />
           <TextBox
             title="Keyword"
+            required
             data={post.keyword}
             onChange={(val) => updatePost({ keyword: val })}
           />
@@ -97,7 +101,7 @@ const Posting = () => {
           <Button title={"Create"} onClick={onSubmit} />
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 

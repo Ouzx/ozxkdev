@@ -5,9 +5,11 @@ const TextBox = ({
   title,
   data,
   onChange,
+  required,
 }: {
   title: string;
   data?: string;
+  required?: boolean;
   onChange(val: string): void;
 }) => {
   return (
@@ -19,6 +21,8 @@ const TextBox = ({
         id={title}
         onChange={(e) => onChange(e.target.value)}
         value={data}
+        required={required}
+        // className={required ? styles.required : ""}
       />
     </div>
   );

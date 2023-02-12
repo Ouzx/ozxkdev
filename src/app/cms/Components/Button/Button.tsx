@@ -4,7 +4,7 @@ const Button = ({ title, onClick }: { title: string; onClick(): void }) => {
   return (
     <input
       className={styles.container}
-      type="button"
+      type="submit"
       value={title}
       name={title}
       id={title}

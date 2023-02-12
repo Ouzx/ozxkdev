@@ -8,7 +8,10 @@
   margin-top: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 0.25rem;
-  padding: 1rem 2.5rem 2.5rem;
+  padding: 0.5rem;
+  @include md {
+    padding: 1rem 2.5rem 2.5rem;
+  }
   margin-bottom: 1rem;
 
   &:focus-within {
