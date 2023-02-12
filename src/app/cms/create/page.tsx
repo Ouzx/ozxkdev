@@ -1,11 +1,10 @@
 import React from "react";
-import Editor from "../Components/Editor/Editor";
-const page = () => {
-  return (
-    <div>
-      <Editor content="" />
-    </div>
-  );
-};
+import Posting from "../Components/Posting/Posting";
+
+const page = () => (
+  <div>
+    <Posting />
+  </div>
+);
 
 export default page;

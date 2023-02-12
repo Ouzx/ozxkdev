@@ -1,173 +1,41 @@
 "use client";
 
-import React, {
-  useEffect,
-  useRef,
-  useState,
-  Ref,
-  useImperativeHandle,
-} from "react";
+import React, { memo, useEffect, useRef } from "react";
 import EditorJS, { OutputData } from "@editorjs/editorjs";
 import configuration from "./configuration";
+import tools from "./tools";
+import styles from "./Editor.module.scss";
 
-const DEFAULT_INITIAL_DATA: OutputData = {
-  time: new Date().getTime(),
-  blocks: [],
+type Props = {
+  data?: OutputData;
+  onChange(val: OutputData): void;
+  holder: string;
 };
-
-interface props {
-  height?: number;
-  content: string;
-}
-const Editor = React.forwardRef((prop: props, ref: Ref<any>) => {
-  const ejInstance = useRef<EditorJS | null>();
-  const [editorData, setEditorData] = useState<OutputData>(() => {
-    if (prop.content) return JSON.parse(prop.content) as OutputData;
-    else return DEFAULT_INITIAL_DATA;
-  });
-  const [count, setCount] = useState(0);
-  const [isReady, setIsReady] = useState(false);
-  useImperativeHandle(
-    ref,
-    () => {
-      return {
-        title: getTitle(),
-        thumbnail: getThumbnail(),
-        content: getContent(),
-        raw: JSON.stringify(editorData),
-        shortContent: shortContent(),
-        urlSuffix: urlSuffix(),
-      };
-    },
-    [ejInstance.current, editorData]
-  );
-
+const EditorBlock = ({ data, onChange, holder }: Props) => {
+  //add a reference to editor
+  const ref = useRef<EditorJS>();
+  //initialize editorjs
   useEffect(() => {
-    if (!ejInstance?.current) {
-      initEditor();
+    //initialize editor if we don't have a reference
+    if (!ref.current) {
+      const editor = new EditorJS({
+        holder: holder,
+        tools: tools,
+        data,
+        async onChange(api, event) {
+          const data = await api.saver.save();
+          onChange(data);
+        },
+      });
+      ref.current = editor;
     }
+    //add a return function handle cleanup
     return () => {
-      ejInstance?.current?.destroy();
-      ejInstance.current = null;
+      if (ref.current && ref.current.destroy) {
+        ref.current.destroy();
+      }
     };
   }, []);
-
-  useEffect(() => {
-    if (!isReady) {
-      setTimeout(() => {
-        setCount(count + 1);
-      }, 1000); // 1000 milliseconds = 1 second
-    }
-    if (!prop.content) return;
-    if (!ejInstance.current) return console.log("Editor not initialized");
-
-    setIsReady(true);
-    const parsed = JSON.parse(prop.content) as OutputData;
-
-    ejInstance.current.blocks.clear();
-    ejInstance.current?.blocks.render(parsed);
-
-    //SAVE
-    ejInstance.current.saver
-      .save()
-      .then((outputData: OutputData) => {
-        parsed.blocks.forEach((block: any) => {
-          outputData.blocks.push(block);
-        });
-        setEditorData(outputData);
-        // ejInstance.current?.blocks.render(parsed);
-      })
-      .catch((error: any) => {
-        console.log("Saving failed: ", error);
-      });
-  }, [count]);
-
-  const initEditor = () => {
-    const config = {
-      ...configuration,
-      data: editorData,
-      onReady: () => {
-        ejInstance.current = editor;
-      },
-      onChange: () => {
-        ejInstance.current?.saver
-          .save()
-          .then((outputData: OutputData) => {
-            setEditorData(outputData);
-          })
-          .catch((error: any) => {
-            console.log("Saving failed: ", error);
-          });
-      },
-    };
-    const editor = new EditorJS(config);
-  };
-
-  const getTitle = () => {
-    for (let i = 0; i < editorData?.blocks?.length; i++) {
-      if (
-        editorData.blocks[i].type == "header" &&
-        editorData.blocks[i].data.text
-      ) {
-        return editorData.blocks[i].data.text;
-      }
-    }
-    return "";
-  };
-
-  const getThumbnail = () => {
-    for (let i = 0; i < editorData?.blocks?.length; i++) {
-      if (
-        editorData.blocks[i].type == "image" &&
-        editorData.blocks[i].data.file.url
-      ) {
-        return editorData.blocks[i].data.file.url;
-      }
-    }
-    return "";
-  };
-
-  const getContent = () => {
-    if (!editorData) return "";
-    // copy editorData.blocks remove title
-    let blocks = Object.assign(editorData.blocks);
-    for (let i = 0; i < blocks.length; i++) {
-      if (blocks[i].type == "header") {
-        blocks.splice(i, 1);
-        break;
-      }
-    }
-    // return parse(blocks);
-    return "";
-  };
-
-  const shortContent = () => {
-    for (let i = 0; i < editorData?.blocks?.length; i++)
-      if (
-        editorData.blocks[i].type == "paragraph" &&
-        editorData.blocks[i].data.text
-      )
-        // return editorData.blocks[i].data.text;
-        // return first 100 characters
-        return editorData.blocks[i].data.text.substring(0, 100);
-  };
-
-  const urlSuffix = () => {
-    // create from title
-    let title = getTitle();
-    // parse title to url
-    let url = title
-      .toLowerCase()
-      .replace(/ /g, "-")
-      .replace(/[^\w-]+/g, "");
-    return url;
-  };
-
-  return (
-    <div className="container border dark:bg-dblackOver2 shadow-md pt-10">
-      <div className="dark:text-black dark:fill-black" id="editor"></div>
-    </div>
-  );
-});
-
-export default Editor;
+  return <div className={styles.wrapper} id={holder} />;
+};
+export default memo(EditorBlock);

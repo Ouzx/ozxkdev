@@ -1,0 +1,6 @@
+@use "../../../globals.scss" as *;
+.container {
+  @include width-maker();
+  margin-top: 2rem;
+  overflow: visible !important;
+}

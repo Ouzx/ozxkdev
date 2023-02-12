@@ -32,12 +32,10 @@ import InlineCode from "@editorjs/inline-code";
 import { getSession } from "next-auth/react";
 
 export default {
-  embed: Embed,
-  table: Table,
+  header: Header,
+
   list: List,
-  warning: Warning,
   code: Code,
-  linkTool: LinkTool,
   image: {
     class: Image,
     config: {
@@ -81,11 +79,14 @@ export default {
       // },
     },
   },
-  raw: Raw,
-  header: Header,
-  quote: Quote,
-  marker: Marker,
-  checklist: CheckList,
-  delimiter: Delimiter,
   inlineCode: InlineCode,
+  quote: Quote,
+  linkTool: LinkTool,
+  marker: Marker,
+  delimiter: Delimiter,
+  checklist: CheckList,
+  embed: Embed,
+  table: Table,
+  warning: Warning,
+  raw: Raw,
 };
