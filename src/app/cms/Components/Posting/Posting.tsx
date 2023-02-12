@@ -1,18 +1,20 @@
 "use client";
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
 import dynamic from "next/dynamic";
-import { OutputData } from "@editorjs/editorjs";
-import TextBox from "../TextBox/TextBox";
-
+import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
+import { Post } from "@/types/CMS";
 import styles from "./Posting.module.scss";
 
-import { getThumbnail, getContent, getShortContent } from "../Editor/Editor";
+import TextBox from "../TextBox/TextBox";
 import Switch from "../Switch/Switch";
 import Button from "../Button/Button";
+
+import { OutputData } from "@editorjs/editorjs";
+import { getThumbnail, getContent, getShortContent } from "../Editor/Editor";
 const EditorBlock = dynamic(() => import("../Editor/Editor"), {
   ssr: false,
 });
-
 interface PostState {
   title: string;
   content: OutputData | undefined;
@@ -25,7 +27,14 @@ interface PostState {
   slug: string;
 }
 
-const Posting = () => {
+const Posting = ({
+  Submit,
+}: {
+  Submit: (post: Post, token: string) => Promise<Post>;
+}) => {
+  const router = useRouter();
+  const { data: session } = useSession();
+  const [isLoading, setIsLoading] = useState(false);
   const [post, updatePost] = useReducer(
     (state: PostState, newState: Partial<PostState>) => ({
       ...state,
@@ -44,10 +53,35 @@ const Posting = () => {
     }
   );
 
-  const onSubmit = () => {};
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (isLoading) return;
+
+    setIsLoading(true);
+    const token = session?.user?.accessToken;
+
+    // convert post: PostState to post: Post
+    const postData: Post = {
+      title: post.title,
+      content: "PostContent",
+      category: post.category,
+      tags: post.tags,
+      keyword: post.keyword,
+      shared: post.shared,
+      thumbnail: "PostThumbnail",
+      shortContent: "post.shortContent",
+      slug: post.slug,
+      createdAt: "2021-08-01T00:00:00.000Z",
+    };
+    if (!token) return;
+    const res = await Submit(postData, token);
+    if (res) {
+      router.push(`/cms`);
+    }
+  };
 
   return (
-    <form className={styles.container}>
+    <form className={styles.container} onSubmit={onSubmit}>
       <TextBox
         title="Title"
         required
@@ -98,7 +132,7 @@ const Posting = () => {
             trueText="Public"
             falseText="Private"
           />
-          <Button title={"Create"} onClick={onSubmit} />
+          <Button title={isLoading ? "Creating..." : "Create"} />
         </div>
       </div>
     </form>
