@@ -10,3 +10,8 @@ export interface Post {
   shortContent: string;
   createdAt: string;
 }
+
+export interface Posts {
+  posts: Post[];
+  totalItems: number;
+}
