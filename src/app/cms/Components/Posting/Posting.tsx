@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import dynamic from "next/dynamic";
 import { OutputData } from "@editorjs/editorjs";
 import TextBox from "../TextBox/TextBox";
@@ -15,33 +15,77 @@ const EditorBlock = dynamic(() => import("../Editor/Editor"), {
 
 // TODO:Add getSLug
 
+interface PostState {
+  title: string;
+  content: OutputData | undefined;
+  category: string;
+  tags: string[];
+  keyword: string;
+  shared: boolean;
+  thumbnail: string;
+  shortContent: string;
+}
+
 const Posting = () => {
-  const [content, setContent] = useState<OutputData>();
-  const [title, setTitle] = useState<string>();
-  const [category, setCategory] = useState<string>();
-  const [tags, setTags] = useState<string[]>([]);
-  const [keyword, setKeyword] = useState<string>();
-  const [shared, setShared] = useState<boolean>(false);
+  const [post, updatePost] = useReducer(
+    (state: PostState, newState: Partial<PostState>) => ({
+      ...state,
+      ...newState,
+    }),
+    {
+      title: "",
+      content: undefined,
+      category: "",
+      tags: [],
+      keyword: "",
+      shared: true,
+      thumbnail: "",
+      shortContent: "",
+    }
+  );
 
   const onSubmit = () => {};
 
   return (
     <div className={styles.container}>
-      <TextBox title="Title" data={title} onChange={setTitle} />
+      <TextBox
+        title="Title"
+        data={post.title}
+        onChange={(val) => updatePost({ title: val })}
+      />
       <div className={styles.main}>
-        <EditorBlock data={content} onChange={setContent} />
+        <EditorBlock
+          data={post.content}
+          onChange={(val) => {
+            updatePost({
+              content: val,
+              thumbnail: getThumbnail(val),
+              shortContent: getShortContent(val),
+            });
+          }}
+        />
         <div className={styles.info}>
-          <TextBox title="Category" data={category} onChange={setCategory} />
+          <TextBox
+            title="Category"
+            data={post.category}
+            onChange={(val) => updatePost({ category: val })}
+          />
           <TextBox
             title="Tags"
-            data={tags.join(",")}
-            onChange={(val) => setTags(val.split(","))}
+            data={post.tags.join(",")}
+            onChange={(val) =>
+              updatePost({ tags: val.split(",").map((v) => v.trim()) })
+            }
           />
-          <TextBox title="Keyword" data={keyword} onChange={setKeyword} />
+          <TextBox
+            title="Keyword"
+            data={post.keyword}
+            onChange={(val) => updatePost({ keyword: val })}
+          />
           <Switch
-            onChange={setShared}
+            onChange={(val) => updatePost({ shared: val })}
             title="Status"
-            data={shared}
+            data={post.shared}
             trueText="Public"
             falseText="Private"
           />

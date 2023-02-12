@@ -32,7 +32,12 @@ export const getContent = (editorData: OutputData) => {
   return "";
 };
 
-export const getShortContent = (content: string) => content.substring(0, 100);
+export const getShortContent = (content: OutputData) => {
+  for (let i = 0; i < content?.blocks?.length; i++)
+    if (content.blocks[i].type == "paragraph" && content.blocks[i].data.text)
+      return content.blocks[i].data.text.substring(0, 100);
+  return "";
+};
 
 const EditorBlock = ({
   data,
