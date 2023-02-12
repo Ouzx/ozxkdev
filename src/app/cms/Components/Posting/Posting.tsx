@@ -13,8 +13,6 @@ const EditorBlock = dynamic(() => import("../Editor/Editor"), {
   ssr: false,
 });
 
-// TODO:Add getSLug
-
 interface PostState {
   title: string;
   content: OutputData | undefined;
@@ -24,6 +22,7 @@ interface PostState {
   shared: boolean;
   thumbnail: string;
   shortContent: string;
+  slug: string;
 }
 
 const Posting = () => {
@@ -41,6 +40,7 @@ const Posting = () => {
       shared: true,
       thumbnail: "",
       shortContent: "",
+      slug: "",
     }
   );
 
@@ -51,7 +51,12 @@ const Posting = () => {
       <TextBox
         title="Title"
         data={post.title}
-        onChange={(val) => updatePost({ title: val })}
+        onChange={(val) =>
+          updatePost({
+            title: val,
+            slug: getSlug(val),
+          })
+        }
       />
       <div className={styles.main}>
         <EditorBlock
@@ -94,6 +99,13 @@ const Posting = () => {
       </div>
     </div>
   );
+};
+
+const getSlug = (title: string) => {
+  return title
+    .toLowerCase()
+    .replace(/ /g, "-")
+    .replace(/[^\w-]+/g, "");
 };
 
 export default Posting;
