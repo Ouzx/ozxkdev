@@ -38,7 +38,10 @@ const Posting = ({
     {
       _id: initialPost?._id || "",
       title: initialPost?.title || "",
-      content: (JSON.parse(initialPost?.content as string) as OutputData) || "",
+      content:
+        (initialPost &&
+          (JSON.parse(initialPost?.content as string) as OutputData)) ||
+        "",
       category: initialPost?.category || "",
       tags: initialPost?.tags || [],
       keyword: initialPost?.keyword || "",
