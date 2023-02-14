@@ -47,7 +47,10 @@ const page = ({
                 <td>{post.shared ? "Public" : "Private"}</td>
                 <td>{new Date(post.createdAt).toDateString()}</td>
                 <td>
-                  <DeleteButton postId={post._id || ""} />
+                  <DeleteButton
+                    postId={post._id || ""}
+                    postTitle={post.title}
+                  />
                 </td>
               </tr>
             ))}
