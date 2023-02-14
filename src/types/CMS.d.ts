@@ -1,7 +1,8 @@
-export interface Post {
-  _id?: string;
+import { OutputData } from "@editorjs/editorjs";
+export interface iPost {
+  _id: string;
   title: string;
-  content: string;
+  content: string | OutputData;
   category: string;
   tags: string[];
   thumbnail: string;
@@ -13,6 +14,6 @@ export interface Post {
 }
 
 export interface Posts {
-  posts: Post[];
+  posts: iPost[];
   totalItems: number;
 }
