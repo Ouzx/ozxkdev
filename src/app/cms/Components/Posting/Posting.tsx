@@ -66,15 +66,15 @@ const Posting = ({
     // convert post: PostState to post: Post
     const postData: Post = {
       title: post.title,
-      content: "PostContent",
+      content: getContent(post.content as OutputData),
       category: post.category,
       tags: post.tags,
       keyword: post.keyword,
       shared: post.shared,
       thumbnail: "PostThumbnail",
-      shortContent: "post.shortContent",
+      shortContent: post.shortContent,
       slug: post.slug,
-      createdAt: "2021-08-01T00:00:00.000Z",
+      createdAt: new Date().toISOString(),
     };
     if (!token) return;
     const res = await Submit(postData, token);

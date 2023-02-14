@@ -18,18 +18,7 @@ export const getThumbnail = (editorData: OutputData) => {
 };
 
 export const getContent = (editorData: OutputData) => {
-  if (!editorData) return "";
-  // copy editorData.blocks remove title
-  let blocks = Object.assign(editorData.blocks);
-  for (let i = 0; i < blocks.length; i++) {
-    if (blocks[i].type == "header") {
-      blocks.splice(i, 1);
-      break;
-    }
-  }
-  // TODO: Add MD Parser
-  // return parse(blocks);
-  return "";
+  return JSON.stringify(editorData);
 };
 
 export const getShortContent = (content: OutputData) => {
