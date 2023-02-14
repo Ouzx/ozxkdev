@@ -40,7 +40,7 @@ const page = ({ params }: { params: { id: string } }) => {
   const [post, setPost] = useState<iPost>();
   useEffect(() => {
     if (!token) return;
-    getPost(params.id, token || "").then((res) => setPost(res));
+    getPost(params.id, token).then((res) => setPost(res));
   }, [params.id, token]);
   return <div>{post && <Posting Submit={updatePost} post={post} />}</div>;
 };
