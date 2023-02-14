@@ -12,7 +12,7 @@ const Menu = () => {
             <Link href={"/cms"}>Posts ✍️</Link>
           </li>
           <li>
-            <Link href={"/cms/create"}>Create Post 📝</Link>
+            <Link href={"/cms/create"}>Write Post 📝</Link>
           </li>
           <li>
             <button
