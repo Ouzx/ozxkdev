@@ -39,7 +39,7 @@ const page = ({
                 className={styles.row}
                 key={post._id}
                 onClick={() => {
-                  router.push(`/cms/edit/${post.slug}`);
+                  router.push(`/cms/edit/${post._id}`);
                 }}
               >
                 <td>{post.title}</td>

@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import Posting from "../Components/Posting/Posting";
-import { Post } from "@/types/CMS";
+import { iPost } from "@/types/CMS";
 
-const createPost = async (post: Post, token: string) => {
+const createPost = async (post: iPost, token: string) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_CMS_API}/posts/`, {
     method: "POST",
     headers: {

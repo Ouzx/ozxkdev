@@ -2,7 +2,7 @@
 import React, { useReducer, useState } from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
-import { Post } from "@/types/CMS";
+import { iPost } from "@/types/CMS";
 
 import styles from "./Posting.module.scss";
 
@@ -18,22 +18,12 @@ const EditorBlock = dynamic(() => import("../Editor/Editor"), {
   ssr: false,
 });
 
-interface PostState {
-  title: string;
-  content: OutputData | undefined;
-  category: string;
-  tags: string[];
-  keyword: string;
-  shared: boolean;
-  thumbnail: string;
-  shortContent: string;
-  slug: string;
-}
-
 const Posting = ({
   Submit,
+  post: initialPost,
 }: {
-  Submit: (post: Post, token: string) => Promise<Post>;
+  Submit: (post: iPost, token: string) => Promise<iPost>;
+  post?: iPost;
 }) => {
   const router = useRouter();
   const [token] = useAccessToken();
@@ -41,20 +31,22 @@ const Posting = ({
   const [isLoading, setIsLoading] = useState(false);
 
   const [post, updatePost] = useReducer(
-    (state: PostState, newState: Partial<PostState>) => ({
+    (state: iPost, newState: Partial<iPost>) => ({
       ...state,
       ...newState,
     }),
     {
-      title: "",
-      content: undefined,
-      category: "",
-      tags: [],
-      keyword: "",
-      shared: true,
-      thumbnail: "",
-      shortContent: "",
-      slug: "",
+      _id: initialPost?._id || "",
+      title: initialPost?.title || "",
+      content: (JSON.parse(initialPost?.content as string) as OutputData) || "",
+      category: initialPost?.category || "",
+      tags: initialPost?.tags || [],
+      keyword: initialPost?.keyword || "",
+      shared: initialPost?.shared || false,
+      thumbnail: initialPost?.thumbnail || "",
+      shortContent: initialPost?.shortContent || "",
+      slug: initialPost?.slug || "",
+      createdAt: initialPost?.createdAt || "",
     }
   );
 
@@ -64,7 +56,8 @@ const Posting = ({
     setIsLoading(true);
 
     // convert post: PostState to post: Post
-    const postData: Post = {
+    const postData: iPost = {
+      _id: post._id,
       title: post.title,
       content: getContent(post.content as OutputData),
       category: post.category,
@@ -98,7 +91,7 @@ const Posting = ({
       />
       <div className={styles.main}>
         <EditorBlock
-          data={post.content}
+          data={post.content as OutputData}
           onChange={(val) => {
             updatePost({
               content: val,
@@ -135,7 +128,17 @@ const Posting = ({
             trueText="Public"
             falseText="Private"
           />
-          <Button title={isLoading ? "Creating..." : "Create"} />
+          <Button
+            title={
+              isLoading
+                ? initialPost
+                  ? "Updating..."
+                  : "Creating..."
+                : initialPost
+                ? "Update"
+                : "Create"
+            }
+          />
         </div>
       </div>
     </form>
