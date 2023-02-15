@@ -1,5 +1,5 @@
 "use client";
-import React, { useReducer, useState } from "react";
+import React, { useReducer, useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import { iPost } from "@/types/CMS";
@@ -78,6 +78,22 @@ const Posting = ({
       router.push(`/cms`);
     }
   };
+
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      e.preventDefault();
+      e.returnValue = "";
+      if (!window.confirm("Are you sure you want to leave?")) {
+        e.returnValue = "Are you sure you want to leave?";
+      }
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
 
   return (
     <form className={styles.container} onSubmit={onSubmit}>
