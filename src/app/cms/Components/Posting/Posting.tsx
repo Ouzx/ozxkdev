@@ -45,7 +45,7 @@ const Posting = ({
       category: initialPost?.category || "",
       tags: initialPost?.tags || [],
       keyword: initialPost?.keyword || "",
-      shared: initialPost?.shared || false,
+      shared: initialPost?.shared || true,
       thumbnail: initialPost?.thumbnail || "",
       shortContent: initialPost?.shortContent || "",
       slug: initialPost?.slug || "",
@@ -55,6 +55,13 @@ const Posting = ({
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!post.thumbnail || !post.shortContent || !post.content) {
+      const fields = `${!post.thumbnail && "- Thumbnail"} ${
+        !post.shortContent && "- Short Content"
+      } ${!post.content && " - Content"}`;
+      return alert(`Please fill all the fields. ${fields}`);
+    }
+
     if (isLoading) return;
     setIsLoading(true);
 
