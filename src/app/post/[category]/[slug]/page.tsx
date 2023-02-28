@@ -11,6 +11,7 @@ import NextPrev from "./Components/NextPrev/NextPrev";
 
 import { ArticleJsonLd } from "next-seo";
 import { post as postx } from "@/lib/general";
+import Content from "./Components/Content/Content";
 
 const page = ({ params }: { params: { category: string; slug: string } }) => {
   const { category, slug } = params;
@@ -19,13 +20,13 @@ const page = ({ params }: { params: { category: string; slug: string } }) => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className={styles.post}>
-        <Image
+        {/* <Image
           className={styles.image}
           src={postData?.post.thumbnail}
           width={1200}
           height={1200}
           alt="Post main image"
-        />
+        /> */}
         <h1>{postData?.post.title}</h1>
         {/* TODO: Change this` */}
         <ArticleJsonLd
@@ -59,14 +60,9 @@ const page = ({ params }: { params: { category: string; slug: string } }) => {
 
         <div className={styles.seperator} />
 
-        {/* <div
-          dangerouslySetInnerHTML={
-            {
-              __html: postData?.post.content,
-            } as any
-          }
-          className={styles.content}
-        ></div> */}
+        <div className={styles.content}>
+          <Content content={postData?.post.content} />
+        </div>
 
         <div className={styles.bottom_wrapper}>
           <div className={styles.tags}>
