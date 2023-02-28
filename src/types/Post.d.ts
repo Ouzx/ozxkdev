@@ -47,7 +47,7 @@ export interface PostMain {
 export interface iPost {
   _id: string;
   title: string;
-  content: string | OutputData;
+  content: string;
   category: string;
   tags: string[];
   thumbnail: string;

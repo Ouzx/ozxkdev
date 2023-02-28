@@ -12,6 +12,7 @@ import { post as postx } from "@/lib/general";
 const page = ({ params }: { params: { category: string; slug: string } }) => {
   const { category, slug } = params;
   const postData = use(postx(slug, category));
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className={styles.post}>
@@ -45,14 +46,14 @@ const page = ({ params }: { params: { category: string; slug: string } }) => {
 
         <div className={styles.seperator} />
 
-        <div
+        {/* <div
           dangerouslySetInnerHTML={
             {
               __html: postData?.post.content,
             } as any
           }
           className={styles.content}
-        ></div>
+        ></div> */}
 
         <div className={styles.bottom_wrapper}>
           <div className={styles.tags}>
