@@ -70,7 +70,11 @@ const page = ({ params }: { params: { category: string; slug: string } }) => {
           <Share />
         </div>
         <div className={styles.seperator} />
-        <NextPrev nextSlug={postData?.nexPost} prevSlug={postData?.prevPost} />
+        <NextPrev
+          nextSlug={postData?.nexPost}
+          prevSlug={postData?.prevPost}
+          category={postData?.post.category}
+        />
         <div className={styles.seperator} />
 
         <Related posts={postData?.relatedPosts} />

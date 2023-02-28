@@ -7,11 +7,13 @@ const Button = ({
   text,
   slug,
   reverse = false,
+  category,
 }: {
   Icon: IconType;
   text: string;
   slug: string;
   reverse?: boolean;
+  category: string;
 }) => {
   return (
     <>
