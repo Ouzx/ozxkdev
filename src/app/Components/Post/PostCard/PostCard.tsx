@@ -24,8 +24,8 @@ const PostCard = ({ postData }: { postData: iPost }) => {
           className={styles.post_card__image}
           alt="Post Image"
           src={postData?.thumbnail!}
-          width={300}
-          height={200}
+          width={1024}
+          height={1024}
         />
         <div className={styles.post_card__content}>
           <p className={styles.post_card__info}>

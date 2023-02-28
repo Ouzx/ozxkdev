@@ -4,7 +4,7 @@ import styles from "./page.module.scss";
 
 import Image from "next/image";
 import Tags from "./Components/Tags/Tags";
-import postImage from "@/assets/post.jpg";
+
 import Related from "./Components/Related/Related";
 import Share from "./Components/Share/Share";
 import NextPrev from "./Components/NextPrev/NextPrev";
@@ -19,7 +19,13 @@ const page = ({ params }: { params: { category: string; slug: string } }) => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className={styles.post}>
-        <Image className={styles.image} src={postImage} alt="Post main image" />
+        <Image
+          className={styles.image}
+          src={postData?.post.thumbnail}
+          width={1200}
+          height={1200}
+          alt="Post main image"
+        />
         <h1>{postData?.post.title}</h1>
         {/* TODO: Change this` */}
         <ArticleJsonLd
