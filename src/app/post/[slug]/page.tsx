@@ -11,7 +11,7 @@ import { post as postx } from "@/lib/general";
 
 const page = ({ params }: { params: { category: string; slug: string } }) => {
   const { category, slug } = params;
-  const postData = use(postx(category, slug));
+  const postData = use(postx(slug, category));
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className={styles.post}>
@@ -36,7 +36,8 @@ const page = ({ params }: { params: { category: string; slug: string } }) => {
 
         <div className={styles.info}>
           <div className={styles.author_date}>
-            <div className={styles.author}>{`by ${postData?.post.user}`}</div>
+            <div className={styles.author}>{`by Oguzhan Kandakoglu`}</div>
+            {/* <div className={styles.author}>{`by ${postData?.post.user}`}</div> */}
             <div>{new Date(postData?.post.createdAt).toDateString()}</div>
           </div>
           <div>{postData?.post.category}</div>

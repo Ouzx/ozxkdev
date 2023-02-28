@@ -1,8 +1,8 @@
-import { PostMini } from "@/types/Post";
+import { iPost } from "@/types/Post";
 import React from "react";
 import Card from "./Card/Card";
 import styles from "./Related.module.scss";
-const Related = ({ posts }: { posts: PostMini[] }) => {
+const Related = ({ posts }: { posts: iPost[] }) => {
   let relatedPosts = posts.map((post) => {
     return <Card post={post} key={post._id} />;
   });
