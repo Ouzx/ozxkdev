@@ -74,7 +74,7 @@ const Posting = ({
       tags: post.tags,
       keyword: post.keyword,
       shared: post.shared,
-      thumbnail: "PostThumbnail",
+      thumbnail: post.thumbnail,
       shortContent: post.shortContent,
       slug: post.slug,
       createdAt: new Date().toISOString(),

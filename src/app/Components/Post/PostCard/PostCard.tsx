@@ -6,7 +6,7 @@ import { iPost } from "@/types/Post";
 
 import styles from "./PostCard.module.scss";
 
-import postImage from "@/assets/post-template.jpg";
+// import postImage from "@/assets/post-template.jpg";
 
 const PostCard = ({ postData }: { postData: iPost }) => {
   let tags = postData.tags.map((tag) => {
@@ -17,14 +17,15 @@ const PostCard = ({ postData }: { postData: iPost }) => {
       </Link>
     );
   });
-
   return (
     <div className={styles.post_card}>
       <Link href={`/post/${postData.category}/${postData.slug}`} scroll>
         <Image
           className={styles.post_card__image}
           alt="Post Image"
-          src={postImage}
+          src={postData?.thumbnail!}
+          width={300}
+          height={200}
         />
         <div className={styles.post_card__content}>
           <p className={styles.post_card__info}>

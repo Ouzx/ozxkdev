@@ -7,13 +7,7 @@ const nextConfig = {
     ],
   },
   images: {
-    remotePatterns: [
-      // {
-      //   protocol: "https",
-      //   host: "cdn.jevelin.shufflehound.com",
-      //   pathname: "/wp-content/**/**",
-      // },
-    ],
+    domains: ["localhost"],
   },
 };
 
