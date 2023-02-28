@@ -36,6 +36,12 @@
     }
   }
 
+  .category {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   .seperator {
     width: 100%;
     height: 0.01rem;

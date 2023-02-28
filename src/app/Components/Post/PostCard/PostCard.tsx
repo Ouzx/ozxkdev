@@ -28,8 +28,7 @@ const PostCard = ({ postData }: { postData: iPost }) => {
         />
         <div className={styles.post_card__content}>
           <p className={styles.post_card__info}>
-            {/* by Oguzhan Kandakoglu January 27, 2023 */}
-            {`by Oguzhan Kandakoglu, ${postData.createdAt}`}
+            {`by ${postData.author}, ${postData.createdAt}`}
           </p>
           <h2>{postData.title}</h2>
           <p>{postData.shortContent}</p>

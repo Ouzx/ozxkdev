@@ -1,11 +1,14 @@
 import React, { use, Suspense } from "react";
+import Link from "next/link";
 import styles from "./page.module.scss";
+
 import Image from "next/image";
 import Tags from "./Components/Tags/Tags";
 import postImage from "@/assets/post.jpg";
 import Related from "./Components/Related/Related";
 import Share from "./Components/Share/Share";
 import NextPrev from "./Components/NextPrev/NextPrev";
+
 import { ArticleJsonLd } from "next-seo";
 import { post as postx } from "@/lib/general";
 
@@ -37,11 +40,15 @@ const page = ({ params }: { params: { category: string; slug: string } }) => {
 
         <div className={styles.info}>
           <div className={styles.author_date}>
-            <div className={styles.author}>{`by Oguzhan Kandakoglu`}</div>
-            {/* <div className={styles.author}>{`by ${postData?.post.user}`}</div> */}
+            <div className={styles.author}>{`by ${postData?.post.author}`}</div>
             <div>{new Date(postData?.post.createdAt).toDateString()}</div>
           </div>
-          <div>{postData?.post.category}</div>
+          <Link
+            href={`/?category=${postData?.post.category}`}
+            className={styles.category}
+          >
+            {postData?.post.category}
+          </Link>
         </div>
 
         <div className={styles.seperator} />
