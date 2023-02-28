@@ -10,7 +10,7 @@ import styles from "./PostCard.module.scss";
 
 const PostCard = ({ postData }: { postData: iPost }) => {
   let tags = postData.tags.map((tag) => {
-    const key = Math.random().toString(36).substring(7);
+    const key = Math.random().toString(36).substring(7) + tag;
     return (
       <Link href={`#`} key={key}>
         {tag}
