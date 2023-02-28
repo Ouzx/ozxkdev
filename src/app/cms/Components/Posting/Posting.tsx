@@ -40,7 +40,7 @@ const Posting = ({
       title: initialPost?.title || "",
       content:
         (initialPost &&
-          (JSON.parse(initialPost?.content as string) as OutputData)) ||
+          (JSON.parse(JSON.stringify(initialPost?.content)) as OutputData)) ||
         "",
       category: initialPost?.category || "",
       tags: initialPost?.tags || [],
