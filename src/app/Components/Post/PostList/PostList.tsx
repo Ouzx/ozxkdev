@@ -1,7 +1,7 @@
 import React from "react";
 import PostCard from "../PostCard/PostCard";
 import styles from "./PostList.module.scss";
-import Pagination from "./Pagination/Pagination";
+import Paginator from "@/Components/Paginator/Paginator";
 import { posts } from "@/lib/general";
 
 const PostList = async ({
@@ -27,7 +27,7 @@ const PostList = async ({
   return (
     <>
       <div className={styles.post_list}>{postCards}</div>
-      <Pagination category={cat} postCount={postList?.totalItems} />
+      <Paginator totalItems={postList?.totalItems} />
     </>
   );
 };
