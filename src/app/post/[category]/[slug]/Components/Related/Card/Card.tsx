@@ -20,7 +20,7 @@ const Card = ({ post }: { post: iPost }) => {
               <div className={styles.category_wrapper}>
                 <AiOutlineTag className={styles.icon} />
                 {post.tags.map((tag) => {
-                  const key = post._id + tag;
+                  const key = post.slug + tag;
                   return <p key={key}>{tag}</p>;
                 })}
               </div>
