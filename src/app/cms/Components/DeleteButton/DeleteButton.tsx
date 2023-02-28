@@ -20,7 +20,6 @@ const DeleteButton = ({ postId, postTitle }: Props) => {
   };
 
   const onYes = async () => {
-    console.log("token", token);
     const res = await deletePost(postId, token!);
     setShowModal(false);
     if (res) {

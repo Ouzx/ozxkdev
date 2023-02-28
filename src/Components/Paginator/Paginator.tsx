@@ -21,7 +21,6 @@ const Paginator = ({ totalItems }: { totalItems: number }) => {
     let pageCountToDisplay = PAGES_TO_SHOW;
 
     const activePage = page || 1;
-    console.log(activePage);
 
     _pageList.push(<PageItem page={activePage} key={activePage} isActive />);
     pageCountToDisplay--;
@@ -63,8 +62,6 @@ const Paginator = ({ totalItems }: { totalItems: number }) => {
       );
     setPageList(_pageList);
   }, [page, totalItems]);
-
-  console.log(pageList);
 
   return (
     <div>
