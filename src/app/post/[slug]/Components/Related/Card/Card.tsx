@@ -4,13 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineTag } from "react-icons/ai";
 import card from "@/assets/card.jpg";
-import { PostMini } from "@/types/Post";
+import { iPost } from "@/types/Post";
 
-const Card = ({ post }: { post: PostMini }) => {
+const Card = ({ post }: { post: iPost }) => {
   return (
     <>
       {post && (
-        <Link href={`/post/${post.urlSuffix}`}>
+        <Link href={`/post/${post.category}/${post.slug}`}>
           <div className={styles.card}>
             <div className={styles.img_wrapper}>
               <Image className={styles.img} src={card} alt="card" />
