@@ -20,7 +20,7 @@ const PostCard = ({ postData }: { postData: PostMini }) => {
 
   return (
     <div className={styles.post_card}>
-      <Link href={`/post/${postData.urlSuffix}`} scroll>
+      <Link href={`/post/${postData.category}/${postData.urlSuffix}`} scroll>
         <Image
           className={styles.post_card__image}
           alt="Post Image"

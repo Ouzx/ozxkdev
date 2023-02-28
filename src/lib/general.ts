@@ -50,6 +50,9 @@ export const posts = async (
   });
 };
 
-export const post = async (slug: string): Promise<PostMain> => {
-  return await (await fetch(link + `/post/${slug}`)).json();
+export const post = async (
+  category: string,
+  slug: string
+): Promise<PostMain> => {
+  return await (await fetch(link + `/post/${category}/${slug}`)).json();
 };

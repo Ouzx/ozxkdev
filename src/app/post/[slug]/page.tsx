@@ -9,9 +9,9 @@ import NextPrev from "./Components/NextPrev/NextPrev";
 import { ArticleJsonLd } from "next-seo";
 import { post as postx } from "@/lib/general";
 
-const page = ({ params }: { params: { slug: string } }) => {
-  const { slug } = params;
-  const postData = use(postx(slug));
+const page = ({ params }: { params: { category: string; slug: string } }) => {
+  const { category, slug } = params;
+  const postData = use(postx(category, slug));
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className={styles.post}>
