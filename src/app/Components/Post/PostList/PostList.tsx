@@ -12,7 +12,7 @@ const PostList = async ({
   pageIndex?: string | string[] | undefined;
 }) => {
   let cat = category ? category : "all";
-  let page = pageIndex ? pageIndex : 0;
+  let page = pageIndex ? pageIndex : 1;
 
   if (Array.isArray(cat)) cat = cat[0];
   if (Array.isArray(page)) page = page[0];
