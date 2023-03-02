@@ -18,25 +18,27 @@ const PostCard = ({ postData }: { postData: iPost }) => {
     );
   });
   return (
-    <div className={styles.post_card}>
-      <Link href={`/post/${postData.category}/${postData.slug}`} scroll>
-        <Image
-          className={styles.post_card__image}
-          alt="Post Image"
-          src={postData?.thumbnail!}
-          width={1024}
-          height={1024}
-        />
-        <div className={styles.post_card__content}>
-          <p className={styles.post_card__info}>
-            {`by ${postData.author}, ${postData.createdAt}`}
-          </p>
-          <h2>{postData.title}</h2>
-          <p>{postData.shortContent}</p>
-        </div>
-      </Link>
-      {/* <hr /> */}
-      <div className={styles.categories}>{tags}</div>
+    <div className={styles.container}>
+      <div className={styles.post_card}>
+        <Link href={`/post/${postData.category}/${postData.slug}`} scroll>
+          <Image
+            className={styles.post_card__image}
+            alt="Post Image"
+            src={postData?.thumbnail!}
+            width={1024}
+            height={1024}
+          />
+          <div className={styles.post_card__content}>
+            <p className={styles.post_card__info}>
+              {`by ${postData.author}, ${postData.createdAt}`}
+            </p>
+            <h2>{postData.title}</h2>
+            <p>{postData.shortContent}</p>
+          </div>
+        </Link>
+        {/* <hr /> */}
+        <div className={styles.categories}>{tags}</div>
+      </div>
     </div>
   );
 };
