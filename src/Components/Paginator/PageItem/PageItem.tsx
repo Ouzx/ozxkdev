@@ -6,17 +6,23 @@ import styles from "./PageItem.module.scss";
 
 interface PageItemProps {
   page: number;
+  destination: string;
   isActive?: boolean;
   placeholder?: string;
 }
 
-const PageItem = ({ isActive, page, placeholder }: PageItemProps) => {
+const PageItem = ({
+  isActive,
+  page,
+  placeholder,
+  destination,
+}: PageItemProps) => {
   const pathname = usePathname();
 
   return (
     <Link
       className={`${isActive && styles.active} ${styles.pageItem}`}
-      href={`${pathname}?page=${page}`}
+      href={`${pathname}?${destination}`}
     >
       {placeholder ? placeholder : page}
     </Link>

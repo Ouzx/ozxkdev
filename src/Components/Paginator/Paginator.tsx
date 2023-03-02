@@ -1,16 +1,29 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import usePageSearchParams from "@/hooks/usePageSearchParams";
 
 import PageItem from "./PageItem/PageItem";
 import styles from "./Paginator.module.scss";
+import { useSearchParams } from "next/navigation";
 
 const ITEMS_PER_PAGE = 5;
 const PAGES_TO_SHOW = 5;
 
 const Paginator = ({ totalItems }: { totalItems: number }) => {
-  const page = usePageSearchParams();
+  const searchParams = useSearchParams()!;
+  const page: number = +(searchParams.get("page") || "");
+
   const [pageList, setPageList] = useState<JSX.Element[]>([]);
+
+  const createQueryString = useCallback(
+    (value: number) => {
+      const params = new URLSearchParams(searchParams);
+      params.set("page", value.toString());
+
+      return params.toString();
+    },
+    [searchParams]
+  );
 
   useEffect(() => {
     if (!totalItems) return;
@@ -22,7 +35,14 @@ const Paginator = ({ totalItems }: { totalItems: number }) => {
 
     const activePage = page || 1;
 
-    _pageList.push(<PageItem page={activePage} key={activePage} isActive />);
+    _pageList.push(
+      <PageItem
+        page={activePage}
+        key={activePage}
+        isActive
+        destination={createQueryString(activePage)}
+      />
+    );
     pageCountToDisplay--;
 
     let i = 1;
@@ -33,12 +53,22 @@ const Paginator = ({ totalItems }: { totalItems: number }) => {
 
       if (activePage - i > 0) {
         _pageList.unshift(
-          <PageItem page={activePage - i} key={activePage - i} />
+          <PageItem
+            page={activePage - i}
+            key={activePage - i}
+            destination={createQueryString(activePage - i)}
+          />
         );
         pageCountToDisplay--;
       }
       if (activePage + i <= totalPages) {
-        _pageList.push(<PageItem page={activePage + i} key={activePage + i} />);
+        _pageList.push(
+          <PageItem
+            page={activePage + i}
+            key={activePage + i}
+            destination={createQueryString(activePage + i)}
+          />
+        );
         pageCountToDisplay--;
       }
       i++;
@@ -50,6 +80,7 @@ const Paginator = ({ totalItems }: { totalItems: number }) => {
           page={activePage - 1}
           key={`${activePage - 1}previous`}
           placeholder="< Previous"
+          destination={createQueryString(activePage - 1)}
         />
       );
     if (activePage < totalPages)
@@ -58,6 +89,7 @@ const Paginator = ({ totalItems }: { totalItems: number }) => {
           page={activePage + 1}
           key={`${activePage + 1}next`}
           placeholder="Next >"
+          destination={createQueryString(activePage + 1)}
         />
       );
     setPageList(_pageList);
