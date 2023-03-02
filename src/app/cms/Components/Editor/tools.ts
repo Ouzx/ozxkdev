@@ -27,7 +27,7 @@ import { getSession } from "next-auth/react";
 export default {
   header: Header,
   list: List,
-  code: CodeBox,
+  codeBox: CodeBox,
   image: {
     class: Image,
     config: {

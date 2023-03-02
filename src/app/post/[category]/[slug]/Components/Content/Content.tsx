@@ -74,10 +74,12 @@ const style = {
     author: {},
     // message: {...}
   },
-  // codeBox: {
-  //   container: {...},
-  //   code: {...},
-  // },
+  codeBox: {
+    container: {
+      margin: "10rem 10rem",
+    },
+    // code: {...},
+  },
   // warning: {
   //   container: {...},
   //   icon: {...},
