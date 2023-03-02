@@ -116,6 +116,8 @@ const Posting = ({
             slug: getSlug(val),
           })
         }
+        tabIndex={1}
+        autoFocus
       />
       <div className={styles.main}>
         <EditorBlock
@@ -127,6 +129,7 @@ const Posting = ({
               shortContent: getShortContent(val),
             });
           }}
+          tabIndex={5}
         />
         <div className={styles.info}>
           <TextBox
@@ -134,6 +137,7 @@ const Posting = ({
             required
             data={post.category}
             onChange={(val) => updatePost({ category: val })}
+            tabIndex={2}
           />
           <TextBox
             title="Tags"
@@ -142,12 +146,14 @@ const Posting = ({
             onChange={(val) =>
               updatePost({ tags: val.split(",").map((v) => v.trim()) })
             }
+            tabIndex={3}
           />
           <TextBox
             title="Keyword"
             required
             data={post.keyword}
             onChange={(val) => updatePost({ keyword: val })}
+            tabIndex={4}
           />
           <Switch
             onChange={(val) => updatePost({ shared: val })}

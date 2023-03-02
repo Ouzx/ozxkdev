@@ -31,9 +31,11 @@ export const getShortContent = (content: OutputData) => {
 const EditorBlock = ({
   data,
   onChange,
+  tabIndex,
 }: {
   data?: OutputData;
   onChange(val: OutputData): void;
+  tabIndex?: number;
 }) => {
   const ref = useRef<EditorJS>();
   useEffect(() => {
@@ -59,7 +61,7 @@ const EditorBlock = ({
       <label className={styles.label} htmlFor="editor">
         Content
       </label>
-      <div className={styles.editor} id="editor" />
+      <div className={styles.editor} tabIndex={tabIndex} id="editor" />
     </div>
   );
 };
