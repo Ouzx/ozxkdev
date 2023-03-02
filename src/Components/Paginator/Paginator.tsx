@@ -1,6 +1,5 @@
 "use client";
 import React, { useCallback, useEffect, useState } from "react";
-import usePageSearchParams from "@/hooks/usePageSearchParams";
 
 import PageItem from "./PageItem/PageItem";
 import styles from "./Paginator.module.scss";
