@@ -3,6 +3,7 @@
 
 .hamburger__menu {
   display: block;
+  position: relative;
   @include screen.lg {
     display: none;
   }
@@ -32,6 +33,10 @@
   }
 
   &.active {
+    position: fixed;
+    top: 35px;
+    right: 25px;
+
     .hamburger__line {
       background-color: #fff;
       &:first-child {
