@@ -15,43 +15,69 @@ $animation-delay: 1s;
     text-align: center;
     position: relative;
     color: $black;
-    animation: pulse-animation 2s cubic-bezier(0.455, 0.03, 0.515, 0.955)
-      infinite;
     span {
       &::after {
         content: "";
         display: inline-block;
-        width: $dot-size;
-        height: $dot-size;
-        background-color: $dot-color;
         border-radius: 50%;
-        animation: dot-animation 2s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+        animation: dot-animation 1.8s cubic-bezier(0.455, 0.03, 0.515, 0.955)
           infinite;
       }
+
       &:nth-child(1) {
         &::after {
-          margin-right: 6px;
+          animation-delay: 0;
+          content: "o";
         }
       }
-
-      &::after {
-        margin-left: 10px;
-      }
-
       &:nth-child(2) {
         &::after {
           animation-delay: 0.1s;
+          content: "z";
         }
       }
       &:nth-child(3) {
         &::after {
           animation-delay: 0.2s;
+          content: "x";
         }
       }
       &:nth-child(4) {
         &::after {
           animation-delay: 0.3s;
+          content: "k";
         }
+      }
+      &:nth-child(5) {
+        &::after {
+          animation-delay: 0.4s;
+          content: "";
+          width: $dot-size;
+          height: $dot-size;
+          background-color: $dot-color;
+        }
+      }
+      &:nth-child(6) {
+        &::after {
+          animation-delay: 0.5s;
+          content: "d";
+        }
+      }
+      &:nth-child(7) {
+        &::after {
+          animation-delay: 0.6s;
+          content: "e";
+        }
+      }
+      &:nth-child(8) {
+        &::after {
+          animation-delay: 0.7s;
+          content: "v";
+        }
+      }
+
+      &::after {
+        margin-left: 1px !important;
       }
     }
   }
@@ -60,7 +86,7 @@ $animation-delay: 1s;
 @keyframes dot-animation {
   0% {
     transform: translateY(0);
-    background-color: $black;
+    opacity: 1;
   }
 
   25% {
@@ -68,22 +94,10 @@ $animation-delay: 1s;
   }
   50% {
     transform: translateY(0);
-    background-color: $main;
+    opacity: 0.7;
   }
   100% {
     transform: translateY(0);
-    background-color: $black;
-  }
-}
-
-@keyframes pulse-animation {
-  0% {
-    color: $black;
-  }
-  50% {
-    color: $main;
-  }
-  100% {
-    color: $black;
+    opacity: 1;
   }
 }

@@ -4,7 +4,11 @@ const LoadIndicator = () => {
   return (
     <div className={styles.container}>
       <h2>
-        ozxk<span></span>dev
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
         <span></span>
         <span></span>
         <span></span>
