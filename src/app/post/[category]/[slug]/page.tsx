@@ -11,6 +11,7 @@ import NextPrev from "./Components/NextPrev/NextPrev";
 import { ArticleJsonLd } from "next-seo";
 import Content from "./Components/Content/Content";
 import { PostMain } from "@/types/Post";
+import NotFound from "@/app/Components/notFound/NotFound";
 
 const getPost = async (slug: string, category: string): Promise<PostMain> => {
   return await fetch(process.env.API + `/post/${category}/${slug}`)
@@ -27,7 +28,11 @@ const page = async ({
 }) => {
   const { category, slug } = params;
   const postData = await getPost(slug, category);
-  // TODO: if (!postData)
+
+  if (!postData) {
+    return <NotFound message="No post found." />;
+  }
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className={styles.post}>
