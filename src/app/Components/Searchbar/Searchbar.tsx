@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Link from "next/link";
+
 import { useRouter } from "next/navigation";
 import { BsSearch } from "react-icons/bs";
 import styles from "./Searchbar.module.scss";
@@ -11,7 +11,7 @@ const SearchBar = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!search || search.length < 2) return;
+    if (!search || search.length < 3) return;
     router.push(`/search?term=${search}`);
   };
 

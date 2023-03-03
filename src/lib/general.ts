@@ -32,6 +32,8 @@ export const post = async (
 export const search = async (
   query: string,
   pageIndex: number
-): Promise<iPost[]> => {
-  return await (await fetch(link + `/search/${query}/${pageIndex}`)).json();
+): Promise<Posts> => {
+  return await (
+    await fetch(link + `/search/${query}/${pageIndex}`).catch()
+  ).json();
 };
