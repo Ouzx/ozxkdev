@@ -42,13 +42,19 @@ const page = ({
             {searchParams?.message || "Invalid username or password"}
           </p>
         )}
-        {/* TODO: Make it component */}
-        <TextBox id="username" type="text" ref={userName} label="Username" />
+        <TextBox
+          id="username"
+          type="text"
+          ref={userName}
+          label="Username"
+          required
+        />
         <TextBox
           id="password"
           type="password"
           ref={password}
           label="Password"
+          required
           onOff
         />
         <button type="submit">Login</button>

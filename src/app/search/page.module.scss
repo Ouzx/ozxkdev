@@ -1,5 +1,14 @@
 @use "../globals.scss" as *;
 .search {
+  background-image: url("../../assets/bg.svg");
+  min-height: 650px;
+  // no repeat, center center, cover
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  // background width 100
+  // background-attachment: fixed;
+  background-size: cover;
   h1 {
     text-align: center;
     margin-top: 2rem;

@@ -1,0 +1,23 @@
+@use "../../../app/globals.scss" as *;
+@use "../../../app/rounded.scss" as *;
+.active {
+  color: #fff !important;
+  background-color: $accent;
+  @extend %full;
+  &:hover {
+    color: $black;
+  }
+}
+
+.pageItem {
+  margin-right: 1rem;
+  padding: 0.2rem 0.6rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

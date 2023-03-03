@@ -1,0 +1,19 @@
+@use "../../app/globals.scss" as *;
+@use "../../app/rounded.scss" as *;
+
+%hov {
+  cursor: pointer;
+  &:hover {
+    color: $accent;
+  }
+}
+
+.container {
+  color: $main;
+  background-color: $light-bg;
+
+  width: max-content;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  @extend %full;
+}

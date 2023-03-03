@@ -1,0 +1,56 @@
+@use "../../../globals.scss" as *;
+.container {
+  cursor: default;
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal_Content {
+      background-color: #fff;
+      font-weight: bold;
+      padding: 20px;
+      border-radius: 5px;
+      height: 15%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      white-space: wrap;
+
+      // drop shadow
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+      p {
+        &:nth-child(2) {
+          font-weight: normal;
+        }
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: flex-end;
+        button {
+          margin-left: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          padding: 0.3rem 1rem;
+          background: none;
+          outline: none;
+          cursor: pointer;
+          transition: 0.2s;
+          &:hover {
+            background-color: $red;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

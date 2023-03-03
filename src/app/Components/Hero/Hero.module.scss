@@ -16,7 +16,7 @@
     object-fit: cover;
     opacity: 0.8;
     max-height: $max-height;
-    max-height: $max-height;
+    max-width: 100%;
 
     // if lanscape
     @media screen and (orientation: landscape) {

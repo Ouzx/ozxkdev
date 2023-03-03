@@ -1,0 +1,36 @@
+@use "../../../../../globals.scss" as *;
+@use "../../../../../rounded.scss" as *;
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  &:hover {
+    .wrapper {
+      background-color: $accent;
+      color: #fff;
+    }
+    span {
+      color: $accent;
+    }
+  }
+  .wrapper {
+    position: relative;
+    padding: 0.5rem;
+    @extend %full;
+    color: $black;
+    background-color: $light-bg;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.hidden {
+  display: none;
+}

@@ -11,7 +11,7 @@
   border: 1px solid white;
   border-radius: 0.5rem;
   transition: 0.3s;
-
+  overflow: hidden;
   input {
     padding: 0.5rem 1rem 0.5rem 1rem;
 
@@ -23,6 +23,13 @@
     &::placeholder {
       color: $main;
     }
+  }
+
+  .submit {
+    border: 0;
+    background: none;
+    outline: none;
+    cursor: pointer;
   }
 
   .icon {

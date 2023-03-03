@@ -1,0 +1,25 @@
+@use "../../../globals.scss" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+
+  input {
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    &:focus {
+      outline: none;
+      border-color: $black;
+    }
+  }
+
+  // .required:invalid {
+  //   // border-color: red;
+  // }
+}

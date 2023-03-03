@@ -1,15 +1,15 @@
-import React from "react";
+import React, { use } from "react";
 import styles from "./Pool.module.scss";
 import Item from "./Item";
 import { categories } from "@/lib/general";
 
-const Pool = async ({
+const Pool = ({
   selected,
 }: {
   selected: string | null | undefined | string[];
 }) => {
   const selection = selected || "All";
-  const data = ["All", ...(await categories())];
+  const data = ["All", ...use(categories())];
   let items = data.map((item) => (
     <Item title={item} path={item} key={item} selected={selection === item} />
   ));

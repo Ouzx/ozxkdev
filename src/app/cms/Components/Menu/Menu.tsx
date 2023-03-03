@@ -9,10 +9,10 @@ const Menu = () => {
       {session && (
         <ul>
           <li>
-            <Link href={"/"}>Posts ✍️</Link>
+            <Link href={"/cms"}>Posts ✍️</Link>
           </li>
           <li>
-            <Link href={"/"}>Create Post 📝</Link>
+            <Link href={"/cms/create"}>Write Post 📝</Link>
           </li>
           <li>
             <button

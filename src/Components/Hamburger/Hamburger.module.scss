@@ -3,6 +3,7 @@
 
 .hamburger__menu {
   display: block;
+  position: relative;
   @include screen.lg {
     display: none;
   }
@@ -14,6 +15,10 @@
   }
 }
 
+$hamburger-width: 30px;
+$hamburger-active-width: $hamburger-width * 1.41421356237;
+
+$hamburger-height: 4px;
 .hamburger {
   position: relative;
   z-index: 100;
@@ -22,6 +27,7 @@
   .hamburger__line {
     width: 30px;
     height: 4px;
+    transform-origin: left center;
 
     transition: 0.4s;
     margin: 4px 0;
@@ -32,10 +38,17 @@
   }
 
   &.active {
+    position: fixed;
+    top: 35px;
+    right: 25px;
+
     .hamburger__line {
       background-color: #fff;
+      width: $hamburger-active-width;
       &:first-child {
-        transform: rotate(45deg) translate(5px, 5px);
+        rotate: 45deg;
+        //translate: 0 calc(var(--bar-height) / -2);
+        translate: 0 2px;
       }
 
       &:nth-child(2) {
@@ -43,7 +56,9 @@
       }
 
       &:last-child {
-        transform: rotate(-45deg) translate(6px, -6px);
+        rotate: -45deg;
+        //translate: 0 calc(var(--bar-height) / 2);
+        translate: 0 15px;
       }
     }
   }

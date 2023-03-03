@@ -1,72 +1,74 @@
 @use "../../../globals.scss" as *;
-
-.post_card {
-  z-index: 9;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  max-width: 27rem;
-  border-radius: 16px;
-  margin: 1rem;
-  cursor: pointer;
-  transition: 0.4s;
-  background-color: rgba(255, 255, 255, 0.8);
-  &:hover {
-    box-shadow: 0 0 3rem 0.7rem rgba(0, 0, 0, 0.2);
-  }
-  .post_card__image {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-
-  .post_card__content {
-    padding: 1rem;
-
-    .post_card__info {
-      font-size: smaller;
-      color: $main;
+.container {
+  .post_card {
+    z-index: 9;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    max-width: 27rem;
+    border-radius: 16px;
+    margin: 1rem;
+    cursor: pointer;
+    transition: 0.4s;
+    background-color: rgba(255, 255, 255, 0.8);
+    &:hover {
+      box-shadow: 0 0 3rem 0.7rem rgba(0, 0, 0, 0.2);
+    }
+    .post_card__image {
+      width: 100%;
+      height: auto;
+      max-height: 24rem;
+      object-fit: fill;
     }
 
-    h2 {
-      color: $black;
-      font-size: xx-large;
-      margin: 1rem 0;
+    .post_card__content {
+      padding: 1rem;
 
-      &:hover {
-        color: $accent;
+      .post_card__info {
+        font-size: smaller;
+        color: $main;
+      }
+
+      h2 {
+        color: $black;
+        font-size: xx-large;
+        margin: 1rem 0;
+
+        &:hover {
+          color: $accent;
+        }
+      }
+
+      p {
+        color: $black;
+        text-overflow: ellipsis;
+        // limit the number of lines to 3
+        line-height: 1.5em;
+        letter-spacing: 0.04em;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
     }
 
-    p {
-      color: $black;
-      text-overflow: ellipsis;
-      // limit the number of lines to 3
-      line-height: 1.5em;
-      letter-spacing: 0.04em;
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 1rem;
+      color: $main;
+      text-decoration: underline;
+      text-underline-offset: 0.2rem;
 
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+      a:hover {
+        color: black;
+      }
     }
-  }
 
-  .categories {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    padding: 1rem;
-    color: $main;
-    text-decoration: underline;
-    text-underline-offset: 0.2rem;
-
-    a:hover {
-      color: black;
+    hr {
+      background-color: $main;
+      height: 1px;
+      border: none;
     }
-  }
-
-  hr {
-    background-color: $main;
-    height: 1px;
-    border: none;
   }
 }

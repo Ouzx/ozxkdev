@@ -3,6 +3,7 @@ $black-bg: #262626;
 $main: #8d8d8d;
 $accent: #47c9e5;
 $light-bg: #f2f2f2;
+$red: #ff5252;
 
 @use "./screens.scss" as screens;
 
@@ -18,7 +19,8 @@ $light-bg: #f2f2f2;
   }
 
   max-width: 100vw;
-  overflow-x: hidden;
+  // TODO: Check this out
+  // overflow-x: hidden;
   font-family: var(--font-montserrat);
 }
 

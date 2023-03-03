@@ -1,0 +1,64 @@
+@use "../../../../../../rounded.scss" as *;
+@use "../../../../../../globals.scss" as *;
+.card {
+  display: grid;
+  grid-template-areas: "stack";
+  color: white;
+  @extend %xl;
+  width: 18rem;
+  .img_wrapper {
+    grid-area: stack;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: -1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgb(38, 38, 38);
+      background: linear-gradient(
+        360deg,
+        rgba(38, 38, 38, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+  }
+
+  .img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+
+  .info_wrapper {
+    grid-area: stack;
+    margin-top: auto;
+    // margin-bottom: 1rem;
+  }
+
+  h3 {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+  }
+
+  .category_wrapper {
+    display: flex;
+    padding-left: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .icon {
+    margin-right: 0.5rem;
+  }
+
+  p {
+    margin: 0;
+    color: #fff;
+  }
+}
