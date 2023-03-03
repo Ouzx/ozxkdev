@@ -3,6 +3,7 @@ import PostList from "../Components/Post/PostList/PostList";
 import SearchBar from "../Components/Searchbar/Searchbar";
 import styles from "./page.module.scss";
 import { Posts } from "@/types/Post";
+import NotFound from "@/app/Components/notFound/NotFound";
 
 const search = async (query: string, pageIndex: number): Promise<Posts> => {
   return await fetch(process.env.API + `/search/${query}/${pageIndex}`)
@@ -24,7 +25,7 @@ const page = async ({
   let _pageIndex = pageIndex ? pageIndex : 1;
 
   if (!_searchTerm) {
-    return notFound();
+    return <NotFound message={"No results found."} />;
   }
 
   if (Array.isArray(_searchTerm)) _searchTerm = _searchTerm[0];
@@ -33,7 +34,7 @@ const page = async ({
   const postList = await search(_searchTerm, +_pageIndex);
 
   if (!postList || !postList.posts || postList.posts.length === 0) {
-    return notFound();
+    return <NotFound message={"No results found."} />;
   }
 
   return (
@@ -44,11 +45,5 @@ const page = async ({
     </div>
   );
 };
-
-const notFound = () => (
-  <div className={styles.search}>
-    <h1>No results found.</h1>
-  </div>
-);
 
 export default page;
