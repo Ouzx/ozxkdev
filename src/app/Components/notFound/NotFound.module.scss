@@ -1,0 +1,7 @@
+@use "../../globals.scss" as *;
+.notFoundText {
+  text-align: center;
+  margin-top: 2rem;
+  color: $black;
+  width: 100%;
+}
