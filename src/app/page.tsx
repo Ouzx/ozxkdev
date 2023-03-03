@@ -1,11 +1,21 @@
-import { use } from "react";
+import { Posts } from "@/types/Post";
 import Hero from "./Components/Hero/Hero";
 import Pool from "./Components/Pool/Pool";
 import PostList from "./Components/Post/PostList/PostList";
 import styles from "./page.module.scss";
-import { posts } from "@/lib/general";
 
-export default function Home({
+const getPosts = async (
+  category: string,
+  pageIndex: number
+): Promise<Posts> => {
+  return await fetch(process.env.API + `/page/${category}/${pageIndex}`)
+    .then((res) => res.json())
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export default async function Home({
   searchParams,
 }: {
   searchParams?: { [key: string]: string | string[] | undefined };
@@ -19,11 +29,12 @@ export default function Home({
   if (Array.isArray(_category)) _category = _category[0];
   if (Array.isArray(_pageIndex)) _pageIndex = _pageIndex[0];
 
-  const postList = use(posts(_category, +_pageIndex));
+  const postList = await getPosts(_category, +_pageIndex);
   return (
     <main className={styles.main}>
       <Hero />
       <div className={styles.content}>
+        {/* @ts-ignore */}
         <Pool selected={searchParams?.category} />
         <PostList postList={postList} />
         {/* <Contact /> */}
