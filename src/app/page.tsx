@@ -12,9 +12,7 @@ export default function Home({
     <main className={styles.main}>
       <Hero />
       <div className={styles.content}>
-        {/* @ts-expect-error Server Component */}
         <Pool selected={searchParams?.category} />
-        {/* @ts-expect-error Server Component */}
         <PostList
           category={searchParams?.category}
           pageIndex={searchParams?.page}
