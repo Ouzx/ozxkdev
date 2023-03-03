@@ -28,3 +28,10 @@ export const post = async (
 ): Promise<PostMain> => {
   return await (await fetch(link + `/post/${category}/${slug}`)).json();
 };
+
+export const search = async (
+  query: string,
+  pageIndex: number
+): Promise<iPost[]> => {
+  return await (await fetch(link + `/search/${query}/${pageIndex}`)).json();
+};
