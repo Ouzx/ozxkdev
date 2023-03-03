@@ -1,8 +1,7 @@
-import React, { use, Suspense } from "react";
+import React, { Suspense } from "react";
 import Link from "next/link";
 import styles from "./page.module.scss";
 
-import Image from "next/image";
 import Tags from "./Components/Tags/Tags";
 
 import Related from "./Components/Related/Related";
@@ -10,23 +9,28 @@ import Share from "./Components/Share/Share";
 import NextPrev from "./Components/NextPrev/NextPrev";
 
 import { ArticleJsonLd } from "next-seo";
-import { post as postx } from "@/lib/general";
 import Content from "./Components/Content/Content";
+import { PostMain } from "@/types/Post";
 
-const page = ({ params }: { params: { category: string; slug: string } }) => {
+const getPost = async (slug: string, category: string): Promise<PostMain> => {
+  return await fetch(process.env.API + `/post/${category}/${slug}`)
+    .then((res) => res.json())
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+const page = async ({
+  params,
+}: {
+  params: { category: string; slug: string };
+}) => {
   const { category, slug } = params;
-  const postData = use(postx(slug, category));
-
+  const postData = await getPost(slug, category);
+  // TODO: if (!postData)
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className={styles.post}>
-        {/* <Image
-          className={styles.image}
-          src={postData?.post.thumbnail}
-          width={1200}
-          height={1200}
-          alt="Post main image"
-        /> */}
         <h1>{postData?.post.title}</h1>
         {/* TODO: Change this` */}
         <ArticleJsonLd
