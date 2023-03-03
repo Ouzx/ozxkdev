@@ -24,7 +24,7 @@ const page = ({
 
   const postList = use(search(_searchTerm, +_pageIndex));
 
-  if (!postList || !postList.posts) {
+  if (!postList || !postList.posts || postList.posts.length === 0) {
     return notFound();
   }
 
@@ -39,7 +39,7 @@ const page = ({
 
 const notFound = () => (
   <div className={styles.search}>
-    <p>No results found.</p>
+    <h1>No results found.</h1>
   </div>
 );
 
