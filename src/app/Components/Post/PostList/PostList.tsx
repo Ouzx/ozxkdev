@@ -1,24 +1,10 @@
-import React, { use } from "react";
+import React from "react";
 import PostCard from "../PostCard/PostCard";
 import styles from "./PostList.module.scss";
 import Paginator from "@/Components/Paginator/Paginator";
-import { posts } from "@/lib/general";
+import { Posts } from "@/types/Post";
 
-const PostList = ({
-  category,
-  pageIndex,
-}: {
-  category?: string | string[] | undefined;
-  pageIndex?: string | string[] | undefined;
-}) => {
-  let cat = category ? category : "all";
-  let page = pageIndex ? pageIndex : 1;
-
-  if (Array.isArray(cat)) cat = cat[0];
-  if (Array.isArray(page)) page = page[0];
-
-  const postList = use(posts(cat as string, page as number));
-
+const PostList = ({ postList }: { postList: Posts }) => {
   let postCards = postList?.posts.map((post, i) => {
     post.createdAt = new Date(post.createdAt).toDateString();
     return <PostCard postData={post} key={post._id} />;
