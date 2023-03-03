@@ -1,0 +1,89 @@
+@use "../../globals.scss" as *;
+
+$dot-size: 12px;
+$dot-color: $black;
+$animation-delay: 1s;
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+
+  h2 {
+    font-size: 3rem;
+    text-align: center;
+    position: relative;
+    color: $black;
+    animation: pulse-animation 2s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+      infinite;
+    span {
+      &::after {
+        content: "";
+        display: inline-block;
+        width: $dot-size;
+        height: $dot-size;
+        background-color: $dot-color;
+        border-radius: 50%;
+        animation: dot-animation 2s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+          infinite;
+      }
+      &:nth-child(1) {
+        &::after {
+          margin-right: 6px;
+        }
+      }
+
+      &::after {
+        margin-left: 10px;
+      }
+
+      &:nth-child(2) {
+        &::after {
+          animation-delay: 0.1s;
+        }
+      }
+      &:nth-child(3) {
+        &::after {
+          animation-delay: 0.2s;
+        }
+      }
+      &:nth-child(4) {
+        &::after {
+          animation-delay: 0.3s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes dot-animation {
+  0% {
+    transform: translateY(0);
+    background-color: $black;
+  }
+
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+    background-color: $main;
+  }
+  100% {
+    transform: translateY(0);
+    background-color: $black;
+  }
+}
+
+@keyframes pulse-animation {
+  0% {
+    color: $black;
+  }
+  50% {
+    color: $main;
+  }
+  100% {
+    color: $black;
+  }
+}

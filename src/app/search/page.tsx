@@ -4,6 +4,7 @@ import SearchBar from "../Components/Searchbar/Searchbar";
 import styles from "./page.module.scss";
 import { Posts } from "@/types/Post";
 import NotFound from "@/app/Components/notFound/NotFound";
+import LoadIndicator from "../Components/LoadIndicator/LoadIndicator";
 
 const search = async (query: string, pageIndex: number): Promise<Posts> => {
   return await fetch(process.env.API + `/search/${query}/${pageIndex}`)
@@ -39,6 +40,7 @@ const page = async ({
 
   return (
     <div className={styles.search}>
+      <LoadIndicator />
       <h1>Search Results for {_searchTerm}</h1>
       <SearchBar />
       <PostList postList={postList} />
