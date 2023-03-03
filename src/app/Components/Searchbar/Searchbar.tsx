@@ -12,7 +12,7 @@ const SearchBar = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!search || search.length < 2) return;
-    router.push(`/search?search=${search}`);
+    router.push(`/search?term=${search}`);
   };
 
   return (
