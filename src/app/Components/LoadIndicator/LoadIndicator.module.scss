@@ -4,12 +4,6 @@ $dot-size: 12px;
 $dot-color: $black;
 $animation-delay: 1s;
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #f2f2f2;
-
   h2 {
     font-size: 3rem;
     text-align: center;
@@ -20,6 +14,7 @@ $animation-delay: 1s;
     span {
       &::after {
         content: "";
+        color: $black;
         display: inline-block;
         border-radius: 50%;
         animation: dot-animation 1.8s cubic-bezier(0.455, 0.03, 0.515, 0.955)
