@@ -1,5 +1,7 @@
 import { Posts } from "@/types/Post";
+import { Suspense } from "react";
 import Hero from "./Components/Hero/Hero";
+import LoadIndicator from "./Components/LoadIndicator/LoadIndicator";
 import Pool from "./Components/Pool/Pool";
 import PostList from "./Components/Post/PostList/PostList";
 import styles from "./page.module.scss";
@@ -36,8 +38,10 @@ export default async function Home({
       <div className={styles.content}>
         {/* @ts-ignore */}
         <Pool selected={searchParams?.category} />
-        <PostList postList={postList} />
-        {/* <Contact /> */}
+        <Suspense fallback={<LoadIndicator />}>
+          <PostList postList={postList} />
+          {/* <Contact /> */}
+        </Suspense>
       </div>
     </main>
   );

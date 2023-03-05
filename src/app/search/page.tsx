@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import PostList from "../Components/Post/PostList/PostList";
 import SearchBar from "../Components/Searchbar/Searchbar";
 import styles from "./page.module.scss";
@@ -39,12 +39,13 @@ const page = async ({
   }
 
   return (
-    <div className={styles.search}>
-      <LoadIndicator />
-      <h1>Search Results for {_searchTerm}</h1>
-      <SearchBar />
-      <PostList postList={postList} />
-    </div>
+    <Suspense fallback={<LoadIndicator />}>
+      <div className={styles.search}>
+        <h1>Search Results for {_searchTerm}</h1>
+        <SearchBar />
+        <PostList postList={postList} />
+      </div>
+    </Suspense>
   );
 };
 

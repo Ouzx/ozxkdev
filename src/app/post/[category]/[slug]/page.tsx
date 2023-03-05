@@ -12,6 +12,7 @@ import { ArticleJsonLd } from "next-seo";
 import Content from "./Components/Content/Content";
 import { PostMain } from "@/types/Post";
 import NotFound from "@/app/Components/notFound/NotFound";
+import LoadIndicator from "@/app/Components/LoadIndicator/LoadIndicator";
 
 const getPost = async (slug: string, category: string): Promise<PostMain> => {
   return await fetch(process.env.API + `/post/${category}/${slug}`)
@@ -34,7 +35,7 @@ const page = async ({
   }
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<LoadIndicator />}>
       <div className={styles.post}>
         <h1>{postData?.post.title}</h1>
         {/* TODO: Change this` */}
