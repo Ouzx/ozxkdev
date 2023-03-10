@@ -85,7 +85,7 @@ const page = async ({
             <h2>Tags</h2>
             <Tags tagList={postData?.post.tags} />
           </div>
-          <Share />
+          <Share url={url} title={postData?.post.title} />
         </div>
         <div className={styles.seperator} />
         <NextPrev

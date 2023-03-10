@@ -8,30 +8,22 @@ import {
 import { FacebookIcon, TwitterIcon, LinkedinIcon } from "react-share";
 
 import styles from "./Share.module.scss";
-const Share = () => {
+const Share = ({ url, title }: { url: string; title: string }) => {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Share</h2>
       <div className={styles.share}>
-        <FacebookShareButton
-          url={"https://www.example.com"}
-          quote={"Dummy text!"}
-          hashtag="#muo"
-        >
+        <FacebookShareButton url={url} quote={title} hashtag="#ozxkdev">
           <FacebookIcon size={32} round />
         </FacebookShareButton>
-        <TwitterShareButton
-          url={"https://www.example.com"}
-          title={"Dummy text!"}
-          hashtags={["muo"]}
-        >
+        <TwitterShareButton url={url} title={title} hashtags={["ozxkdev"]}>
           <TwitterIcon size={32} round />
         </TwitterShareButton>
         <LinkedinShareButton
-          url={"https://www.example.com"}
-          title={"Dummy text!"}
-          summary={"Dummy text!"}
-          source={"https://www.example.com"}
+          url={url}
+          title={title}
+          summary={title}
+          source={url}
         >
           <LinkedinIcon size={32} round />
         </LinkedinShareButton>
