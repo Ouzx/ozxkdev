@@ -3,20 +3,18 @@ import React from "react";
 import Posting from "../Components/Posting/Posting";
 import { iPost } from "@/types/CMS";
 
-const createPost = async (post: iPost, token: string) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_CMS_API}/posts/`, {
+const createPost = async (
+  url: string,
+  { arg }: { arg: { post: iPost; token: string } }
+) => {
+  return fetch(`${process.env.NEXT_PUBLIC_CMS_API}/posts/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${arg?.token}`,
     },
-    body: JSON.stringify(post),
-  })
-    .then((res) => res.json())
-    .catch((err) => console.log(err));
-
-  const data = await res;
-  return data;
+    body: JSON.stringify(arg?.post),
+  }).catch((err) => console.log(err));
 };
 
 const page = () => (
