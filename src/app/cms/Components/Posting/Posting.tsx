@@ -1,5 +1,8 @@
 "use client";
 import React, { useReducer, useState, useEffect } from "react";
+import useSWRMutation from "swr/mutation";
+import { FetcherResponse } from "swr/_internal";
+
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import { iPost } from "@/types/CMS";
@@ -22,13 +25,17 @@ const Posting = ({
   Submit,
   post: initialPost,
 }: {
-  Submit: (post: iPost, token: string) => Promise<iPost>;
+  Submit: (
+    url: string,
+    { arg }: { arg: { post: iPost; token: string } }
+  ) => Promise<Response | void>;
   post?: iPost;
 }) => {
   const router = useRouter();
   const [token] = useAccessToken();
 
   const [isLoading, setIsLoading] = useState(false);
+  const { trigger, isMutating } = useSWRMutation("/api/user", Submit);
 
   const [post, updatePost] = useReducer(
     (state: iPost, newState: Partial<iPost>) => ({
@@ -82,10 +89,8 @@ const Posting = ({
       createdAt: new Date().toISOString(),
     };
     if (!token) return;
-    const res = await Submit(postData, token);
-    if (res) {
-      router.push(`/cms`);
-    }
+    trigger({ post: postData, token });
+    router.push(`/cms`);
   };
 
   useEffect(() => {
