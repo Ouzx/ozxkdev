@@ -1,7 +1,6 @@
 // next-seo.config.ts
 import type { NextSeoProps } from "next-seo";
 
-// TODO: Add images
 export const NEXT_SEO_DEFAULT: NextSeoProps = {
   title: "ozxk's Adventures in Code",
   description:
@@ -16,12 +15,12 @@ export const NEXT_SEO_DEFAULT: NextSeoProps = {
       "Get an inside look at the world of software development through ozxk's eyes",
     images: [
       {
-        url: "https://ozxk.dev/og-image.jpg",
+        url: "https://ozxk.dev/og-image.png",
         width: 800,
         height: 600,
         alt: "ozxk's Dev Blog header image",
         type: "image/jpeg",
-        secureUrl: "https://ozxk.dev/secure-og-image.jpg",
+        secureUrl: "https://ozxk.dev/og-image.png",
       },
     ],
     siteName: "ozxk's Adventures in Code",

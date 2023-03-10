@@ -9,6 +9,9 @@ import Share from "./Components/Share/Share";
 import NextPrev from "./Components/NextPrev/NextPrev";
 
 import { ArticleJsonLd } from "next-seo";
+import { NextSeo, NextSeoProps } from "next-seo";
+import { NEXT_SEO_DEFAULT } from "@/next-seo.config";
+
 import Content from "./Components/Content/Content";
 import { PostMain } from "@/types/Post";
 import NotFound from "@/app/Components/notFound/NotFound";
@@ -33,26 +36,29 @@ const page = async ({
   if (!postData) {
     return <NotFound message="No post found." />;
   }
+  const meta = JSON.parse(JSON.stringify(NEXT_SEO_DEFAULT));
+  meta.title = postData?.post.title;
+  meta.description = postData?.post.shortContent;
+  meta.titleTemplate = `%s | ${postData?.post.category} | ozxk dev blog`;
+  const updateMeta: NextSeoProps = meta;
 
+  // get url
+  const url = `${process.env.NEXT_PUBLIC_URL}/${category}/${slug}`;
   return (
     <Suspense fallback={<LoadIndicator />}>
+      <NextSeo {...updateMeta} useAppDir={true} />
       <div className={styles.post}>
         <h1>{postData?.post.title}</h1>
         {/* TODO: Change this` */}
         <ArticleJsonLd
           useAppDir={true}
           type="BlogPosting"
-          url="https://example.com/blog"
-          title="Blog headline"
-          images={[
-            "https://example.com/photos/1x1/photo.jpg",
-            "https://example.com/photos/4x3/photo.jpg",
-            "https://example.com/photos/16x9/photo.jpg",
-          ]}
-          datePublished="2015-02-05T08:00:00+08:00"
-          dateModified="2015-02-05T09:00:00+08:00"
-          authorName="Jane Blogs"
-          description="This is a mighty good description of this blog."
+          url={url}
+          title={postData?.post.title}
+          images={[postData?.post?.thumbnail]}
+          datePublished={postData?.post.createdAt}
+          authorName={postData?.post.author}
+          description={postData?.post.shortContent}
         />
 
         <div className={styles.info}>
