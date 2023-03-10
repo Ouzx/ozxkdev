@@ -4,23 +4,18 @@ import Posting from "../../Components/Posting/Posting";
 import { iPost } from "@/types/CMS";
 import useAccessToken from "@/hooks/useAccessToken";
 
-const updatePost = async (post: iPost, token: string) => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_CMS_API}/posts/${post._id}`,
-    {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(post),
-    }
-  )
-    .then((res) => res.json())
-    .catch((err) => console.log(err));
-
-  const data = await res;
-  return data;
+const updatePost = async (
+  url: string,
+  { arg }: { arg: { post: iPost; token: string } }
+) => {
+  return fetch(`${process.env.NEXT_PUBLIC_CMS_API}/posts/${arg?.post._id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${arg?.token}`,
+    },
+    body: JSON.stringify(arg?.post),
+  }).catch((err) => console.log(err));
 };
 
 const getPost = async (id: string, token: string) => {
