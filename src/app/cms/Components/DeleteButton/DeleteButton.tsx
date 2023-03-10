@@ -24,6 +24,7 @@ const DeleteButton = ({ postId, postTitle }: Props) => {
   };
 
   const onYes = async () => {
+    if (isMutating) return;
     trigger({ postId, token });
     setShowModal(false);
 
