@@ -5,6 +5,8 @@ import styles from "./DeleteButton.module.scss";
 import useAccessToken from "@/hooks/useAccessToken";
 import Modal from "../Modal/Modal";
 
+import useSWRMutation from "swr/mutation";
+
 interface Props {
   postId: string;
   postTitle: string;
@@ -14,18 +16,18 @@ const DeleteButton = ({ postId, postTitle }: Props) => {
   const [token] = useAccessToken();
   const [showModal, setShowModal] = useState(false);
 
+  const { trigger, isMutating } = useSWRMutation("/api/user", deletePost);
+
   const onClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.stopPropagation();
     setShowModal(true);
   };
 
   const onYes = async () => {
-    const res = await deletePost(postId, token!);
+    trigger({ postId, token });
     setShowModal(false);
-    if (res) {
-      // refresh page
-      window.location.reload();
-    }
+
+    window.location.reload();
   };
 
   const onNo = () => {
@@ -48,19 +50,16 @@ const DeleteButton = ({ postId, postTitle }: Props) => {
   );
 };
 
-const deletePost = async (postId: string, token: string) => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_CMS_API}/posts/${postId}`,
-    {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
-
-  if (res.status === 200) return true;
-  else return false;
-};
+async function deletePost(
+  url: string,
+  { arg }: { arg: { postId: string; token: string | undefined } }
+) {
+  return fetch(`${process.env.NEXT_PUBLIC_CMS_API}/posts/${arg?.postId!}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${arg?.token}`,
+    },
+  });
+}
 
 export default DeleteButton;
