@@ -7,13 +7,11 @@ const Related = ({ posts }: { posts: iPost[] }) => {
     return <Card post={post} key={post._id} />;
   });
   return (
-    <div className={styles.related}>
-      {relatedPosts.length > 0 && (
-        <>
-          <h2 className={styles.related_title}>Related Posts</h2>
-          {relatedPosts}
-        </>
-      )}
+    <div>
+      <h2 className={styles.related_title}>Related Posts</h2>
+      <div className={styles.related}>
+        {relatedPosts.length > 0 && <>{relatedPosts}</>}
+      </div>
     </div>
   );
 };
