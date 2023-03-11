@@ -104,7 +104,6 @@ const CodeBoxOutput = ({
   classNames,
   config,
 }: CodeBoxOutputProps): JSX.Element => {
-  console.log("CodeBoxOutput");
   if (!style || typeof style !== "object") style = {};
   if (!config || typeof config !== "object")
     config = { disableDefaultStyle: false };
