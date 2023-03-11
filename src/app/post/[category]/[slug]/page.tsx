@@ -33,13 +33,13 @@ const page = async ({
   const { category, slug } = params;
   const postData = await getPost(slug, category);
 
-  if (!postData) {
+  if (!postData || !postData?.post) {
     return <NotFound message="No post found." />;
   }
   const meta = JSON.parse(JSON.stringify(NEXT_SEO_DEFAULT));
-  meta.title = postData?.post.title;
-  meta.description = postData?.post.shortContent;
-  meta.titleTemplate = `%s | ${postData?.post.category} | ozxk dev blog`;
+  meta.title = postData?.post?.title;
+  meta.description = postData?.post?.shortContent;
+  meta.titleTemplate = `%s | ${postData?.post?.category} | ozxk dev blog`;
   const updateMeta: NextSeoProps = meta;
 
   // get url
