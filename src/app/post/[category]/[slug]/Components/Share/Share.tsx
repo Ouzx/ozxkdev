@@ -13,15 +13,19 @@ const Share = ({ url, title }: { url: string; title: string }) => {
     <div className={styles.container}>
       <h2 className={styles.title}>Share</h2>
       <div className={styles.share}>
-        <FacebookShareButton url={url} quote={title} hashtag="#ozxkdev">
+        <FacebookShareButton url={url} quote={title + "\n"} hashtag="#ozxkdev">
           <FacebookIcon size={32} round />
         </FacebookShareButton>
-        <TwitterShareButton url={url} title={title} hashtags={["ozxkdev"]}>
+        <TwitterShareButton
+          url={url}
+          title={title + "\n"}
+          hashtags={["ozxkdev"]}
+        >
           <TwitterIcon size={32} round />
         </TwitterShareButton>
         <LinkedinShareButton
           url={url}
-          title={title}
+          title={title + "\n"}
           summary={title}
           source={url}
         >
