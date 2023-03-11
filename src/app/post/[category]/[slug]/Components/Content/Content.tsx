@@ -2,6 +2,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import styles from "./Content.module.scss";
+import OzCodeBox from "./Components/Renderers/Code/Code";
 const Output = dynamic(
   async () => (await import("editorjs-react-renderer")).default,
   { ssr: false }
@@ -112,9 +113,13 @@ const style = {
   // },
 };
 
+const renderers = {
+  asd: OzCodeBox,
+};
+
 const Content = ({ content }: { content: string }) => {
   const data = JSON.parse(content);
-  return <Output data={data} style={style} />;
+  return <Output renderers={renderers} data={data} style={style} />;
 };
 
 export default Content;
