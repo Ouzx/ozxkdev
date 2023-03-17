@@ -48,50 +48,52 @@ const page = async ({
     <Suspense fallback={<LoadIndicator />}>
       <NextSeo {...updateMeta} useAppDir={true} />
       <div className={styles.post}>
-        <h1>{postData?.post.title}</h1>
+        <h1>{postData?.post?.title}</h1>
         {/* TODO: Change this` */}
         <ArticleJsonLd
           useAppDir={true}
           type="BlogPosting"
           url={url}
-          title={postData?.post.title}
+          title={postData?.post?.title}
           images={[postData?.post?.thumbnail]}
-          datePublished={postData?.post.createdAt}
-          authorName={postData?.post.author}
-          description={postData?.post.shortContent}
+          datePublished={postData?.post?.createdAt}
+          authorName={postData?.post?.author}
+          description={postData?.post?.shortContent}
         />
 
         <div className={styles.info}>
           <div className={styles.author_date}>
-            <div className={styles.author}>{`by ${postData?.post.author}`}</div>
-            <div>{new Date(postData?.post.createdAt).toDateString()}</div>
+            <div
+              className={styles.author}
+            >{`by ${postData?.post?.author}`}</div>
+            <div>{new Date(postData?.post?.createdAt).toDateString()}</div>
           </div>
           <Link
-            href={`/?category=${postData?.post.category}`}
+            href={`/?category=${postData?.post?.category}`}
             className={styles.category}
           >
-            {postData?.post.category}
+            {postData?.post?.category}
           </Link>
         </div>
 
         <div className={styles.seperator} />
 
         <div className={styles.content}>
-          <Content content={postData?.post.content} />
+          <Content content={postData?.post?.content} />
         </div>
 
         <div className={styles.bottom_wrapper}>
           <div className={styles.tags}>
             <h2>Tags</h2>
-            <Tags tagList={postData?.post.tags} />
+            <Tags tagList={postData?.post?.tags} />
           </div>
-          <Share url={url} title={postData?.post.title} />
+          <Share url={url} title={postData?.post?.title} />
         </div>
         <div className={styles.seperator} />
         <NextPrev
           nextSlug={postData?.nexPost}
           prevSlug={postData?.prevPost}
-          category={postData?.post.category}
+          category={postData?.post?.category}
         />
         <div className={styles.seperator} />
 
