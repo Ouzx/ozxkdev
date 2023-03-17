@@ -21,7 +21,7 @@ const page = ({
   return (
     <div className={styles.container}>
       <h1>Posts</h1>
-      {posts?.posts.length === 0 ? (
+      {posts?.posts?.length === 0 ? (
         <p>No posts found</p>
       ) : (
         <div>
@@ -36,7 +36,7 @@ const page = ({
               </tr>
             </thead>
             <tbody>
-              {posts?.posts.map((post) => (
+              {posts?.posts?.map((post) => (
                 <tr
                   className={styles.row}
                   key={post._id}
