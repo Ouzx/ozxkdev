@@ -17,10 +17,13 @@ const createPost = async (
   }).catch((err) => console.log(err));
 };
 
-const page = () => (
-  <div>
-    <Posting Submit={createPost} />
-  </div>
-);
+const page = () => {
+  if (window === undefined) return <div>Loading...</div>;
+  return (
+    <div>
+      <Posting Submit={createPost} />
+    </div>
+  );
+};
 
 export default page;

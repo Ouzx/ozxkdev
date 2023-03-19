@@ -31,6 +31,8 @@ const getPost = async (id: string, token: string) => {
 };
 
 const page = ({ params }: { params: { id: string } }) => {
+  if (window === undefined) return <div>Loading...</div>;
+
   const [token] = useAccessToken();
   const [post, setPost] = useState<iPost>();
   useEffect(() => {
