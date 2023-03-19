@@ -7,7 +7,7 @@ const nextConfig = {
     ],
   },
   images: {
-    domains: ["localhost"],
+    domains: ["localhost", "https://ozxkdev-backend.vercel.app/"],
   },
   eslint: {
     // Warning: This allows production builds to successfully complete even if

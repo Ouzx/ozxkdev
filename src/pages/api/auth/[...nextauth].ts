@@ -3,6 +3,7 @@ import NextAuth from "next-auth";
 import type { NextAuthOptions } from "next-auth";
 import { User } from "next-auth";
 
+// TODO: Add env variables
 export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
@@ -20,16 +21,19 @@ export const authOptions: NextAuthOptions = {
       async authorize(credentials, req) {
         const { username, password } = credentials as any;
         try {
-          const res = await fetch("http://localhost:8000/auth/login", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              username,
-              password,
-            }),
-          });
+          const res = await fetch(
+            "https://ozxkdev-backend.vercel.app/auth/login",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                username,
+                password,
+              }),
+            }
+          );
 
           const user = await res.json();
 
