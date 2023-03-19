@@ -9,6 +9,7 @@ const Resume = () => {
       href="https://portfolio.ozxk.dev"
       className={styles.resume}
       target="_blank"
+      rel="noopener noreferrer"
     >
       <Image src={pp} alt="picture" className={styles.pp} />
     </a>

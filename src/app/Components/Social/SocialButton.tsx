@@ -17,6 +17,7 @@ const SocialButton = ({
     <a
       className={styles.social_button}
       aria-label={name}
+      rel="noopener noreferrer"
       target="_blank"
       href={link}
     >
