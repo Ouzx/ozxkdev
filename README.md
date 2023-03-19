@@ -1,38 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# OZXK.DEV Blog Front-End 🎨
 
-## Getting Started
+Welcome to the OZXK.DEV blog, where readers can enjoy reading blog posts and interacting with the blog's features. It was built using Next, React, TypeScript, and SCSS.
 
-First, run the development server:
+## Features 🌟
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+Some of the features included in the front-end are:
+
+- User-friendly interface: The front-end was designed to be easy to use and navigate, with a clean and modern interface.
+- Responsive design: The front-end is optimized for various screen sizes, including desktop, tablet, and mobile.
+- Blog post display: Readers can browse and read blog posts, which are displayed in a user-friendly and visually appealing format.
+- Shareable posts: Each blog post can be shared via a unique URL that can be easily copied and shared on social media or other platforms.
+- Search functionality: Readers can search for posts using keywords or phrases.
+- Categories and tags: Posts can be organized into categories and tagged with keywords for easier browsing and searching.
+- Built-in Content Management System (CMS): The front-end includes a built-in CMS that allows the blog's owner to easily create, edit, and delete blog posts.
+
+## Technologies Used 💫
+
+The front-end of the OZXK.DEV blog was built using the following technologies:
+
+- Next.js: A React framework that provides useful features, such as server-side rendering and static site generation.
+- React: A popular JavaScript library for building user interfaces.
+- Redux: A predictable state container for JavaScript apps.
+- TypeScript: A typed superset of JavaScript that compiles to plain JavaScript.
+- SCSS: A CSS preprocessor that adds useful features to CSS, such as variables, mixins, and nesting.
+
+## How to Use 📝
+
+To run this front-end locally, you will need to have Node.js installed on your machine.
+
+1. Clone the GitHub repository to your local machine.
+2. Navigate to the frontend directory and run `npm install` to install the required dependencies.
+3. Run `npm run dev` to start the development server.
+4. You can now access the blog by navigating to `http://localhost:3000` in your web browser.
+
+### Running and Building 🎁
+
+#### Environment Variables 🌎
+
+`API` - The URL of the back-end API.
+`NEXT_PUBLIC_CMS_API` - The URL of the back-end API + /general route for public.
+`NEXT_PUBLIC_URL` - The URL of the front-end.
+`NEXTAUTH_SECRET` - The secret for NextAuth.
+
+```
+API=BACKEND_URL/general
+NEXT_PUBLIC_CMS_API=BACKEND_URL
+NEXT_PUBLIC_URL=YOUR_FRONTEND_URL
+NEXTAUTH_SECRET=YOUR_SECRET
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Development 💻
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+#### Deployment 🖥️
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+npm install && npm run build
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<hr>
 
-## Learn More
+## Contributions 👐
 
-To learn more about Next.js, take a look at the following resources:
+Contributions to the front-end are welcome. Please fork the repository, make your changes, and submit a pull request.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## TO-DO 📝
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Improve accessibility for users with disabilities
+- Implement a dark mode option
+- Add a "like" feature for blog posts
 
-## Deploy on Vercel
+## License 📜
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This front-end is licensed under the MIT License. See the LICENSE file for more information.
