@@ -1,6 +1,10 @@
 "use client";
 import React from "react";
-import Posting from "../Components/Posting/Posting";
+import dynamic from "next/dynamic";
+const Posting = dynamic(() => import("../Components/Posting/Posting"), {
+  ssr: false,
+});
+
 import { iPost } from "@/types/CMS";
 
 const createPost = async (
@@ -18,7 +22,6 @@ const createPost = async (
 };
 
 const page = () => {
-  if (window === undefined) return <div>Loading...</div>;
   return (
     <div>
       <Posting Submit={createPost} />

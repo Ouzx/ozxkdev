@@ -31,8 +31,6 @@ const Posting = ({
   ) => Promise<Response | void>;
   post?: iPost;
 }) => {
-  if (window === undefined) return <div>Loading...</div>;
-
   const router = useRouter();
   const [token] = useAccessToken();
 
