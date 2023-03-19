@@ -14,6 +14,9 @@ Some of the features included in the front-end are:
 - Categories and tags: Posts can be organized into categories and tagged with keywords for easier browsing and searching.
 - Built-in Content Management System (CMS): The front-end includes a built-in CMS that allows the blog's owner to easily create, edit, and delete blog posts.
 
+![BLOG](https://user-images.githubusercontent.com/47363718/226212955-d8550d63-a067-4adb-b9af-7607e32453cd.png)
+
+
 ## Technologies Used 💫
 
 The front-end of the OZXK.DEV blog was built using the following technologies:
