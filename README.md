@@ -16,7 +16,6 @@ Some of the features included in the front-end are:
 
 ![BLOG](https://user-images.githubusercontent.com/47363718/226212955-d8550d63-a067-4adb-b9af-7607e32453cd.png)
 
-
 ## Technologies Used 💫
 
 The front-end of the OZXK.DEV blog was built using the following technologies:
@@ -70,9 +69,19 @@ Contributions to the front-end are welcome. Please fork the repository, make you
 
 ## TO-DO 📝
 
-- Improve accessibility for users with disabilities
-- Implement a dark mode option
-- Add a "like" feature for blog posts
+- [ ] Improve accessibility for users with disabilities
+- [ ] Implement a dark mode option
+- [ ] Write tests
+- [ ] Add a "like" feature for blog posts
+- [ ] Add a "comment" feature for blog posts
+- [ ] Add CAPTCHA V3 to the contact form and comment form
+- [ ] Add registration form
+- [ ] Add forgot password form
+- [ ] Add Google Analytics
+- [ ] Add Google Login
+- [ ] Add 404 page
+- [ ] Add live search
+- [ ] Add loading animations
 
 ## License 📜
 
