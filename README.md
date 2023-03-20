@@ -71,6 +71,7 @@ Contributions to the front-end are welcome. Please fork the repository, make you
 
 - [ ] Improve accessibility for users with disabilities
 - [ ] Implement a dark mode option
+- [ ] Add Github Gists Code Snippets
 - [ ] Write tests
 - [ ] Add a "like" feature for blog posts
 - [ ] Add a "comment" feature for blog posts
