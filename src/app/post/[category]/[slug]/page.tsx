@@ -14,7 +14,7 @@ import { NEXT_SEO_DEFAULT } from "@/next-seo.config";
 
 import Content from "./Components/Content/Content";
 import { PostMain } from "@/types/Post";
-import NotFound from "@/app/Components/notFound/NotFound";
+import { notFound } from "next/navigation";
 import LoadIndicator from "@/app/Components/LoadIndicator/LoadIndicator";
 
 const getPost = async (slug: string, category: string): Promise<PostMain> => {
@@ -34,7 +34,8 @@ const page = async ({
   const postData = await getPost(slug, category);
 
   if (!postData || !postData?.post) {
-    return <NotFound message="No post found." />;
+    console.log("not found");
+    return notFound();
   }
   const meta = JSON.parse(JSON.stringify(NEXT_SEO_DEFAULT));
   meta.title = postData?.post?.title;

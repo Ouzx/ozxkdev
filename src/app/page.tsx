@@ -5,6 +5,7 @@ import LoadIndicator from "./Components/LoadIndicator/LoadIndicator";
 import Pool from "./Components/Pool/Pool";
 import PostList from "./Components/Post/PostList/PostList";
 import styles from "./page.module.scss";
+import { notFound } from "next/navigation";
 
 const getPosts = async (
   category: string,
@@ -32,6 +33,7 @@ export default async function Home({
   if (Array.isArray(_pageIndex)) _pageIndex = _pageIndex[0];
 
   const postList = await getPosts(_category, +_pageIndex);
+  if (!postList) return notFound();
   return (
     <main className={styles.main}>
       <Hero />
