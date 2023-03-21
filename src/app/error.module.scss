@@ -1,0 +1,55 @@
+@use "screens.scss" as *;
+
+$color-primary: #ff745c;
+$color-secondary: #1a2e35;
+$color-white: #fff;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+
+    @include md {
+      width: 50%;
+    }
+  }
+
+  .button {
+    margin: 20px 0;
+    background-color: $color-secondary;
+    color: $color-white;
+    font-size: large;
+    border: 1px solid $color-primary;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s;
+    animation: pulse 2s infinite;
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+  }
+}
+
+// animate pulse color of button like on hover
+
+@keyframes pulse {
+  0% {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+  50% {
+    background-color: $color-secondary;
+    color: $color-white;
+  }
+  100% {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+}
