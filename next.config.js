@@ -7,7 +7,7 @@ const nextConfig = {
     ],
   },
   images: {
-    domains: ["localhost", "https://ozxkdev-backend.vercel.app/"],
+    domains: ["res.cloudinary.com", "ozxk.dev", "localhost"],
   },
   eslint: {
     // Warning: This allows production builds to successfully complete even if
