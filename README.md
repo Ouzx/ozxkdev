@@ -82,7 +82,7 @@ Contributions to the front-end are welcome. Please fork the repository, make you
 - [ ] Add Google Login
 - [ ] Add 404 page
 - [ ] Add live search
-- [ ] Add loading animations
+- [x] Add loading animations
 
 ## License 📜
 
