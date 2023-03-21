@@ -4,7 +4,8 @@ import Link from "next/link";
 import errorPic from "@/assets/error.jpg";
 import styles from "./not-Found.module.scss";
 
-const notFound = () => {
+const NotFound = () => {
+  console.log("not found");
   return (
     <div className={styles.container}>
       <Image className={styles.image} src={errorPic} alt="error" />
@@ -17,4 +18,4 @@ const notFound = () => {
   );
 };
 
-export default notFound;
+export default NotFound;
