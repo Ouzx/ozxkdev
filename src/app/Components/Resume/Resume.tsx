@@ -6,7 +6,7 @@ import pp from "../../../assets/PP.png";
 const Resume = () => {
   return (
     <a
-      href="https://portfolio.ozxk.dev"
+      href="https://ozxk.dev"
       className={styles.resume}
       target="_blank"
       rel="noopener noreferrer"

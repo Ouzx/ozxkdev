@@ -11,7 +11,7 @@ const Nav = () => {
         <Link href={"/contact"}>Contact</Link>
       </li>
       <li>
-        <Link href={"https://portfolio.ozxk.dev"} target="_blank">
+        <Link href={"https://ozxk.dev"} target="_blank">
           Portfolio
         </Link>
       </li>
