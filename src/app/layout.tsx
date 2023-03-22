@@ -7,6 +7,8 @@ import Footer from "./Components/Footer/Footer";
 import Bottom from "./Components/Footer/Bottom/Bottom";
 import Resume from "./Components/Resume/Resume";
 import BacktoTop from "@/Components/BacktoTop/BacktoTop";
+import { Analytics } from "@vercel/analytics/react";
+
 import "./globals.scss";
 
 export default function RootLayout({
@@ -35,6 +37,7 @@ export default function RootLayout({
         </SessionProvider>
         <Resume />
         <BacktoTop />
+        <Analytics />
       </body>
     </html>
   );
