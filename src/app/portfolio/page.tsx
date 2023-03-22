@@ -9,6 +9,8 @@ import Profile from "./Components/Profile/Profile";
 import Contact from "./Components/Contact/Contact";
 import Badges from "./Components/Badges/Badges";
 import ExButton from "./Components/ExButton/ExButton";
+import Hello from "./Components/Hello/Hello";
+import HR from "./Components/HR/HR";
 
 const page = () => {
   return (
@@ -39,17 +41,8 @@ const page = () => {
         </div>
 
         <div className={styles.main}>
-          <h1>
-            Hello, I'm <span className={styles.name}>Oğuz</span>
-          </h1>
-          <p className={styles.hello}>
-            I am a recent graduate with a strong background in full stack web
-            development. Proficient in a variety of technologies including
-            JavaScript, React, Node.js and experienced in developing web
-            applications with a focus on user experience. Strong problem-solving
-            skills and ability to work in a team environment.
-          </p>
-          <div className={styles.seperator}></div>
+          <Hello />
+          <HR />
         </div>
       </div>
     </div>

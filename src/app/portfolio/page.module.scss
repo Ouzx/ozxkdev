@@ -78,15 +78,6 @@ $transparent-bg: rgb(255, 255, 255, 0.85);
       background-color: $transparent-bg;
       padding: 2rem;
       @extend %shadow;
-
-      .name {
-        animation: main-name-color-transiton 5s ease-in-out infinite alternate;
-      }
-
-      .hello {
-        padding-top: 2rem;
-        margin-bottom: 2rem;
-      }
     }
   }
 }
