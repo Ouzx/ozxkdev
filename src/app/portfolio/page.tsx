@@ -8,6 +8,7 @@ import heroBG from "@/assets/hero-bg.svg";
 import Profile from "./Components/Profile/Profile";
 import Contact from "./Components/Contact/Contact";
 import Badges from "./Components/Badges/Badges";
+import ExButton from "./Components/ExButton/ExButton";
 
 const page = () => {
   return (
@@ -28,16 +29,12 @@ const page = () => {
           </div>
 
           <div className={styles.row}>
-            <a className={styles.button} href="#">
-              <button>
-                <span>Project Repo</span> <AiOutlineDownload />
-              </button>
-            </a>
-            <a className={styles.button} href="#">
-              <button>
-                <span>Download Resume</span> <AiOutlineGithub />
-              </button>
-            </a>
+            <ExButton text="Project Repo" link="#">
+              <AiOutlineGithub />
+            </ExButton>
+            <ExButton text="Download Resume" link="#">
+              <AiOutlineDownload />
+            </ExButton>
           </div>
         </div>
 
