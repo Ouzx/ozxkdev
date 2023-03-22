@@ -24,6 +24,7 @@ const page = async ({
   let _searchTerm = searchTerm ? searchTerm : null;
   let _pageIndex = pageIndex ? pageIndex : 1;
 
+  console.log(_searchTerm, _pageIndex);
   if (!_searchTerm) {
     notFound();
   }
