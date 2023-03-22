@@ -8,7 +8,7 @@ const Contact = () => {
   const { BirthDate, Contact } = useDataContext();
   return (
     <div className={styles.contact}>
-      <Title title={"INFO"} />
+      <Title title={"Contact"} />
       <HR />
       <div className={styles.line}>
         <p>Date of Birth</p>
