@@ -1,3 +1,5 @@
+@use "../../../globals.scss" as *;
+
 .name {
   animation: main-name-color-transiton 5s ease-in-out infinite alternate;
 }
@@ -5,4 +7,13 @@
 .hello {
   padding-top: 2rem;
   margin-bottom: 2rem;
+}
+
+@keyframes main-name-color-transiton {
+  0% {
+    color: $accent;
+  }
+  100% {
+    color: $black;
+  }
 }
