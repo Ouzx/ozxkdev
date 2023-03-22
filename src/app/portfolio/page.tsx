@@ -6,14 +6,18 @@ import styles from "./page.module.scss";
 import { DataProvider } from "./Context/DataContext";
 
 import heroBG from "@/assets/hero-bg.svg";
+import HR from "./Components/HR/HR";
+
 import Profile from "./Components/Profile/Profile";
 import Contact from "./Components/Contact/Contact";
 import Badges from "./Components/Badges/Badges";
-import ExButton from "./Components/ExButton/ExButton";
 import Hello from "./Components/Hello/Hello";
-import HR from "./Components/HR/HR";
+
 import ExButtons from "./Components/Fixed/ExButtons";
 import Experience from "./Components/Fixed/Experience";
+import Education from "./Components/Fixed/Education";
+import Certifications from "./Components/Fixed/Certifications";
+import Langs from "./Components/Langs/Langs";
 
 const page = () => {
   return (
@@ -31,6 +35,10 @@ const page = () => {
             </div>
 
             <div className={styles.row}>
+              <Langs />
+            </div>
+
+            <div className={styles.row}>
               <Badges />
             </div>
 
@@ -41,12 +49,12 @@ const page = () => {
 
           <div className={styles.main}>
             <Hello />
-
             <HR />
-
-            <div className={styles.timeSection}>
-              <Experience />
-            </div>
+            <Experience />
+            <HR />
+            <Education />
+            <HR />
+            <Certifications />
           </div>
         </div>
       </div>

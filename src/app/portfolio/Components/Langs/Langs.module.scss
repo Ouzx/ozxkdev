@@ -1,0 +1,13 @@
+.container {
+  text-align: center;
+  width: 100%;
+
+  .wrapper {
+    text-align: start;
+    margin-top: 0.5rem;
+    h4,
+    p {
+      display: inline-block;
+    }
+  }
+}

@@ -56,21 +56,51 @@ $transparent-bg: rgb(255, 255, 255, 0.85);
 
         @media screen and (max-width: 1200px) {
           &:nth-child(2),
-          &:nth-child(3) {
-            width: 50vw;
+          &:nth-child(3),
+          &:nth-child(4) {
+            width: 33vw;
             height: 600px;
             vertical-align: top;
             display: inline-flex;
+            box-shadow: none;
+            align-items: flex-start;
+            justify-content: flex-start;
+          }
+        }
+
+        @media screen and (max-width: 900px) {
+          &:nth-child(2),
+          &:nth-child(3) {
+            width: 50vw;
+            height: 400px;
+            vertical-align: top;
+            display: inline-flex;
+            box-shadow: none;
+            align-items: flex-start;
+            justify-content: flex-start;
+          }
+          &:nth-child(4) {
+            width: 100%;
+            height: auto;
+            vertical-align: top;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
           }
         }
 
         @media screen and (max-width: 600px) {
           &:nth-child(2),
-          &:nth-child(3) {
+          &:nth-child(3),
+          &:nth-child(4) {
             width: 100%;
             height: auto;
             vertical-align: top;
             display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
           }
         }
       }
