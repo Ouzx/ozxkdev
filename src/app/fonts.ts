@@ -1,4 +1,4 @@
-import { Montserrat, Raleway } from "@next/font/google";
+import { Montserrat, Raleway, Pacifico } from "@next/font/google";
 
 export const montserrat = Montserrat({
   subsets: ["latin"],
@@ -10,4 +10,11 @@ export const raleway = Raleway({
   subsets: ["latin"],
   variable: "--font-raleway",
   display: "swap",
+});
+
+export const pacifico = Pacifico({
+  subsets: ["latin"],
+  variable: "--font-pacifico",
+  display: "swap",
+  weight: "400",
 });

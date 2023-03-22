@@ -6,9 +6,9 @@ const Hello = () => {
 
   return (
     <>
-      <h1>
+      <p className={styles.hi}>
         Hello, I'm <span className={styles.name}>{HI}</span>
-      </h1>
+      </p>
       <p className={styles.hello}>{Description}</p>
     </>
   );

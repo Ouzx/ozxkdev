@@ -1,7 +1,7 @@
 "use client";
 import { SessionProvider } from "next-auth/react";
 
-import { montserrat, raleway } from "./fonts";
+import { montserrat, raleway, pacifico } from "./fonts";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Bottom from "./Components/Footer/Bottom/Bottom";
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`app ${montserrat.variable} ${raleway.variable}`}
+      className={`app ${montserrat.variable} ${raleway.variable} ${pacifico.variable}`}
     >
       {/*
         <head /> will contain the components returned by the nearest parent

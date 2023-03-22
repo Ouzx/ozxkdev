@@ -1,5 +1,16 @@
 @use "../../../globals.scss" as *;
 
+.hi {
+  font-family: var(--font-pacifico) !important;
+  span {
+    font-family: var(--font-pacifico) !important;
+  }
+
+  font-style: italic;
+  font-size: x-large;
+  font-weight: 400;
+}
+
 .name {
   animation: main-name-color-transiton 5s ease-in-out infinite alternate;
 }
