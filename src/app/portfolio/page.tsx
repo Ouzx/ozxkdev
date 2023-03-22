@@ -18,6 +18,7 @@ import Experience from "./Components/Fixed/Experience";
 import Education from "./Components/Fixed/Education";
 import Certifications from "./Components/Fixed/Certifications";
 import Langs from "./Components/Langs/Langs";
+import Projects from "./Components/Projects/Projects";
 
 const page = () => {
   return (
@@ -55,6 +56,8 @@ const page = () => {
             <Education />
             <HR />
             <Certifications />
+            <HR />
+            <Projects />
           </div>
         </div>
       </div>

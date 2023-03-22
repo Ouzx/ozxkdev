@@ -42,7 +42,8 @@ export interface Resume {
   ProjectList: {
     title: string;
     description: string;
-    link: string;
+    link?: string;
+    linkType?: string;
     img: string;
   }[];
   Projects: {

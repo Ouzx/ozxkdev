@@ -83,19 +83,21 @@
             "title": "INHALT CMS | Full Stack React Project",
             "description": "Inhalt CMS is a content management system that allows you to create and manage your website with typescript. It is built with React, and Tailwind CSS.",
             "link": "https://github.com/Ouzx/inhalt-cms",
-            "img": "inhalt.png"
+            "linkType": "Github",
+            "img": "/og-image.png"
         },
         {
             "title": "Personal Portfolio Website",
             "description": "This is my personal portfolio website. It is built with React and Tailwind CSS. Used Github Actions to deploy the website to Hostinger.",
             "link": "https://github.com/Ouzx/resume-react-ts-tawilwind-vite",
-            "img": "portfolio.png"
+            "linkType": "Github",
+            "img": "/og-image.png"
         },
         {
             "title": "Freelance Wordpress Projects",
             "description": "In the last 4 years, I have developed 6-Live Wordpress websites for clients from several industries. I have developed websites for local businesses, e-commerce websites, and learning management systems. With these I have gained experience in SEO, caching policies, minifying and lazy but most important UI/UX.",
             "link": "",
-            "img": "safranplise.png"
+            "img": "/og-image.png"
         }
     ],
     "Projects": [

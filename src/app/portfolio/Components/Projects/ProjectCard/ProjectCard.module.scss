@@ -1,29 +1,30 @@
-@use "../../../globals.scss" as *;
+@use "../../../../globals.scss" as *;
 
-.timeElement {
+.projectElement {
   display: grid;
   grid-template-columns: 0.25fr 0.75fr;
   background-color: #fff;
   padding: 1rem;
 
-  &__date {
-    text-align: center;
-    vertical-align: middle;
-    margin: auto 0;
-
-    font-size: large;
-    font-weight: bold;
+  &__image {
+    padding-right: 1rem;
+    .img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0.4rem;
+    }
   }
 
   &__content {
     padding-left: 1rem;
     border-left: 1px solid $accent;
 
-    h5 {
+    h4 {
       margin: 0.4rem 0;
     }
 
-    h5,
+    h4,
     p {
       padding-left: 0.5rem;
     }
