@@ -2,23 +2,19 @@ import React from "react";
 import styles from "./TimeCard.module.scss";
 
 const TimeCard = ({
-  startDate,
-  endDate,
+  date,
   title,
   company,
   description,
 }: {
-  startDate: string;
-  endDate: string;
+  date: string;
   title: string;
   company: string;
   description: string;
 }) => {
   return (
     <div className={styles.timeElement}>
-      <div className={styles.timeElement__date}>
-        <span>{startDate}</span>/<span>{endDate}</span>
-      </div>
+      <div className={styles.timeElement__date}>{date}</div>
       <div className={styles.timeElement__content}>
         <h4>{title}</h4>
         <h5>{company}</h5>
