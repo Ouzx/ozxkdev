@@ -6,6 +6,7 @@ import { AiOutlineDownload, AiOutlineGithub } from "react-icons/ai";
 
 import heroBG from "@/assets/hero-bg.svg";
 import Profile from "./Components/Profile/Profile";
+import Contact from "./Components/Contact/Contact";
 
 const badges = [
   <img
@@ -244,34 +245,12 @@ const page = () => {
       <Image src={heroBG} alt="" className={styles.bg} />
       <div className={styles.content}>
         <div className={styles.side}>
-          <div className={`${styles.row} ${styles.hero}`}>
+          <div className={styles.row}>
             <Profile />
           </div>
 
           <div className={styles.row}>
-            <div className={styles.contact}>
-              <p className={styles.info}>INFO</p>
-              <div className={styles.seperator}></div>
-              <div className={styles.line}>
-                <p>Date of Birth</p>
-                <p>11 - 24 - 1999</p>
-              </div>
-              <div className={styles.line}>
-                <p>Location</p>
-                <p>Ankara / Turkey</p>
-              </div>
-              <a
-                href="mailto:oguzhankandakoglu@gmail.com"
-                className={styles.line}
-              >
-                <p>E-mail</p>
-                <p>oguzhankandakoglu@gmail.com</p>
-              </a>
-              <a href="tel:+90546488984" className={styles.line}>
-                <p>Phone</p>
-                <p>(+90)-546-488-9884</p>
-              </a>
-            </div>
+            <Contact />
           </div>
 
           <div className={styles.row}>

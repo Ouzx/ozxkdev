@@ -1,0 +1,15 @@
+.contact {
+  .line {
+    margin-bottom: 1rem;
+    display: block;
+    p:first-child {
+      font-weight: 600;
+    }
+    &:is(a):hover {
+      p:last-child {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+    }
+  }
+}
