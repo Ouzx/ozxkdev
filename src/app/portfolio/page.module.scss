@@ -123,25 +123,6 @@ $transparent-bg: rgb(255, 255, 255, 0.85);
           }
         }
       }
-
-      .pp {
-        width: 12rem;
-        height: 12rem;
-        object-fit: cover;
-        border-radius: 50%;
-      }
-
-      .name {
-        font-size: 2rem;
-        font-weight: 600;
-        margin-top: 1rem;
-        text-align: center;
-      }
-
-      .role {
-        margin-top: 1rem;
-        text-align: center;
-      }
     }
     .main {
       background-color: $transparent-bg;

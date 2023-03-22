@@ -5,7 +5,7 @@ import styles from "./page.module.scss";
 import { AiOutlineDownload, AiOutlineGithub } from "react-icons/ai";
 
 import heroBG from "@/assets/hero-bg.svg";
-import pp from "@/assets/PP.png";
+import Profile from "./Components/Profile/Profile";
 
 const badges = [
   <img
@@ -245,9 +245,7 @@ const page = () => {
       <div className={styles.content}>
         <div className={styles.side}>
           <div className={`${styles.row} ${styles.hero}`}>
-            <Image className={styles.pp} src={pp} alt="" />
-            <p className={styles.name}>Oğuzhan Kandakoğlu</p>
-            <p className={styles.role}>Full Stack Developer</p>
+            <Profile />
           </div>
 
           <div className={styles.row}>
