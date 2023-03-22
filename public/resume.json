@@ -1,7 +1,7 @@
 {
     "ProfilePic": "PP.png",
     "ProfilePicHover": "PP-glassed.png",
-    "Name": "Oguzhan Kandakoglu",
+    "Name": "Oğuzhan Kandakoğlu",
     "BirthDate": "11 - 24 - 1999",
     "JobTitle": "Full Stack Developer",
     "ResumeFileName": "https://drive.google.com/file/d/1PzJabFQIVEvHu5SmFcGPa7FnY3gMV-Hd/view?usp=sharing",
@@ -11,12 +11,12 @@
         "github": "https://github.com/Ouzx",
         "email": "mailto:oguzhankandakoglu@gmail.com"
     },
-    "HI": "I'm Oğuz",
+    "HI": "Oğuz",
     "Description": "I am a recent graduate with a strong background in full stack web development. Proficient in a variety of technologies including JavaScript, React, Node.js and experienced in developing web applications with a focus on user experience. Strong problem-solving skills and ability to work in a team environment.",
     "Contact": {
         "email": "oguzhankandakoglu@gmail.com",
         "phone": "(+90)-546-488-9884",
-        "address": "06930 Ankara, Turkey"
+        "address": "Ankara, Turkey"
     },
     "Skills": [
         {

@@ -9,7 +9,7 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [data, setData] = useState<Resume>({} as Resume);
   useEffect(() => {
-    fetch("@/assets/resume.json")
+    fetch("resume.json")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.error(err));

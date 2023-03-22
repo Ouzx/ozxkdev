@@ -1,18 +1,15 @@
 import React from "react";
+import { useDataContext } from "../../Context/DataContext";
 import styles from "./Hello.module.scss";
 const Hello = () => {
+  const { HI, Description } = useDataContext();
+
   return (
     <>
       <h1>
-        Hello, I'm <span className={styles.name}>Oğuz</span>
+        Hello, I'm <span className={styles.name}>{HI}</span>
       </h1>
-      <p className={styles.hello}>
-        I am a recent graduate with a strong background in full stack web
-        development. Proficient in a variety of technologies including
-        JavaScript, React, Node.js and experienced in developing web
-        applications with a focus on user experience. Strong problem-solving
-        skills and ability to work in a team environment.
-      </p>
+      <p className={styles.hello}>{Description}</p>
     </>
   );
 };
