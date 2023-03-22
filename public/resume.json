@@ -81,7 +81,7 @@
     "ProjectList": [
         {
             "title": "OZXK Blog | Full Stack React Project",
-            "description": "This is my blog site with a content management system that allows me to create and manage my website with easily. It is built with React, Next.js and SASS. It also has strong backend support with Node.js and MongoDB. I have also developed a custom CMS for this project.",
+            "description": "This is my blog site with a content management system that allows me to create/edit my posts and manage my website easily. It is built with React, Next.js and SASS. It also has strong backend support with Node.js and MongoDB. I have also developed a custom CMS for this project.",
             "link": "https://github.com/Ouzx/ozxkdev",
             "linkType": "Github",
             "img": "/og-image.png"
