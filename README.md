@@ -84,6 +84,10 @@ Contributions to the front-end are welcome. Please fork the repository, make you
 - [ ] Add live search
 - [x] Add loading animations
 
+## Known Issues 🐛
+
+- [ ] Search Page not working in production
+
 ## License 📜
 
 This front-end is licensed under the MIT License. See the LICENSE file for more information.
