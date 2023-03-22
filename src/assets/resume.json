@@ -1,0 +1,140 @@
+{
+    "ProfilePic": "PP.png",
+    "ProfilePicHover": "PP-glassed.png",
+    "Name": "Oguzhan Kandakoglu",
+    "BirthDate": "11 - 24 - 1999",
+    "JobTitle": "Full Stack Developer",
+    "ResumeFileName": "https://drive.google.com/file/d/1PzJabFQIVEvHu5SmFcGPa7FnY3gMV-Hd/view?usp=sharing",
+    "Social": {
+        "linkedin": "https://linkedin.com/in/ozxk",
+        "twitter": "https://twitter.com/Ozx_K",
+        "github": "https://github.com/Ouzx",
+        "email": "mailto:oguzhankandakoglu@gmail.com"
+    },
+    "HI": "I'm Oğuz",
+    "Description": "I am a recent graduate with a strong background in full stack web development. Proficient in a variety of technologies including JavaScript, React, Node.js and experienced in developing web applications with a focus on user experience. Strong problem-solving skills and ability to work in a team environment.",
+    "Contact": {
+        "email": "oguzhankandakoglu@gmail.com",
+        "phone": "(+90)-546-488-9884",
+        "address": "06930 Ankara, Turkey"
+    },
+    "Skills": [
+        {
+            "title": "JavaScript",
+            "percent": 60
+        },
+        {
+            "title": "React",
+            "percent": 90
+        },
+        {
+            "title": "Node.js",
+            "percent": 70
+        }
+    ],
+    "Experience": [
+        {
+            "title": "Web Developer Intern",
+            "company": "VHS Elektronik",
+            "date": "June 2021 - September 2021",
+            "description": "Assisted in the development and maintenance of web applications using JavaScript and React, as well as database management using T-SQL and PL-SQL. /n Worked with a team to create a web application for one of Turkey's largest critical infrastructures."
+        }
+    ],
+    "Education": [
+        {
+            "title": "Bachelor of Computer Science",
+            "company": "University of KIRIKKALE",
+            "date": "2018 - 2022",
+            "description": "Completed coursework in web development, software engineering, and computer science. Graduated with Honor Degree.",
+            "GPA": "GPA: 3.09 / 4.00"
+        }
+    ],
+    "Languages": [
+        {
+            "title": "English",
+            "percent": 100
+        },
+        {
+            "title": "German",
+            "percent": 50
+        }
+    ],
+    "Certifications": [
+        {
+            "title": "AZ-900: Microsoft Azure Fundamentals",
+            "date": "January 2021",
+            "description": "Microsoft Azure Fundamentals certification is an entry-level certification that demonstrates foundational knowledge of cloud concepts, Azure services, security, privacy, compliance, and trust.",
+            "company": "Microsoft"
+        }
+    ],
+    "ProjectList": [
+        {
+            "title": "INHALT CMS | Full Stack React Project",
+            "description": "Inhalt CMS is a content management system that allows you to create and manage your website with typescript. It is built with React, and Tailwind CSS.",
+            "link": "https://github.com/Ouzx/inhalt-cms",
+            "img": "inhalt.png"
+        },
+        {
+            "title": "Personal Portfolio Website",
+            "description": "This is my personal portfolio website. It is built with React and Tailwind CSS. Used Github Actions to deploy the website to Hostinger.",
+            "link": "https://github.com/Ouzx/resume-react-ts-tawilwind-vite",
+            "img": "portfolio.png"
+        },
+        {
+            "title": "Freelance Wordpress Projects",
+            "description": "In the last 4 years, I have developed 6-Live Wordpress websites for clients from several industries. I have developed websites for local businesses, e-commerce websites, and learning management systems. With these I have gained experience in SEO, caching policies, minifying and lazy but most important UI/UX.",
+            "link": "",
+            "img": "safranplise.png"
+        }
+    ],
+    "Projects": [
+        {
+            "title": "INHALT CMS | Full Stack React Project",
+            "description": "Developed a content management system using React and Node.js",
+            "link": "https://github.com/Ouzx/inhalt-cms",
+            "img": "inhalt.png"
+        },
+        {
+            "title": "Safran Plise | E-Commerce Website",
+            "description": "Developed a e-commerce website using Wordpress for a client",
+            "link": "https://safranplise.com",
+            "img": "safranplise.png"
+        },
+        {
+            "title": "Personal Portfolio Website",
+            "description": "Developed a personal portfolio website using React",
+            "link": "https://portfolio.ozxk.dev",
+            "img": "portfolio.png"
+        },
+        {
+            "title": "Karabuk Enes Nakliyat | Local Business Website",
+            "description": "Developed a local business website using Wordpress for a client",
+            "link": "https://karabukenesnakliyat.com",
+            "img": "karabukenes.png"
+        },
+        {
+            "title": "Zarif Akademi | Learning Management System",
+            "description": " Developed a learning management system using Wordpress for a client",
+            "link": "https://www.zarifakademi.com",
+            "img": "zarifakademi.png"
+        },
+        {
+            "title": "Arel Plise | Local Business Website",
+            "description": " Local business Wordpress website for a client",
+            "link": "https://arelplise.com",
+            "img": "arel.png"
+        },
+        {
+            "title": "Karabuk Evim Nakliyat | Local Business Website",
+            "description": "Local business Wordpress website for a client",
+            "link": "https://karabukevimnakliyat.com",
+            "img": "karabukevim.png"
+        },
+        {
+            "title": "Hidro-Pir | Business Website",
+            "description": " Business Wordpress website for a client",
+            "link": "https://hidropir.net",
+            "img": "hidropir.png"
+        }
+    ]
+}
