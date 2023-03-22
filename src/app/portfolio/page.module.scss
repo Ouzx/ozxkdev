@@ -9,6 +9,18 @@ $transparent-bg: rgb(255, 255, 255, 0.85);
 
 .container {
   position: relative;
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  a {
+    line-height: 1.5em;
+    letter-spacing: 0.04em;
+  }
   .bg {
     position: absolute;
     top: 0;
