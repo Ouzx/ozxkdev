@@ -39,13 +39,11 @@ const page = async ({
   }
 
   return (
-    <Suspense fallback={<LoadIndicator />}>
-      <div className={styles.search}>
-        <h1>Search Results for {_searchTerm}</h1>
-        <SearchBar />
-        <PostList postList={postList} />
-      </div>
-    </Suspense>
+    <div className={styles.search}>
+      <h1>Search Results for {_searchTerm}</h1>
+      <SearchBar />
+      <PostList postList={postList} />
+    </div>
   );
 };
 
