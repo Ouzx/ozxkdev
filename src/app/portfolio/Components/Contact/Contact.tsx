@@ -14,7 +14,7 @@ const Contact = () => {
       </div>
       <div className={styles.line}>
         <p>Location</p>
-        <p>Ankara / Turkey</p>
+        <p>Ankara, Turkey</p>
       </div>
       <a href="mailto:oguzhankandakoglu@gmail.com" className={styles.line}>
         <p>E-mail</p>

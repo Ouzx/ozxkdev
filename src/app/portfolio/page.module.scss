@@ -61,6 +61,18 @@ $transparent-bg: rgb(255, 255, 255, 0.85);
           }
         }
       }
+      .buttons {
+        @media screen and (max-width: 1200px) {
+          flex-direction: row;
+          gap: 2rem;
+          margin: auto 0;
+        }
+
+        @media screen and (max-width: 600px) {
+          flex-direction: column;
+          gap: 0;
+        }
+      }
     }
     .main {
       background-color: $transparent-bg;

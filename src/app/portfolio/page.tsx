@@ -28,7 +28,7 @@ const page = () => {
             <Badges />
           </div>
 
-          <div className={styles.row}>
+          <div className={`${styles.row} ${styles.buttons}`}>
             <ExButton text="Project Repo" link="#">
               <AiOutlineGithub />
             </ExButton>
