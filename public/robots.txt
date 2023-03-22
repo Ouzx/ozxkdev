@@ -2,6 +2,10 @@
 User-agent: *
 Disallow: /auth
 
+# Block all crawlers for /cms
+User-agent: *
+Disallow: /cms
+
 # Allow all crawlers
 User-agent: *
 Allow: /
