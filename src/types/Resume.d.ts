@@ -53,7 +53,7 @@ export interface Resume {
   }[];
   Languages: {
     title: string;
-    percent: number;
+    level: string;
   }[];
   Certifications: {
     title: string;

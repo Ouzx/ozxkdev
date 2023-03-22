@@ -53,17 +53,27 @@
     "Languages": [
         {
             "title": "English",
-            "percent": 100
+            "level": "Fluent"
         },
         {
             "title": "German",
-            "percent": 50
+            "level": "Beginner"
+        },
+        {
+            "title": "Turkish",
+            "level": "Native"
         }
     ],
     "Certifications": [
         {
+            "title": "Develhope Full Stack Web Development Bootcamp",
+            "date": "June 2023",
+            "description": "Develhope Full Stack Web Development Bootcamp is a 6-month intensive program that provides students with the skills and knowledge to become a full stack web developer.",
+            "company": "Develhope"
+        },
+        {
             "title": "AZ-900: Microsoft Azure Fundamentals",
-            "date": "January 2021",
+            "date": "December 2022",
             "description": "Microsoft Azure Fundamentals certification is an entry-level certification that demonstrates foundational knowledge of cloud concepts, Azure services, security, privacy, compliance, and trust.",
             "company": "Microsoft"
         }
