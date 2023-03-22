@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import PostList from "../Components/Post/PostList/PostList";
 import SearchBar from "../Components/Searchbar/Searchbar";
@@ -24,7 +25,6 @@ const page = async ({
   let _searchTerm = searchTerm ? searchTerm : null;
   let _pageIndex = pageIndex ? pageIndex : 1;
 
-  console.log(_searchTerm, _pageIndex);
   if (!_searchTerm) {
     notFound();
   }
