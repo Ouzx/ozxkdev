@@ -10,7 +10,12 @@ const ExButton = ({
   children: React.ReactNode;
 }) => {
   return (
-    <a className={styles.button} href={link}>
+    <a
+      className={styles.button}
+      rel="noopener noreferrer"
+      href={link}
+      target="_blank"
+    >
       <button>
         <span>{text}</span> {children}
       </button>

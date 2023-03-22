@@ -3,8 +3,6 @@ import React from "react";
 import Image from "next/image";
 import styles from "./page.module.scss";
 
-import { AiOutlineDownload, AiOutlineGithub } from "react-icons/ai";
-
 import { DataProvider } from "./Context/DataContext";
 
 import heroBG from "@/assets/hero-bg.svg";
@@ -14,6 +12,8 @@ import Badges from "./Components/Badges/Badges";
 import ExButton from "./Components/ExButton/ExButton";
 import Hello from "./Components/Hello/Hello";
 import HR from "./Components/HR/HR";
+import ExButtons from "./Components/Fixed/ExButtons";
+import Experience from "./Components/Fixed/Experience";
 
 const page = () => {
   return (
@@ -35,12 +35,7 @@ const page = () => {
             </div>
 
             <div className={`${styles.row} ${styles.buttons}`}>
-              <ExButton text="Project Repo" link="#">
-                <AiOutlineGithub />
-              </ExButton>
-              <ExButton text="Download Resume" link="#">
-                <AiOutlineDownload />
-              </ExButton>
+              <ExButtons />
             </div>
           </div>
 
@@ -50,7 +45,7 @@ const page = () => {
             <HR />
 
             <div className={styles.timeSection}>
-              <h3>Work Experience</h3>
+              <Experience />
             </div>
           </div>
         </div>

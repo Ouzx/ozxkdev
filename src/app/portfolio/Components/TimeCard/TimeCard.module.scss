@@ -4,21 +4,68 @@
   display: grid;
   grid-template-columns: 0.25fr 0.75fr;
   background-color: #fff;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;
   padding: 1rem;
-  margin-top: 1rem;
 
   &__date {
     text-align: center;
     vertical-align: middle;
     margin: auto 0;
 
-    font-size: x-large;
+    font-size: large;
+    font-weight: bold;
   }
 
   &__content {
     padding-left: 1rem;
     border-left: 1px solid $accent;
+
+    h5 {
+      margin: 0.4rem 0;
+      // add indents to the text
+    }
+
+    h5,
+    p {
+      padding-left: 0.5rem;
+    }
   }
+}
+
+.box {
+  width: 100%;
+  padding: 3px;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+
+  --border-size: 2px;
+  --border-angle: 0turn;
+  background-image: conic-gradient(
+      from var(--border-angle),
+      rgb(255, 255, 255),
+      rgb(255, 255, 255)
+    ),
+    conic-gradient(from var(--border-angle), transparent 20%, #21ffbe, #21bee0);
+
+  background-size: calc(100% - (var(--border-size) * 2))
+      calc(100% - (var(--border-size) * 2)),
+    cover;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  animation: bg-spin 3s linear infinite;
+  @keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
+    }
+  }
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
 }

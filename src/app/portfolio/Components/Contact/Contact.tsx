@@ -18,11 +18,11 @@ const Contact = () => {
         <p>Location</p>
         <p>{Contact?.address}</p>
       </div>
-      <a href="mailto:oguzhankandakoglu@gmail.com" className={styles.line}>
+      <a href={`mailto:${Contact?.email}`} className={styles.line}>
         <p>E-mail</p>
         <p>{Contact?.email}</p>
       </a>
-      <a href="tel:+90546488984" className={styles.line}>
+      <a href={`tel:${Contact?.phoneLink}`} className={styles.line}>
         <p>Phone</p>
         <p>{Contact?.phone}</p>
       </a>
