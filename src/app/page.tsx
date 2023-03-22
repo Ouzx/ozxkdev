@@ -33,7 +33,7 @@ export default async function Home({
   if (Array.isArray(_pageIndex)) _pageIndex = _pageIndex[0];
 
   const postList = await getPosts(_category, +_pageIndex);
-  if (!postList) return notFound();
+  if (!postList) notFound();
   return (
     <main className={styles.main}>
       <Hero />

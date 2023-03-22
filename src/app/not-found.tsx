@@ -5,7 +5,6 @@ import errorPic from "@/assets/error.jpg";
 import styles from "./not-found.module.scss";
 
 const NotFound = () => {
-  console.log("not found");
   return (
     <div className={styles.container}>
       <Image className={styles.image} src={errorPic} alt="error" />

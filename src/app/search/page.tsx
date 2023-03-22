@@ -25,7 +25,7 @@ const page = async ({
   let _pageIndex = pageIndex ? pageIndex : 1;
 
   if (!_searchTerm) {
-    return notFound();
+    notFound();
   }
 
   if (Array.isArray(_searchTerm)) _searchTerm = _searchTerm[0];
@@ -34,7 +34,7 @@ const page = async ({
   const postList = await search(_searchTerm!, +_pageIndex);
 
   if (!postList || !postList.posts || postList.posts.length === 0) {
-    return notFound();
+    notFound();
   }
 
   return (

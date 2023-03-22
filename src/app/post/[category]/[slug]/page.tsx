@@ -34,7 +34,7 @@ const page = async ({
   const postData = await getPost(slug, category);
 
   if (!postData || !postData?.post) {
-    return notFound();
+    notFound();
   }
   const meta = JSON.parse(JSON.stringify(NEXT_SEO_DEFAULT));
   meta.title = postData?.post?.title;
