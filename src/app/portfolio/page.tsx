@@ -11,6 +11,7 @@ import Badges from "./Components/Badges/Badges";
 import ExButton from "./Components/ExButton/ExButton";
 import Hello from "./Components/Hello/Hello";
 import HR from "./Components/HR/HR";
+import TimeCard from "./Components/Card/TimeCard";
 
 const page = () => {
   return (
@@ -42,7 +43,13 @@ const page = () => {
 
         <div className={styles.main}>
           <Hello />
+
           <HR />
+
+          <div className={styles.timeSection}>
+            <h3>Work Experience</h3>
+            <TimeCard />
+          </div>
         </div>
       </div>
     </div>
