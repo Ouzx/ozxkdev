@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import PostList from "../Components/Post/PostList/PostList";
 import SearchBar from "../Components/Searchbar/Searchbar";
@@ -25,24 +24,26 @@ const page = async ({
   let _searchTerm = searchTerm ? searchTerm : null;
   let _pageIndex = pageIndex ? pageIndex : 1;
 
-  if (!_searchTerm) {
-    notFound();
-  }
-
   if (Array.isArray(_searchTerm)) _searchTerm = _searchTerm[0];
   if (Array.isArray(_pageIndex)) _pageIndex = _pageIndex[0];
-
-  const postList = await search(_searchTerm!, +_pageIndex);
-
-  if (!postList || !postList.posts || postList.posts.length === 0) {
-    notFound();
-  }
+  let postList: Posts | null = null;
+  if (_searchTerm) postList = await search(_searchTerm!, +_pageIndex);
 
   return (
     <div className={styles.search}>
-      <h1>Search Results for "{_searchTerm}"</h1>
+      <h1>
+        {postList
+          ? postList.totalItems >= 0
+            ? `Search results for "${_searchTerm}"`
+            : `No results found for "${_searchTerm}"`
+          : "Search Something"}
+      </h1>
       <SearchBar />
-      <PostList postList={postList} />
+      <React.Suspense>
+        {postList && postList.totalItems > 0 && (
+          <PostList postList={postList} />
+        )}
+      </React.Suspense>
     </div>
   );
 };

@@ -21,6 +21,7 @@ $color-white: #fff;
   }
 
   .button {
+    cursor: pointer;
     margin: 20px 0;
     background-color: $color-secondary;
     color: $color-white;
