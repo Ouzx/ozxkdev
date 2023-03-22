@@ -1,10 +1,13 @@
 import React from "react";
+import HR from "../HR/HR";
+import Title from "../Title/Title";
 import styles from "./Contact.module.scss";
+
 const Contact = () => {
   return (
     <div className={styles.contact}>
-      <p className={styles.info}>INFO</p>
-      <div className={styles.seperator}></div>
+      <Title title={"INFO"} />
+      <HR />
       <div className={styles.line}>
         <p>Date of Birth</p>
         <p>11 - 24 - 1999</p>

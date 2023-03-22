@@ -125,19 +125,6 @@ $transparent-bg: rgb(255, 255, 255, 0.85);
   }
 }
 
-.seperator {
-  width: 100%;
-  height: 1px;
-  background-color: #e5e7eb;
-  margin: 1rem 0;
-}
-
-.info {
-  color: $main;
-  text-align: center;
-  font-weight: 600;
-}
-
 .tagStyle {
   // "mr-1 mb-1 hover:scale-125 hover:ml-2 hover:mr-3 transform duration-300";
   margin-right: 0.25rem;
