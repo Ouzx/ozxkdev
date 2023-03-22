@@ -1,0 +1,17 @@
+.tagStyle {
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+  &:hover {
+    scale: 105%;
+    transition: all;
+    transition-duration: 0.3s;
+  }
+}
+
+.tags {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
