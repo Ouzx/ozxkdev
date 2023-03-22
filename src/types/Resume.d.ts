@@ -19,6 +19,7 @@ export interface Resume {
   Contact: {
     email: string;
     phone: string;
+    phoneLink: string;
     address: string;
   };
   Skills: {
