@@ -1,3 +1,4 @@
+"use client;";
 import React, { Suspense } from "react";
 import PostList from "../Components/Post/PostList/PostList";
 import SearchBar from "../Components/Searchbar/Searchbar";
@@ -26,16 +27,18 @@ const page = async ({
   let _pageIndex = pageIndex ? pageIndex : 1;
 
   if (!_searchTerm) {
-    return notFound();
+    // return notFound();
+    console.log(_searchTerm, _pageIndex);
   }
 
   if (Array.isArray(_searchTerm)) _searchTerm = _searchTerm[0];
   if (Array.isArray(_pageIndex)) _pageIndex = _pageIndex[0];
 
-  const postList = await search(_searchTerm, +_pageIndex);
+  const postList = await search(_searchTerm!, +_pageIndex);
 
   if (!postList || !postList.posts || postList.posts.length === 0) {
-    return notFound();
+    // return notFound();
+    console.log(postList);
   }
 
   return (
