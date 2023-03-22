@@ -17,7 +17,8 @@ $transparent-bg: rgb(255, 255, 255, 0.85);
   h5,
   h6,
   span,
-  a {
+  a,
+  div {
     line-height: 1.5em;
     letter-spacing: 0.04em;
   }
@@ -91,14 +92,5 @@ $transparent-bg: rgb(255, 255, 255, 0.85);
       padding: 2rem;
       @extend %shadow;
     }
-  }
-}
-
-@keyframes main-name-color-transiton {
-  0% {
-    color: $accent;
-  }
-  100% {
-    color: $black;
   }
 }
