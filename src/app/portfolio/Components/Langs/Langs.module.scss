@@ -5,9 +5,13 @@
   .wrapper {
     text-align: start;
     margin-top: 0.5rem;
-    h4,
+
     p {
       display: inline-block;
+
+      &:first-child {
+        font-weight: 600;
+      }
     }
   }
 }

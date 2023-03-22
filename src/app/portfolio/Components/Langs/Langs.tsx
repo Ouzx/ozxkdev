@@ -11,7 +11,7 @@ const Langs = () => {
       <HR />
       {Languages?.map((lang, i) => (
         <div className={styles.wrapper} key={i}>
-          <h4>{lang.title}: </h4> <p>{lang.level}</p>
+          <p>{lang.title}: </p> <p>{lang.level}</p>
         </div>
       ))}
     </div>
