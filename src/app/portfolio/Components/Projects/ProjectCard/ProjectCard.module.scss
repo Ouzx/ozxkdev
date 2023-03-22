@@ -29,6 +29,22 @@
       padding-left: 0.5rem;
     }
   }
+
+  @media screen and (max-width: 720px) {
+    grid-template-columns: 1fr;
+
+    &__image {
+      border-bottom: 1px solid $accent;
+      padding-bottom: 0.5rem;
+      margin: 0 auto;
+    }
+
+    &__content {
+      padding-left: 0;
+      border-left: none;
+      padding-top: 0.5rem;
+    }
+  }
 }
 
 .box {
