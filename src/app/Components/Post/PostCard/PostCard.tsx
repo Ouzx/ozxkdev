@@ -6,8 +6,6 @@ import { iPost } from "@/types/Post";
 
 import styles from "./PostCard.module.scss";
 
-// import postImage from "@/assets/post-template.jpg";
-
 const PostCard = ({ postData }: { postData: iPost }) => {
   let tags = postData.tags.map((tag) => {
     const key = Math.random().toString(36).substring(7) + tag;

@@ -34,7 +34,6 @@ const page = async ({
   const postData = await getPost(slug, category);
 
   if (!postData || !postData?.post) {
-    console.log("not found");
     return notFound();
   }
   const meta = JSON.parse(JSON.stringify(NEXT_SEO_DEFAULT));
@@ -50,7 +49,6 @@ const page = async ({
       <NextSeo {...updateMeta} useAppDir={true} />
       <div className={styles.post}>
         <h1>{postData?.post?.title}</h1>
-        {/* TODO: Change this` */}
         <ArticleJsonLd
           useAppDir={true}
           type="BlogPosting"

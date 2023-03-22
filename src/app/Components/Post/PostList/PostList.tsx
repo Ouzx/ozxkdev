@@ -7,7 +7,7 @@ import { Posts } from "@/types/Post";
 const PostList = ({ postList }: { postList: Posts }) => {
   let postCards = postList?.posts.map((post, i) => {
     post.createdAt = new Date(post.createdAt).toDateString();
-    return <PostCard postData={post} key={post._id} />;
+    return <PostCard postData={post} key={post.title + i} />;
   });
 
   return (
