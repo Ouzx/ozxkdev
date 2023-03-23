@@ -38,3 +38,27 @@
     }
   }
 }
+
+.error {
+  // add padding, baground  color red-ish, color: dark red, border, etc
+  padding: 0.5rem;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.success {
+  // add padding, baground  color green-ish, color: dark green, border, etc
+  padding: 0.5rem;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.loader {
+  margin: 2rem auto;
+}
