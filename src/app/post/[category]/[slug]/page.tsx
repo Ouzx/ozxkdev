@@ -16,6 +16,7 @@ import Content from "./Components/Content/Content";
 import { PostMain } from "@/types/Post";
 import { notFound } from "next/navigation";
 import LoadIndicator from "@/app/Components/LoadIndicator/LoadIndicator";
+import ScrollTop from "@/Components/ScrollTop";
 
 const getPost = async (slug: string, category: string): Promise<PostMain> => {
   return await fetch(process.env.API + `/post/${category}/${slug}`)
@@ -42,15 +43,11 @@ const page = async ({
   meta.titleTemplate = `%s | ${postData?.post?.category} | ozxk dev blog`;
   const updateMeta: NextSeoProps = meta;
 
-  // move page to top
-  if (typeof window !== "undefined") {
-    window.scrollTo(0, 0);
-  }
-
   // get url
   const url = `${process.env.NEXT_PUBLIC_URL}/${category}/${slug}`;
   return (
     <Suspense fallback={<LoadIndicator />}>
+      <ScrollTop />
       <NextSeo {...updateMeta} useAppDir={true} />
       <div className={styles.post}>
         <h1>{postData?.post?.title}</h1>

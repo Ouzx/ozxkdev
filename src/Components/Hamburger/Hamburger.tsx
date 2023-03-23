@@ -9,7 +9,6 @@ const Hamburger = () => {
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (window === undefined) return;
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setIsOpen(false);
@@ -19,11 +18,9 @@ const Hamburger = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [menuRef, window]);
+  }, [menuRef]);
 
-  // If user clicks on a link, close the menu
   useEffect(() => {
-    if (window === undefined) return;
     const links = document.querySelectorAll("a");
     links.forEach((link) => {
       link.addEventListener("click", () => {
@@ -38,7 +35,7 @@ const Hamburger = () => {
         });
       });
     };
-  }, [window]);
+  }, []);
 
   useEffect(() => {
     setIsOpen(false);
