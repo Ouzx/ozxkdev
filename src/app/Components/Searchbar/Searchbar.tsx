@@ -23,6 +23,7 @@ const SearchBar = () => {
           name="search"
           id="search"
           placeholder="Search ..."
+          autoComplete="off"
           minLength={2}
           maxLength={32}
           value={search}
