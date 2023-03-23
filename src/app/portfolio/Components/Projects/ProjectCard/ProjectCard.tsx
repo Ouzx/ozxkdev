@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import styles from "./ProjectCard.module.scss";
 import ProjectButton from "../ProjectButton/ProjectButton";
@@ -15,10 +16,26 @@ const ProjectCard = ({
   link?: string;
   linkType?: string;
 }) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const handleWindowResize = () => {
+    if (ref.current && window.innerWidth > 720) {
+      ref.current.style.height = ref.current.offsetWidth + "px";
+    }
+  };
+
+  useEffect(() => {
+    handleWindowResize();
+    window.addEventListener("resize", handleWindowResize);
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
   return (
     <div className={styles.box}>
       <div className={styles.projectElement}>
-        <div className={styles.projectElement__image}>
+        <div className={styles.projectElement__image} ref={ref}>
           <Image
             className={styles.img}
             src={image}

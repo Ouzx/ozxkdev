@@ -8,11 +8,13 @@
 
   &__image {
     padding-right: 1rem;
+    margin: auto 0;
     .img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: 0.4rem;
+      margin: auto;
     }
   }
 
@@ -33,6 +35,7 @@
     &__image {
       border-bottom: 1px solid $accent;
       padding-bottom: 0.5rem;
+      padding-right: 0;
       margin: 0 auto;
     }
 
