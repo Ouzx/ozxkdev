@@ -6,7 +6,9 @@ const Nav = () => {
       <li>
         <Link href={"/"}>Home</Link>
       </li>
-      <li>Projects</li>
+      <li>
+        <Link href={"/projects"}>Projects</Link>
+      </li>
       <li>
         <Link href={"/contact"}>Contact</Link>
       </li>
