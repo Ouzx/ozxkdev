@@ -42,6 +42,11 @@ const page = async ({
   meta.titleTemplate = `%s | ${postData?.post?.category} | ozxk dev blog`;
   const updateMeta: NextSeoProps = meta;
 
+  // move page to top
+  if (typeof window !== "undefined") {
+    window.scrollTo(0, 0);
+  }
+
   // get url
   const url = `${process.env.NEXT_PUBLIC_URL}/${category}/${slug}`;
   return (
