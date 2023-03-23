@@ -35,6 +35,12 @@
     ],
     "Experience": [
         {
+            "title": "Game Developer & Co-Founder",
+            "company": "Axolot Games",
+            "date": "March 2022 - October 2022",
+            "description": "As a Game Developer developed many hyper-casual games using Unity and C# for Android and iOS platforms. As a Co-Founder, I was responsible for the apps KPI and the team management."
+        },
+        {
             "title": "Web Developer Intern",
             "company": "VHS Elektronik",
             "date": "June 2021 - September 2021",
