@@ -21,4 +21,8 @@
     border: 1px solid #f5f5f5;
     color: #000;
   }
+
+  @media print {
+    display: none;
+  }
 }

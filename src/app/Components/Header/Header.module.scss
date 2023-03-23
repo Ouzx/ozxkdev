@@ -25,4 +25,8 @@
 
     @include width-maker(1200px);
   }
+
+  @media print {
+    display: none;
+  }
 }

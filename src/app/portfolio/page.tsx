@@ -53,10 +53,15 @@ const page = () => {
             <HR />
             <Experience />
             <HR />
+            <div className={styles.printSpacer}></div>
             <Education />
             <HR />
+            <div className={styles.printSpacer}></div>
             <Certifications />
             <HR />
+            <div className={styles.printSpacer10}></div>
+            <div className={styles.printSpacer10}></div>
+            <div className={styles.printSpacer10}></div>
             <Projects />
           </div>
         </div>

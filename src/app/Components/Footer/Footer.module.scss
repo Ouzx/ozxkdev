@@ -26,4 +26,8 @@
     padding-bottom: 2rem;
     transition: 0.3s;
   }
+
+  @media print {
+    display: none;
+  }
 }

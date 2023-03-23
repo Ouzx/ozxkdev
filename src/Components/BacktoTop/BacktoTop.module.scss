@@ -20,4 +20,7 @@
     background: $accent;
     color: #fff;
   }
+  @media print {
+    display: none;
+  }
 }
