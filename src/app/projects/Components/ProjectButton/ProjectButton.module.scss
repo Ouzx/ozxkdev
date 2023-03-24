@@ -1,0 +1,30 @@
+.projectButton {
+  border-radius: 5px;
+
+  background-color: #f5f5f5;
+  border: 1px solid #f5f5f5;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.75rem 0;
+  margin-left: auto;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #e5e5e5;
+    border: 1px solid #e5e5e5;
+    color: #000;
+    transition: all 0.2s ease-in-out;
+  }
+
+  @media print {
+    display: none;
+  }
+}
