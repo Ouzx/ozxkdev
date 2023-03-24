@@ -5,8 +5,8 @@ export interface Posts {
 export interface PostMain {
   post: iPost;
   relatedPosts: iPost[];
-  prevPost: string;
-  nexPost: string;
+  previousPost: MicroPost;
+  nextPost: MicroPost;
 }
 export interface iPost {
   _id: string;
@@ -21,4 +21,10 @@ export interface iPost {
   keyword: string;
   shortContent: string;
   createdAt: string;
+}
+
+export interface MicroPost {
+  _id: string;
+  category: string;
+  slug: string;
 }

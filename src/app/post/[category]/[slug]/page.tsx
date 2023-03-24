@@ -94,8 +94,8 @@ const page = async ({
         </div>
         <div className={styles.seperator} />
         <NextPrev
-          nextSlug={postData?.nexPost}
-          prevSlug={postData?.prevPost}
+          nextSlug={postData?.nextPost?.slug}
+          prevSlug={postData?.previousPost?.slug}
           category={postData?.post?.category}
         />
         <div className={styles.seperator} />

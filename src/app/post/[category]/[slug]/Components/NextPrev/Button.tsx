@@ -18,7 +18,7 @@ const Button = ({
     <>
       {slug ? (
         <Link
-          href={`/post/${slug}`}
+          href={`/post/${category}/${slug}`}
           className={`${styles.container} ${reverse && styles.reverse}`}
         >
           <div className={styles.wrapper}>{children}</div>
