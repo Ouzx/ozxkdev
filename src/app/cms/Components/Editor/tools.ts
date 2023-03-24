@@ -27,7 +27,12 @@ import { getSession } from "next-auth/react";
 export default {
   header: Header,
   list: List,
-  asd: CodeBox,
+  asd: {
+    class: CodeBox,
+    config: {
+      useDefaultTheme: "dark", // Optional. This also determines the background color of the language select drop-down
+    },
+  },
   image: {
     class: Image,
     config: {
