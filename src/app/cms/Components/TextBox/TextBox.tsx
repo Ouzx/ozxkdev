@@ -8,12 +8,14 @@ const TextBox = ({
   required,
   tabIndex,
   autoFocus,
+  autoComplete,
 }: {
   title: string;
   data?: string;
   required?: boolean;
   tabIndex?: number;
   autoFocus?: boolean;
+  autoComplete?: boolean;
   onChange(val: string): void;
 }) => {
   return (
@@ -28,6 +30,7 @@ const TextBox = ({
         required={required}
         tabIndex={tabIndex}
         autoFocus={autoFocus}
+        autoComplete={autoComplete ? "on" : "off"}
         // className={required ? styles.required : ""}
       />
     </div>
