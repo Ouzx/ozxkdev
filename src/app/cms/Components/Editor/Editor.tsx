@@ -24,7 +24,10 @@ export const getContent = (editorData: OutputData) => {
 export const getShortContent = (content: OutputData) => {
   for (let i = 0; i < content?.blocks?.length; i++)
     if (content.blocks[i].type == "paragraph" && content.blocks[i].data.text)
-      return content.blocks[i].data.text.substring(0, 100);
+      // replace all html tags
+      return content.blocks[i].data.text
+        .replace(/(<([^>]+)>)/gi, "")
+        .substring(0, 100);
   return "";
 };
 
