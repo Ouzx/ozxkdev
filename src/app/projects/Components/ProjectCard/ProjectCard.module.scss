@@ -5,7 +5,7 @@
   grid-template-columns: 0.25fr 0.75fr;
   background-color: rgba($color: #fff, $alpha: 0.8);
   padding: 1rem;
-  min-width: min-content;
+  min-width: fit-content;
   &__image {
     padding-right: 1rem;
     margin: auto 0;

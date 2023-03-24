@@ -2,19 +2,14 @@ import React from "react";
 import Image from "next/image";
 import styles from "./ProjectCard.module.scss";
 import ProjectButton from "../ProjectButton/ProjectButton";
+import { iProject } from "@/types/Projects";
 const ProjectCard = ({
   title,
   description,
   image,
   link,
   linkType,
-}: {
-  title: string;
-  description: string;
-  image: string;
-  link?: string;
-  linkType?: string;
-}) => {
+}: iProject) => {
   return (
     <div className={styles.box}>
       <div className={styles.projectElement}>
