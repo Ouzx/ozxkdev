@@ -2,11 +2,12 @@ import React from "react";
 
 const Revalidator = () => {
   const revalidate = () => {
-    fetch(`/api/revalidate?secret=${process.env.REVALIDATE_TOKEN}`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
+    if (!process.env.REVALIDATE_TOKEN) return;
+    const link = `${process.env.NEXT_PUBLIC_URL}/api/revalidate?secret=${process.env.REVALIDATE_TOKEN}`;
+
+    fetch(link).catch((err) => {
+      console.log(err);
+    });
   };
   revalidate();
   return null;
