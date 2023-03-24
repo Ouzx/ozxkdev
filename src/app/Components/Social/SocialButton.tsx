@@ -1,17 +1,16 @@
 import React from "react";
-import { IconType } from "react-icons";
 import styles from "./SocialButton.module.scss";
 
 const SocialButton = ({
-  Icon,
   link,
   userName,
   name,
+  children,
 }: {
-  Icon: IconType;
   link: string;
   userName: string;
   name: string;
+  children: React.ReactNode;
 }) => {
   return (
     <a
@@ -22,7 +21,7 @@ const SocialButton = ({
       href={link}
     >
       <button className={styles.button} aria-label={name} name={userName}>
-        <Icon size={28} />
+        {children}
       </button>
     </a>
   );

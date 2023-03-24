@@ -9,17 +9,19 @@ const Social = ({ className }: { className?: string }) => {
   return (
     <div className={`${styles.social} ${className}`}>
       <SocialButton
-        Icon={AiFillLinkedin}
         link="https://www.linkedin.com/in/ozxk/"
         userName="ozxk"
         name="Linkedin"
-      />
+      >
+        <AiFillLinkedin size={28} />
+      </SocialButton>
       <SocialButton
-        Icon={AiFillGithub}
         link="https://github.com/Ouzx"
         userName="Ouzx"
         name="Github"
-      />
+      >
+        <AiFillGithub size={28} />
+      </SocialButton>
     </div>
   );
 };

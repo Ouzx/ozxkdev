@@ -1,19 +1,18 @@
 import React from "react";
-import { IconType } from "react-icons";
 import Link from "next/link";
 import styles from "./Button.module.scss";
 const Button = ({
-  Icon,
   text,
   slug,
   reverse = false,
   category,
+  children,
 }: {
-  Icon: IconType;
   text: string;
   slug: string;
   reverse?: boolean;
   category: string;
+  children: React.ReactNode;
 }) => {
   return (
     <>
@@ -22,9 +21,7 @@ const Button = ({
           href={`/post/${slug}`}
           className={`${styles.container} ${reverse && styles.reverse}`}
         >
-          <div className={styles.wrapper}>
-            <Icon className={styles.icon} />
-          </div>
+          <div className={styles.wrapper}>{children}</div>
           <span>{text}</span>
         </Link>
       ) : (

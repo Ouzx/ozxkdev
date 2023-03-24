@@ -13,19 +13,12 @@ const NextPrev = ({
 }) => {
   return (
     <div className={styles.container}>
-      <Button
-        Icon={AiFillCaretLeft}
-        text="Previous Post"
-        slug={prevSlug}
-        category={category}
-      />
-      <Button
-        Icon={AiFillCaretRight}
-        text="Next Post"
-        slug={nextSlug}
-        category={category}
-        reverse
-      />
+      <Button text="Previous Post" slug={prevSlug} category={category}>
+        <AiFillCaretLeft />
+      </Button>
+      <Button text="Next Post" slug={nextSlug} category={category} reverse>
+        <AiFillCaretRight />
+      </Button>
     </div>
   );
 };
