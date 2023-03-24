@@ -11,7 +11,9 @@ const getPosts = async (
   category: string,
   pageIndex: number
 ): Promise<Posts> => {
-  return await fetch(process.env.API + `/page/${category}/${pageIndex}`)
+  return await fetch(process.env.API + `/page/${category}/${pageIndex}`, {
+    next: { revalidate: 60 },
+  })
     .then((res) => res.json())
     .catch((err) => {
       console.log(err);

@@ -19,7 +19,9 @@ import LoadIndicator from "@/app/Components/LoadIndicator/LoadIndicator";
 import ScrollTop from "@/Components/ScrollTop";
 
 const getPost = async (slug: string, category: string): Promise<PostMain> => {
-  return await fetch(process.env.API + `/post/${category}/${slug}`)
+  return await fetch(process.env.API + `/post/${category}/${slug}`, {
+    next: { revalidate: 60 },
+  })
     .then((res) => res.json())
     .catch((err) => {
       console.log(err);

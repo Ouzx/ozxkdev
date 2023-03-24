@@ -8,7 +8,6 @@ import usePosts from "@/hooks/usePosts";
 import styles from "./page.module.scss";
 import DeleteButton from "./Components/DeleteButton/DeleteButton";
 import Paginator from "@/Components/Paginator/Paginator";
-import Revalidator from "./Components/Revalidator";
 
 const page = ({
   searchParams,
@@ -21,7 +20,6 @@ const page = ({
   // table list of posts
   return (
     <div className={styles.container}>
-      <Revalidator />
       <h1>Posts</h1>
       {posts?.posts?.length === 0 ? (
         <p>No posts found</p>

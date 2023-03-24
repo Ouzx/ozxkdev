@@ -43,14 +43,12 @@ To run this front-end locally, you will need to have Node.js installed on your m
 `NEXT_PUBLIC_CMS_API` - The URL of the back-end API + /general route for public.
 `NEXT_PUBLIC_URL` - The URL of the front-end.
 `NEXTAUTH_SECRET` - The secret for NextAuth.
-`REVALIDATE_TOKEN` - For revalidating post list.
 
 ```
 API=BACKEND_URL/general
 NEXT_PUBLIC_CMS_API=BACKEND_URL
 NEXT_PUBLIC_URL=YOUR_FRONTEND_URL
 NEXTAUTH_SECRET=YOUR_SECRET
-REVALIDATE_TOKEN=YOUR_SECRET
 ```
 
 #### Development 💻
