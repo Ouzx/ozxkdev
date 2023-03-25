@@ -21,6 +21,8 @@ import Delimiter from "@editorjs/delimiter";
 import LinkTool from "@editorjs/link";
 // @ts-ignore
 import CodeTool from "@editorjs/code";
+// @ts-ignore
+import InlineCode from "@editorjs/inline-code";
 
 import { getSession } from "next-auth/react";
 
@@ -28,7 +30,10 @@ export default {
   header: Header,
   list: List,
   asd: CodeTool,
-  OzCodeBlock: CodeTool,
+  inlineCode: {
+    class: InlineCode,
+    shortcut: "CMD+SHIFT+M",
+  },
   image: {
     class: Image,
     config: {
@@ -73,10 +78,10 @@ export default {
     },
   },
   quote: Quote,
-  linkTool: LinkTool,
   delimiter: Delimiter,
   checklist: CheckList,
   embed: Embed,
   table: Table,
   warning: Warning,
+  linkTool: LinkTool,
 };
