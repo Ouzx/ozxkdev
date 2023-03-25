@@ -3,8 +3,8 @@ import React from "react";
 import Card from "./Card/Card";
 import styles from "./Related.module.scss";
 const Related = ({ posts }: { posts: iPost[] }) => {
-  let relatedPosts = posts.map((post) => {
-    return <Card post={post} key={post._id} />;
+  let relatedPosts = posts.map((post, i) => {
+    return <Card post={post} key={post.slug + i + "related"} />;
   });
   return (
     <div>
