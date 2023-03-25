@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
 import dynamic from "next/dynamic";
-import styles from "./Content.module.scss";
-import OzCodeBox from "./Components/Renderers/Code/Code";
+import OzCodeBlock from "./Components/Renderers/Code/OzCodeBlock";
 const Output = dynamic(
   async () => (await import("editorjs-react-renderer")).default,
   { ssr: false }
@@ -15,14 +14,6 @@ const style = {
     letterSpacing: "0.04em",
     marginBottom: "1rem",
   },
-  // header: {
-  //   h1: {...},
-  //   h2: {...},
-  //   h3: {...},
-  //   h4: {...},
-  //   h5: {...},
-  //   h6: {...},
-  // },
   image: {
     img: {
       gridArea: "stack",
@@ -35,32 +26,38 @@ const style = {
       gridArea: "stack",
     },
   },
-  // video: {
-  //   video: {...},
-  //   figure: {...},
-  //   figcaption: {...}
-  // },
-  // embed: {
-  //   video: {...},
-  //   figure: {...},
-  //   figcaption: {...}
-  // },
-  // list: {
-  //   container: {...},
-  //   listItem: {...},
-  // },
-  // checklist: {
-  //   container: {...},
-  //   item: {...},
-  //   checkbox: {...},
-  //   label: {...},
-  // },
-  // table: {
-  //   table: {...},
-  //   tr: {...},
-  //   th: {...},
-  //   td: {...},
-  // },
+  list: {
+    //   container: {...},
+    listItem: {
+      lineHeight: "1.6em",
+      letterSpacing: "0.04em",
+      marginBottom: "1rem",
+    },
+  },
+  checklist: {
+    //   container: {...},
+    item: {
+      lineHeight: "1.6em",
+      letterSpacing: "0.04em",
+      marginBottom: "1rem",
+    },
+    //   checkbox: {...},
+    label: {
+      lineHeight: "1.6em",
+      letterSpacing: "0.04em",
+      marginBottom: "1rem",
+    },
+  },
+  table: {
+    table: {
+      lineHeight: "1.6em",
+      letterSpacing: "0.04em",
+      marginBottom: "1rem",
+    },
+    //   tr: {...},
+    //   th: {...},
+    //   td: {...},
+  },
   quote: {
     container: {
       justifyContent: "flex-start",
@@ -75,18 +72,7 @@ const style = {
     author: {},
     // message: {...}
   },
-  codeBox: {
-    container: {
-      margin: "10rem 10rem",
-    },
-    // code: {...},
-  },
-  // warning: {
-  //   container: {...},
-  //   icon: {...},
-  //   title: {...},
-  //   message: {...},
-  // },
+
   delimiter: {
     container: {
       width: "80%",
@@ -102,28 +88,15 @@ const style = {
       display: "none",
     },
   },
-  asd: {
-    code: {
-      // backgroundColor: "#F2F2F2",
-    },
-  },
-
-  // linkTool: {
-  //   container: {...},
-  //   textHolder: {...},
-  //   title: {...},
-  //   description: {...},
-  //   image: {...},
-  //   siteName: {...}
-  // },
 };
 
 const renderers = {
-  asd: OzCodeBox,
+  OzCodeBlock,
 };
 
 const Content = ({ content }: { content: string }) => {
   const data = JSON.parse(content);
+
   return <Output renderers={renderers} data={data} style={style} />;
 };
 

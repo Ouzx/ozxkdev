@@ -1,7 +1,5 @@
 "use client";
 // @ts-ignore
-import CodeBox from "@bomdi/codebox";
-// @ts-ignore
 import Header from "@editorjs/header";
 // @ts-ignore
 import Image from "@editorjs/image";
@@ -21,18 +19,15 @@ import Warning from "@editorjs/warning";
 import Delimiter from "@editorjs/delimiter";
 // @ts-ignore
 import LinkTool from "@editorjs/link";
+// @ts-ignore
+import CodeTool from "@editorjs/code";
 
 import { getSession } from "next-auth/react";
 
 export default {
   header: Header,
   list: List,
-  asd: {
-    class: CodeBox,
-    config: {
-      useDefaultTheme: "dark", // Optional. This also determines the background color of the language select drop-down
-    },
-  },
+  OzCodeBlock: CodeTool,
   image: {
     class: Image,
     config: {
