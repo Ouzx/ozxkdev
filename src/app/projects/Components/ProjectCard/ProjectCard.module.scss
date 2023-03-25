@@ -27,6 +27,9 @@
     }
 
     padding-left: 0.5rem;
+
+    line-height: 1.4em;
+    letter-spacing: 0.02em;
   }
 
   @media screen and (max-width: 720px) {
@@ -42,7 +45,6 @@
     &__content {
       padding-left: 0;
       border-left: none;
-      padding-top: 0.5rem;
     }
   }
 }
