@@ -27,6 +27,7 @@ import { getSession } from "next-auth/react";
 export default {
   header: Header,
   list: List,
+  asd: CodeTool,
   OzCodeBlock: CodeTool,
   image: {
     class: Image,

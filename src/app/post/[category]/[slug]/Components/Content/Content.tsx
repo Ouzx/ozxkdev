@@ -31,7 +31,6 @@ const style = {
     listItem: {
       lineHeight: "1.6em",
       letterSpacing: "0.04em",
-      marginBottom: "1rem",
     },
   },
   checklist: {
@@ -39,20 +38,17 @@ const style = {
     item: {
       lineHeight: "1.6em",
       letterSpacing: "0.04em",
-      marginBottom: "1rem",
     },
     //   checkbox: {...},
     label: {
       lineHeight: "1.6em",
       letterSpacing: "0.04em",
-      marginBottom: "1rem",
     },
   },
   table: {
     table: {
       lineHeight: "1.6em",
       letterSpacing: "0.04em",
-      marginBottom: "1rem",
     },
     //   tr: {...},
     //   th: {...},
@@ -91,7 +87,7 @@ const style = {
 };
 
 const renderers = {
-  OzCodeBlock,
+  asd: OzCodeBlock,
 };
 
 const Content = ({ content }: { content: string }) => {

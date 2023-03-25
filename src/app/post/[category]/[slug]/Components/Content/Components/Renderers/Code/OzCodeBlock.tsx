@@ -1,12 +1,15 @@
 import React from "react";
 import type { CSSProperties } from "react";
 
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { github } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { PrismAsync as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const defaultStyle: { [key: string]: CSSProperties } = {
   container: {
-    width: "100%",
+    // dropShadow
+    boxShadow: "0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1)",
+    borderRadius: "1rem",
+    margin: "2rem 0",
   },
   code: {
     borderRadius: "1rem",
@@ -65,11 +68,6 @@ const OzCodeBlock = ({
     ? style.code
     : { ...defaultStyle.code, ...style.code };
 
-  const [lang, ...code] = data.code.split("\n")[0].split(" ");
-  // if language is starts with #, then use its value as language
-  let language = "javascript";
-  if (language.startsWith("#")) language = language.replace("#", "");
-
   let content = null;
 
   if (typeof data === "string") content = data;
@@ -80,12 +78,18 @@ const OzCodeBlock = ({
   )
     content = data.code;
 
+  const [lang, ...code] = data.code.split("\n");
+  let language = "javascript";
+  if (lang.startsWith("#")) {
+    language = lang.replace("#", "");
+    content = code.join("\n");
+  }
   return content ? (
     <div style={containerStyle}>
       <SyntaxHighlighter
         showLineNumbers
         language={language || "javascript"}
-        style={github}
+        style={atomDark}
         customStyle={codeStyle}
       >
         {content}
