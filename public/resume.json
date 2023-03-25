@@ -12,7 +12,7 @@
         "email": "mailto:oguzhankandakoglu@gmail.com"
     },
     "HI": "Oğuz",
-    "Description": "I am a recent graduate with a strong background in full stack web development. Proficient in a variety of technologies including JavaScript, React, Node.js and experienced in developing web applications with a focus on user experience. Strong problem-solving skills and ability to work in a team environment.",
+    "Description": "I am a full stack web developer with a passion for creating web applications using technologies such as JavaScript, React, and Node.js. I have gained a lot of experience and knowledge in various web development domains throughout my career. I always aim to provide an outstanding user experience with my web applications, and I have excellent problem-solving skills and teamwork abilities. I keep myself updated with the latest trends and innovations in technology, and I constantly look for ways to enhance the quality and performance of my work.",
     "Contact": {
         "email": "oguzhankandakoglu@gmail.com",
         "phone": "(+90)-546-488-9884",
@@ -38,13 +38,13 @@
             "title": "Game Developer & Co-Founder",
             "company": "Axolot Games",
             "date": "March 2022 - October 2022",
-            "description": "As a Game Developer developed many hyper-casual games using Unity and C# for Android and iOS platforms. As a Co-Founder, I was responsible for the apps KPI and the team management."
+            "description": "I developed several hyper-casual games for Android and iOS platforms using Unity and C# as a Game Developer. I also co-founded the company and took charge of the apps' KPI and the team management."
         },
         {
             "title": "Web Developer Intern",
             "company": "VHS Elektronik",
             "date": "June 2021 - September 2021",
-            "description": "Assisted in the development and maintenance of web applications using JavaScript and React, as well as database management using T-SQL and PL-SQL. Worked with a team to create a web application for one of Turkey's largest critical infrastructures."
+            "description": "I contributed to the development and maintenance of web applications using JavaScript and React, as well as database management using T-SQL and PL-SQL. I worked with a team to build a web application for one of Turkey's largest critical infrastructures."
         }
     ],
     "Education": [
@@ -87,14 +87,14 @@
     "ProjectList": [
         {
             "title": "OZXK Blog | Full Stack React Project",
-            "description": "This is my blog site with a content management system that allows me to create/edit my posts and manage my website easily. It is built with React, Next.js and SASS. It also has strong backend support with Node.js and MongoDB. I have also developed a custom CMS for this project.",
+            "description": "This project is a personal blog site that I built with React, Next.js and SASS. It features a content management system that I designed and implemented with Node.js and MongoDB. The CMS allows me to create and edit my blog posts and manage my website settings with ease. You can find the source code of this project on Github.",
             "link": "https://github.com/Ouzx/ozxkdev",
             "linkType": "Github",
             "img": "/og-image.png"
         },
         {
             "title": "Freelance Wordpress Projects",
-            "description": "In the last 4 years, I have developed 6-Live Wordpress websites for clients from several industries. I have developed websites for local businesses, e-commerce websites, and learning management systems. With these I have gained experience in SEO, caching policies, minifying and lazy but most important UI/UX.",
+            "description": "I have been working as a freelance Wordpress developer for the past 4 years. I have created 6 live Wordpress websites for various clients in different industries. Some of the websites I have developed include local businesses, e-commerce platforms, and learning management systems. Through these projects, I have acquired skills in SEO, caching strategies, minification and lazy loading, and UI/UX design.",
             "link": "",
             "img": "/wordpress.jpg"
         }
