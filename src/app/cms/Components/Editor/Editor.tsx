@@ -23,15 +23,16 @@ export const getContent = (editorData: OutputData) => {
 
 export const getShortContent = (content: OutputData) => {
   for (let i = 0; i < content?.blocks?.length; i++)
-    if (content.blocks[i].type == "paragraph" && content.blocks[i].data.text)
+    if (content.blocks[i].type == "paragraph" && content.blocks[i].data.text) {
       // replace all html tags
       // dont break words
       // add Read more... if text is longer than 100 characters
-      return content.blocks[i].data.text
+      const text = content.blocks[i].data.text
         .replace(/(<([^>]+)>)/gi, "")
-        .replace(/(.{100})..+/, "$1...")
+        .replace(/(.{95})..+/, "$1...")
         .trim();
-
+      return text;
+    }
   return "";
 };
 

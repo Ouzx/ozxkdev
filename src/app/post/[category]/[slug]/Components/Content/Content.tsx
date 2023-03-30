@@ -34,10 +34,14 @@ const style = {
     },
   },
   checklist: {
-    //   container: {...},
+    container: {
+      marginBottom: "2rem",
+    },
     item: {
       lineHeight: "1.6em",
       letterSpacing: "0.04em",
+      alignItems: "flex-start",
+      marginBottom: "1rem",
     },
     //   checkbox: {...},
     label: {

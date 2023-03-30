@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import Link from "next/link";
 import styles from "./page.module.scss";
+import "./inlineCode.scss";
 
 import Tags from "./Components/Tags/Tags";
 
