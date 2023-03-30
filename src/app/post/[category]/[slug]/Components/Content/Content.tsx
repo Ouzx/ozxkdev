@@ -14,6 +14,28 @@ const style = {
     letterSpacing: "0.04em",
     marginBottom: "1rem",
   },
+  warning: {
+    container: {
+      backgroundColor: "#fff3cd",
+      border: "1px solid #ffeeba",
+      borderRadius: "0.5rem",
+      padding: "1rem",
+      boxShadow: "0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.2)",
+      alignItems: "center",
+    },
+    icon: {
+      marginRight: "0.5rem",
+    },
+    title: {
+      fontSize: "1.2rem",
+      fontWeight: "bold",
+    },
+    message: {
+      lineHeight: "1.6em",
+      letterSpacing: "0.04em",
+      fontWeight: "500",
+    },
+  },
   image: {
     img: {
       gridArea: "stack",
@@ -43,7 +65,11 @@ const style = {
       alignItems: "flex-start",
       marginBottom: "1rem",
     },
-    //   checkbox: {...},
+    checkbox: {
+      width: "1.2rem",
+      height: "1.2rem",
+      flexShrink: 0,
+    },
     label: {
       lineHeight: "1.6em",
       letterSpacing: "0.04em",
