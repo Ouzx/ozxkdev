@@ -47,7 +47,7 @@ const page = async ({
   const updateMeta: NextSeoProps = meta;
 
   // get url
-  const url = `${process.env.NEXT_PUBLIC_URL}/${category}/${slug}`;
+  const url = `${process.env.NEXT_PUBLIC_URL}/post/${category}/${slug}`;
   return (
     <Suspense fallback={<LoadIndicator />}>
       <ScrollTop />
