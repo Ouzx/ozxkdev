@@ -5,7 +5,7 @@
             "description": "This project is a personal blog site that I built with React, Next.js and SASS. It features a content management system that I designed and implemented with Node.js and MongoDB. The CMS allows me to create and edit my blog posts and manage my website settings with ease. You can find the source code of this project on Github.",
             "link": "https://github.com/Ouzx/ozxkdev",
             "linkType": "Github",
-            "image": "/og-image.png"
+            "image": "/favicon.png"
         },
         {
             "title": "Freelance Wordpress Projects",
