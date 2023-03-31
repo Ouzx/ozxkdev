@@ -5,6 +5,7 @@ import styles from "./DeleteButton.module.scss";
 import useAccessToken from "@/hooks/useAccessToken";
 import Modal from "../Modal/Modal";
 import usePost, { DELETE_POST } from "@/hooks/usePost";
+import { useRouter } from "next/navigation";
 
 interface Props {
   postId: string;
@@ -12,15 +13,29 @@ interface Props {
 }
 
 const DeleteButton = ({ postId, postTitle }: Props) => {
+  const router = useRouter();
+
   const [token] = useAccessToken();
   const [showModal, setShowModal] = useState(false);
-  const { success, loading, error, fetchPost } = usePost(DELETE_POST, postId);
+  const { success, loading, error, postData, fetchPost } = usePost(
+    DELETE_POST,
+    postId
+  );
 
   useEffect(() => {
     if (error) {
       alert("There was an error deleting the post. Please try again later.");
     }
   }, [error]);
+
+  useEffect(() => {
+    if (success) {
+      alert("Post deleted successfully.");
+      router.push(
+        `/api/revalidate?secret=${process.env.NEXT_PUBLIC_REVALIDATE_SECRET}&category=${postData?.category}&slug=${postData?.slug}`
+      );
+    }
+  }, [success]);
 
   const onClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.stopPropagation();
@@ -31,8 +46,6 @@ const DeleteButton = ({ postId, postTitle }: Props) => {
     if (loading) return;
     await fetchPost(token);
     setShowModal(false);
-
-    window.location.reload();
   };
 
   const onNo = () => {
