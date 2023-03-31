@@ -82,6 +82,7 @@ Contributions to the front-end are welcome. Please fork the repository, make you
 - [x] Add 404 page
 - [ ] Add live search
 - [x] Add loading animations
+- [ ] Add live saving for blog posts in the cms
 
 ## Known Issues 🐛
 

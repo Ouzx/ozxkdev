@@ -58,7 +58,9 @@ const Posting = ({
 
   useEffect(() => {
     if (success) {
-      router.push("/cms");
+      router.push(
+        `/api/revalidate?secret=${process.env.NEXT_PUBLIC_REVALIDATE_SECRET}&category=${post.category}&slug=${post.slug}`
+      );
     }
   }, [success]);
 
