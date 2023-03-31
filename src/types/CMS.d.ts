@@ -10,7 +10,7 @@ export interface iPost {
   slug: string;
   keyword: string;
   shortContent: string;
-  createdAt: string;
+  createdAt?: string;
 }
 
 export interface Posts {

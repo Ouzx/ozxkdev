@@ -58,7 +58,6 @@ const Posting = ({
       thumbnail: initialPost?.thumbnail || "",
       shortContent: initialPost?.shortContent || "",
       slug: initialPost?.slug || "",
-      createdAt: initialPost?.createdAt || "",
     }
   );
 
@@ -86,7 +85,6 @@ const Posting = ({
       thumbnail: post.thumbnail,
       shortContent: post.shortContent,
       slug: post.slug,
-      createdAt: new Date().toISOString(),
     };
     if (!token) return;
     trigger({ post: postData, token });
