@@ -47,7 +47,7 @@ const page = ({
                   <td>{post.title}</td>
                   <td>{post.category}</td>
                   <td>{post.shared ? "Public" : "Private"}</td>
-                  <td>{new Date(post.createdAt).toDateString()}</td>
+                  <td>{new Date(post.createdAt || "").toDateString()}</td>
                   <td>
                     <DeleteButton
                       postId={post._id || ""}
