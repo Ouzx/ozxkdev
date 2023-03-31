@@ -10,6 +10,7 @@ const getPosts = async (token: string, page: string): Promise<Posts> => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
+      cache: "no-cache",
     }
   )
     .then((res) => res.json())

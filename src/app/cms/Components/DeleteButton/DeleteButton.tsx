@@ -1,11 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, use } from "react";
 import { RxCrossCircled } from "react-icons/rx";
 import styles from "./DeleteButton.module.scss";
 import useAccessToken from "@/hooks/useAccessToken";
 import Modal from "../Modal/Modal";
-
-import useSWRMutation from "swr/mutation";
+import usePost, { DELETE_POST } from "@/hooks/usePost";
 
 interface Props {
   postId: string;
@@ -15,8 +14,13 @@ interface Props {
 const DeleteButton = ({ postId, postTitle }: Props) => {
   const [token] = useAccessToken();
   const [showModal, setShowModal] = useState(false);
+  const { success, loading, error, fetchPost } = usePost(DELETE_POST, postId);
 
-  const { trigger, isMutating } = useSWRMutation("/api/user", deletePost);
+  useEffect(() => {
+    if (error) {
+      alert("There was an error deleting the post. Please try again later.");
+    }
+  }, [error]);
 
   const onClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.stopPropagation();
@@ -24,8 +28,8 @@ const DeleteButton = ({ postId, postTitle }: Props) => {
   };
 
   const onYes = async () => {
-    if (isMutating) return;
-    trigger({ postId, token });
+    if (loading) return;
+    await fetchPost(token);
     setShowModal(false);
 
     window.location.reload();
@@ -50,17 +54,5 @@ const DeleteButton = ({ postId, postTitle }: Props) => {
     </>
   );
 };
-
-async function deletePost(
-  url: string,
-  { arg }: { arg: { postId: string; token: string | undefined } }
-) {
-  return fetch(`${process.env.NEXT_PUBLIC_CMS_API}/posts/${arg?.postId!}`, {
-    method: "DELETE",
-    headers: {
-      Authorization: `Bearer ${arg?.token}`,
-    },
-  });
-}
 
 export default DeleteButton;

@@ -1,47 +1,42 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
+import { notFound } from "next/navigation";
 const Posting = dynamic(() => import("../../Components/Posting/Posting"), {
   ssr: false,
 });
 
 import { iPost } from "@/types/CMS";
 import useAccessToken from "@/hooks/useAccessToken";
+import usePost, { GET_POST, UPDATE_POST } from "@/hooks/usePost";
 
-const updatePost = async (
-  url: string,
-  { arg }: { arg: { post: iPost; token: string } }
-) => {
-  return fetch(`${process.env.NEXT_PUBLIC_CMS_API}/posts/${arg?.post._id}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${arg?.token}`,
-    },
-    body: JSON.stringify(arg?.post),
-  }).catch((err) => console.log(err));
-};
-
-const getPost = async (id: string, token: string) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_CMS_API}/posts/${id}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  const data = await res.json();
-  return data;
-};
+import LoadIndicator from "@/app/Components/LoadIndicator/LoadIndicator";
 
 const page = ({ params }: { params: { id: string } }) => {
   const [token] = useAccessToken();
-  const [post, setPost] = useState<iPost>();
+  const { success, loading, error, postData, fetchPost } = usePost(
+    GET_POST,
+    params.id
+  );
   useEffect(() => {
-    if (!token) return;
-    getPost(params.id, token).then((res) => setPost(res));
-  }, [params.id, token]);
-  return <div>{post && <Posting Submit={updatePost} post={post} />}</div>;
+    if (error) {
+      alert("There was an error fetching the post. Please try again later.");
+      notFound();
+    }
+  }, [error]);
+
+  useEffect(() => {
+    if (!loading && !success && !error && token) {
+      fetchPost(token);
+    }
+  }, [loading, token]);
+
+  return (
+    <div>
+      {loading && <LoadIndicator containItself />}
+      {success && <Posting operation={UPDATE_POST} post={postData} />}
+    </div>
+  );
 };
 
 export default page;

@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "./LoadIndicator.module.scss";
-const LoadIndicator = () => {
+const LoadIndicator = ({ containItself }: { containItself?: boolean }) => {
   return (
-    <div className={styles.container}>
+    <div
+      className={`${styles.container} ${containItself && styles.containItself}`}
+    >
       <h2>
         <span></span>
         <span></span>

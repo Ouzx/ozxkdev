@@ -1,7 +1,5 @@
 "use client";
 import React, { useReducer, useState, useEffect } from "react";
-import useSWRMutation from "swr/mutation";
-import { FetcherResponse } from "swr/_internal";
 
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
@@ -10,6 +8,7 @@ import { iPost } from "@/types/CMS";
 import styles from "./Posting.module.scss";
 
 import useAccessToken from "@/hooks/useAccessToken";
+import usePost from "@/hooks/usePost";
 
 import TextBox from "../TextBox/TextBox";
 import Switch from "../Switch/Switch";
@@ -22,20 +21,14 @@ const EditorBlock = dynamic(() => import("../Editor/Editor"), {
 });
 
 const Posting = ({
-  Submit,
   post: initialPost,
+  operation,
 }: {
-  Submit: (
-    url: string,
-    { arg }: { arg: { post: iPost; token: string } }
-  ) => Promise<Response | void>;
   post?: iPost;
+  operation: string;
 }) => {
   const router = useRouter();
   const [token] = useAccessToken();
-
-  const [isLoading, setIsLoading] = useState(false);
-  const { trigger, isMutating } = useSWRMutation("/api/user", Submit);
 
   const [post, updatePost] = useReducer(
     (state: iPost, newState: Partial<iPost>) => ({
@@ -61,17 +54,32 @@ const Posting = ({
     }
   );
 
+  const { success, loading, error, fetchPost } = usePost(operation, post._id);
+
+  useEffect(() => {
+    if (success) {
+      router.push("/cms");
+    }
+  }, [success]);
+
+  if (error) {
+    alert("There was an error. Please try again later.");
+  }
+
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!token) {
+      return alert("Please login to post");
+    }
+
+    if (loading) return;
+
     if (!post.thumbnail || !post.shortContent || !post.content) {
       const fields = `${!post.thumbnail ? "- Thumbnail" : ""} ${
         !post.shortContent ? "- Short Content" : ""
       } ${!post.content ? " - Content" : ""}`;
       return alert(`Please fill all the fields. ${fields}`);
     }
-
-    if (isLoading) return;
-    setIsLoading(true);
 
     // convert post: PostState to post: Post
     const postData: iPost = {
@@ -86,9 +94,8 @@ const Posting = ({
       shortContent: post.shortContent,
       slug: post.slug,
     };
-    if (!token) return;
-    trigger({ post: postData, token });
-    router.push(`/cms`);
+
+    await fetchPost(token, postData);
   };
 
   useEffect(() => {
@@ -167,7 +174,7 @@ const Posting = ({
           />
           <Button
             title={
-              isLoading
+              loading
                 ? initialPost
                   ? "Updating..."
                   : "Creating..."

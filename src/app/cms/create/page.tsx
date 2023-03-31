@@ -5,26 +5,12 @@ const Posting = dynamic(() => import("../Components/Posting/Posting"), {
   ssr: false,
 });
 
-import { iPost } from "@/types/CMS";
-
-const createPost = async (
-  url: string,
-  { arg }: { arg: { post: iPost; token: string } }
-) => {
-  return fetch(`${process.env.NEXT_PUBLIC_CMS_API}/posts/`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${arg?.token}`,
-    },
-    body: JSON.stringify(arg?.post),
-  }).catch((err) => console.log(err));
-};
+import { CREATE_POST } from "@/hooks/usePost";
 
 const page = () => {
   return (
     <div>
-      <Posting Submit={createPost} />
+      <Posting operation={CREATE_POST} />
     </div>
   );
 };
