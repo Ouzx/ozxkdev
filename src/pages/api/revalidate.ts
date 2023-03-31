@@ -10,8 +10,8 @@ export default async function handler(
 
   try {
     await res.revalidate(`/post/${req.query.category}/${req.query.slug}`);
+    await res.revalidate("/cms");
     await res.revalidate("/");
-
     return res.redirect("/cms");
   } catch (err) {
     return res.status(500).send("Error revalidating");
