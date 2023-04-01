@@ -12,9 +12,9 @@ const Nav = () => {
       <li>
         <Link href={"/contact"}>Contact</Link>
       </li>
-      <li>
+      {/* <li>
         <Link href={"/portfolio"}>Portfolio</Link>
-      </li>
+      </li> */}
     </ul>
   );
 };
