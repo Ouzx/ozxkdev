@@ -4,14 +4,37 @@
 $border-color: #e6e6e6;
 .item {
   cursor: pointer;
-
   @extend %not-selected;
+  position: relative;
+  overflow: hidden; // add this line
+}
 
-  transition: 0.3s;
-  &:hover {
-    background: $accent;
-    color: #fff;
-    border-color: $accent;
+.loading {
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 10px;
+    height: 200%;
+    // rotate 45deg
+    transform: rotate(45deg);
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.1) 50%
+    );
+    animation: loading 1s infinite;
+  }
+
+  @keyframes loading {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
   }
 }
 

@@ -19,7 +19,8 @@ const getCategories = () => {
           setError("No results found");
         } else {
           setSuccess(true);
-          setPostData(data);
+          const categories = ["All", ...data];
+          setPostData(categories);
         }
       })
       .catch((err) => {
@@ -45,7 +46,16 @@ const Pool = ({ selected }: { selected: string | null }) => {
 
   return (
     <div className={styles.pool}>
-      <Item title="All" path="All" selected={selection === "All"} />
+      {loading &&
+        Array.from({ length: 4 }, (_, i) => (
+          <Item
+            key={i}
+            title="..."
+            path="Loading..."
+            selected={false}
+            loading
+          />
+        ))}
       {success &&
         postData &&
         postData.map((item) => (
