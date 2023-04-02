@@ -1,5 +1,8 @@
+"use client";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+
 import { Posts } from "@/types/Post";
-import { Suspense } from "react";
 import Hero from "./Components/Hero/Hero";
 import LoadIndicator from "./Components/LoadIndicator/LoadIndicator";
 import Pool from "./Components/Pool/Pool";
@@ -7,45 +10,81 @@ import PostList from "./Components/Post/PostList/PostList";
 import styles from "./page.module.scss";
 import { notFound } from "next/navigation";
 
-const getPosts = async (
-  category: string,
-  pageIndex: number
-): Promise<Posts> => {
-  return await fetch(process.env.API + `/page/${category}/${pageIndex}`, {
-    next: { revalidate: 60 },
-  })
-    .then((res) => res.json())
-    .catch((err) => {
-      console.log(err);
-    });
+const getPosts = (category: string, pageIndex: number) => {
+  const [success, setSuccess] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+  const [postData, setPostData] = useState<Posts | undefined>(undefined);
+
+  const fetchPost = () => {
+    setLoading(true);
+
+    fetch(
+      process.env.NEXT_PUBLIC_CMS_API +
+        `/general/page/${category}/${pageIndex}`,
+      {
+        cache: "no-cache",
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (!data) {
+          setError("No results found");
+        } else {
+          setSuccess(true);
+          setPostData(data);
+        }
+      })
+      .catch((err) => {
+        setError(err.message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
+  return { success, loading, error, postData, fetchPost };
 };
 
-export default async function Home({
-  searchParams,
-}: {
-  searchParams?: { [key: string]: string | string[] | undefined };
-}) {
-  const category = searchParams?.category;
-  const pageIndex = searchParams?.page;
+export default function Home() {
+  const [category, setCategory] = useState<string | null>(null);
+  const [pageIndex, setPageIndex] = useState<number>(1);
 
-  let _category = category ? category : "all";
-  let _pageIndex = pageIndex ? pageIndex : 1;
+  const searchParams = useSearchParams();
+  const _searchTerm = searchParams.get("category");
+  const _pageIndex = searchParams.get("page");
 
-  if (Array.isArray(_category)) _category = _category[0];
-  if (Array.isArray(_pageIndex)) _pageIndex = _pageIndex[0];
+  const { success, loading, error, postData, fetchPost } = getPosts(
+    category!,
+    pageIndex
+  );
+  console.log(category, pageIndex);
 
-  const postList = await getPosts(_category, +_pageIndex);
-  if (!postList) notFound();
+  if (error) notFound();
+
+  useEffect(() => {
+    setCategory(_searchTerm);
+    const _page = parseInt(_pageIndex || "1");
+    setPageIndex(_page);
+  }, [searchParams]);
+
+  useEffect(() => {
+    if (category && pageIndex) {
+      fetchPost();
+    }
+  }, [category, pageIndex]);
+
   return (
     <main className={styles.main}>
       <Hero />
       <div className={styles.content}>
-        {/* @ts-ignore */}
-        <Pool selected={searchParams?.category} />
-        <Suspense fallback={<LoadIndicator />}>
-          <PostList postList={postList} />
-          {/* <Contact /> */}
-        </Suspense>
+        <Pool selected={category} />
+
+        {loading ? (
+          <LoadIndicator containItself />
+        ) : (
+          success && postData && <PostList postList={postData as Posts} />
+        )}
       </div>
     </main>
   );
