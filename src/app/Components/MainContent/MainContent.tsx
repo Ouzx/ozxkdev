@@ -19,11 +19,7 @@ const getPosts = (category: string, pageIndex: number) => {
     setLoading(true);
 
     fetch(
-      process.env.NEXT_PUBLIC_CMS_API +
-        `/general/page/${category}/${pageIndex}`,
-      {
-        cache: "no-cache",
-      }
+      process.env.NEXT_PUBLIC_CMS_API + `/general/page/${category}/${pageIndex}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -57,7 +53,6 @@ const MainContent = () => {
     category!,
     pageIndex
   );
-  console.log(category, pageIndex);
 
   if (error) notFound();
 

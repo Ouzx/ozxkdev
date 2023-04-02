@@ -47,7 +47,7 @@ const Posting = ({
       category: initialPost?.category || "",
       tags: initialPost?.tags || [],
       keyword: initialPost?.keyword || "",
-      shared: initialPost?.shared || true,
+      shared: initialPost?.shared === undefined ? true : initialPost?.shared,
       thumbnail: initialPost?.thumbnail || "",
       shortContent: initialPost?.shortContent || "",
       slug: initialPost?.slug || "",

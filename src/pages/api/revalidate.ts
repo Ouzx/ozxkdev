@@ -14,6 +14,6 @@ export default async function handler(
     await res.revalidate("/");
     return res.redirect("/cms");
   } catch (err) {
-    return res.status(500).send("Error revalidating");
+    return res.status(500).send("Something went wrong when revalidating");
   }
 }
