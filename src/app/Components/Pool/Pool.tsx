@@ -3,15 +3,6 @@ import React, { useState, useEffect } from "react";
 import styles from "./Pool.module.scss";
 import Item from "./Item";
 
-// const getCategories = async () => {
-//   return await fetch(process.env.NEXT_PUBLIC_CMS_API + "/general/categories")
-//     .then((res) => res.json())
-//     .catch((err) => {
-//       console.log(err);
-//       return [""];
-//     });
-// };
-
 const getCategories = () => {
   const [success, setSuccess] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
@@ -28,8 +19,7 @@ const getCategories = () => {
           setError("No results found");
         } else {
           setSuccess(true);
-          const categories = ["All", ...data];
-          setPostData(categories);
+          setPostData(data);
         }
       })
       .catch((err) => {
@@ -55,6 +45,7 @@ const Pool = ({ selected }: { selected: string | null }) => {
 
   return (
     <div className={styles.pool}>
+      <Item title="All" path="All" selected={selection === "All"} />
       {success &&
         postData &&
         postData.map((item) => (
