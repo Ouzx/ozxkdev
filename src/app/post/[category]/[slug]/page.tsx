@@ -40,10 +40,34 @@ const page = async ({
   if (!postData || !postData?.post) {
     notFound();
   }
-  const meta = JSON.parse(JSON.stringify(NEXT_SEO_DEFAULT));
-  meta.title = postData?.post?.title;
-  meta.description = postData?.post?.shortContent;
-  meta.titleTemplate = `%s | ${postData?.post?.category} | ozxk dev blog`;
+  const meta = JSON.parse(JSON.stringify(NEXT_SEO_DEFAULT)) as NextSeoProps;
+  if (meta) {
+    meta.title = postData?.post?.title;
+    meta.description = postData?.post?.shortContent;
+    meta.titleTemplate = `%s | ${postData?.post?.category} | ozxk dev blog`;
+    if (meta.openGraph) {
+      meta.openGraph.title = postData?.post?.title;
+      meta.openGraph.description = postData?.post?.shortContent;
+      meta.openGraph.url = `${process.env.NEXT_PUBLIC_URL}/post/${category}/${slug}`;
+      meta.openGraph.images = [
+        {
+          url: postData?.post?.thumbnail,
+          width: 800,
+          height: 600,
+          alt: postData?.post?.title,
+        },
+      ];
+      meta.openGraph.siteName = "ozxk dev blog";
+      meta.openGraph.locale = "en_US";
+      meta.openGraph.type = "article";
+      if (meta.openGraph.article) {
+        meta.openGraph.article.publishedTime = postData?.post?.createdAt;
+        meta.openGraph.article.authors = [postData?.post?.author];
+        meta.openGraph.article.section = postData?.post?.category;
+        meta.openGraph.article.tags = postData?.post?.tags;
+      }
+    }
+  }
   const updateMeta: NextSeoProps = meta;
 
   // get url
