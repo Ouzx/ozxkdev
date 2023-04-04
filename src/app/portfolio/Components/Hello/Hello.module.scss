@@ -13,6 +13,11 @@
 
 .name {
   animation: main-name-color-transiton 5s ease-in-out infinite alternate;
+
+  @media print {
+    animation: none;
+    color: $accent;
+  }
 }
 
 .hello {

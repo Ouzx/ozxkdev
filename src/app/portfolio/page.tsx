@@ -59,9 +59,10 @@ const page = () => {
             <div className={styles.printSpacer}></div>
             <Certifications />
             <HR />
+            {/* <div className={styles.printSpacer10}></div>*/}
+
             <div className={styles.printSpacer10}></div>
-            <div className={styles.printSpacer10}></div>
-            <div className={styles.printSpacer10}></div>
+            <div className={styles.printSpacer5}></div>
             <Projects />
           </div>
         </div>

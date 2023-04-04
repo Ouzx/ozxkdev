@@ -50,7 +50,12 @@ $transparent-bg: rgb(255, 255, 255, 0.85);
     max-width: 75rem;
 
     margin: 0 auto;
+
     padding-top: 2rem;
+    @media print {
+      padding-top: 0;
+      padding-left: 1rem;
+    }
 
     .side {
       .row {
@@ -143,7 +148,15 @@ $transparent-bg: rgb(255, 255, 255, 0.85);
     display: block;
     height: 1rem;
     width: 100%;
-    margin: 1rem;
+    background-color: transparent;
+  }
+}
+.printSpacer5 {
+  display: none;
+  @media print {
+    display: block;
+    height: 5rem;
+    width: 100%;
     background-color: transparent;
   }
 }
@@ -151,9 +164,8 @@ $transparent-bg: rgb(255, 255, 255, 0.85);
   display: none;
   @media print {
     display: block;
-    height: 1rem;
+    height: 10rem;
     width: 100%;
-    margin: 10rem;
     background-color: transparent;
   }
 }
