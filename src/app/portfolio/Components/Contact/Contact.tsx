@@ -5,7 +5,7 @@ import Title from "../Title/Title";
 import styles from "./Contact.module.scss";
 
 const Contact = () => {
-  const { BirthDate, Contact } = useDataContext();
+  const { BirthDate, Contact, Social } = useDataContext();
   return (
     <div className={styles.contact}>
       <Title title={"Contact"} />
@@ -26,6 +26,16 @@ const Contact = () => {
         <p>Phone</p>
         <p>{Contact?.phone}</p>
       </a>
+      <div className={styles.print_link}>
+        <a href={`${Social?.linkedin}`} className={styles.line}>
+          <p>LinkedIn</p>
+          <p>{Social?.linkedin}</p>
+        </a>
+        <a href={`${Social?.github}`} className={styles.line}>
+          <p>Github</p>
+          <p>{Social?.github}</p>
+        </a>
+      </div>
     </div>
   );
 };
