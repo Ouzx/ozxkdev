@@ -19,7 +19,7 @@ const TimeCard = ({
         <div className={styles.timeElement__content}>
           <h4>{title}</h4>
           <h5>{company}</h5>
-          <p>{description}</p>
+          <p dangerouslySetInnerHTML={{ __html: description || "" }}></p>
         </div>
       </div>
     </div>
