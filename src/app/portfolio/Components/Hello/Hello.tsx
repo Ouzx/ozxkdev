@@ -9,7 +9,10 @@ const Hello = () => {
       <p className={styles.hi}>
         Hello, I'm <span className={styles.name}>{HI}</span>
       </p>
-      <p className={styles.hello}>{Description}</p>
+      <p
+        className={styles.hello}
+        dangerouslySetInnerHTML={{ __html: Description || "" }}
+      ></p>
     </>
   );
 };

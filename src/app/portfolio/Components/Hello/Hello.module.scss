@@ -23,6 +23,10 @@
 .hello {
   padding-top: 2rem;
   margin-bottom: 2rem;
+
+  b {
+    font-weight: 600;
+  }
 }
 
 @keyframes main-name-color-transiton {
