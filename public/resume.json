@@ -12,31 +12,32 @@
         "email": "mailto:oguzhankandakoglu@gmail.com"
     },
     "HI": "Oğuz",
-    "Description": "I am a full stack web developer with a passion for creating web applications using technologies such as JavaScript, React, and Node.js. I have gained a lot of experience and knowledge in various web development domains throughout my career. I always aim to provide an outstanding user experience with my web applications, and I have excellent problem-solving skills and teamwork abilities. I keep myself updated with the latest trends and innovations in technology, and I constantly look for ways to enhance the quality and performance of my work.",
+    "Description": "I am a full stack web developer with a passion for creating web applications using technologies such as <b>JavaScript, React,</b> and <b>Node.js</b>. I have gained a lot of experience and knowledge in various web development domains throughout my career. I always aim to provide an outstanding user experience with my web applications, and I have excellent problem-solving skills and teamwork abilities. I keep myself updated with the latest trends and innovations in technology, and I constantly look for ways to enhance the quality and performance of my work.",
     "Contact": {
         "email": "oguzhankandakoglu@gmail.com",
         "phone": "(+90)-546-488-9884",
         "phoneLink": "+905464889884",
-        "address": "Ankara, Turkey"
+        "address": "Ankara, Turkey",
+        "availability": "Available to change countries/move, remote"
     },
     "Experience": [
         {
             "title": "Game Developer & Co-Founder",
             "company": "Axolot Games",
             "date": "March 2022 - October 2022",
-            "description": "I developed several hyper-casual games for <b>Android</b> and <b>iOS</b> platforms using <b>Unity</b> and <b>C#</b> as a Game Developer. I also co-founded the company and took charge of the apps' <b>KPI and the team management.</b>"
+            "description": "I developed several hyper-casual games for <b>Android</b> and <b>iOS</b> platforms using <b>Unity</b> and <b>C#</b> as a Game Developer. I also co-founded the company and took charge of the apps' <b>KPI and the team management</b>. We worked with several companies from several countries."
         },
         {
             "title": "Web Developer Intern",
             "company": "VHS Elektronik",
             "date": "June 2021 - September 2021",
-            "description": "I contributed to the development and maintenance of web applications using <b>JavaScript and React</b>, as well as database management using <b>T-SQL</b> and <b>PL-SQL</b>. I worked with a team to build a web application for <b>one of Turkey's largest critical infrastructures.</b>"
+            "description": "I contributed to the development and maintenance of web applications using <b>JavaScript</b> and <b>React</b>, as well as database management using <b>T-SQL</b> and <b>PL-SQL</b>. I worked with a team to build a web application for <b>one of Turkey's largest critical infrastructures.</b>"
         }
     ],
     "Education": [
         {
             "title": "Bachelor of Computer Science",
-            "company": "University of KIRIKKALE",
+            "company": "KIRIKKALE University",
             "date": "2018 - 2022",
             "description": "Completed coursework in web development, software engineering, and computer science. Graduated with Honor Degree.",
             "GPA": "GPA: 3.09 / 4.00"

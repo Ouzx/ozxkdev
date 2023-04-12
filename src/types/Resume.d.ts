@@ -21,6 +21,7 @@ export interface Resume {
     phone: string;
     phoneLink: string;
     address: string;
+    availability: string;
   };
   Skills: {
     title: string;

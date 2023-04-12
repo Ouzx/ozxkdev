@@ -26,6 +26,8 @@ const Contact = () => {
         <p>Phone</p>
         <p>{Contact?.phone}</p>
       </a>
+      <HR />
+
       <div className={styles.print_link}>
         <a href={`${Social?.linkedin}`} className={styles.line}>
           <p>LinkedIn</p>
@@ -35,6 +37,12 @@ const Contact = () => {
           <p>Github</p>
           <p>{Social?.github}</p>
         </a>
+      </div>
+      <HR />
+
+      <div className={styles.line}>
+        <p>Availability</p>
+        <p>{Contact?.availability}</p>
       </div>
     </div>
   );

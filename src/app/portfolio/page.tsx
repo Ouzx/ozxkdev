@@ -39,6 +39,11 @@ const page = () => {
               <Langs />
             </div>
 
+            <div className={styles.printSpacer10}></div>
+            <div className={styles.printSpacer5}></div>
+            <div className={styles.printSpacer5}></div>
+            <div className={styles.printSpacer5}></div>
+            <div className={styles.printSpacer}></div>
             <div className={styles.row}>
               <Badges />
             </div>
