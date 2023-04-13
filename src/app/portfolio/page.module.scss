@@ -87,7 +87,7 @@ $transparent-bg: rgb(255, 255, 255, 0.85);
           &:nth-child(2),
           &:nth-child(3) {
             width: 50vw;
-            height: 400px;
+            height: 600px;
             vertical-align: top;
             display: inline-flex;
             box-shadow: none;
@@ -142,30 +142,20 @@ $transparent-bg: rgb(255, 255, 255, 0.85);
   }
 }
 
+.page_break {
+  @media print {
+    page-break-before: always;
+    margin-top: 4rem;
+  }
+}
+
 .printSpacer {
   display: none;
+
   @media print {
     display: block;
+    width: 100%;
+    background-color: transparent;
     height: 1rem;
-    width: 100%;
-    background-color: transparent;
-  }
-}
-.printSpacer5 {
-  display: none;
-  @media print {
-    display: block;
-    height: 5rem;
-    width: 100%;
-    background-color: transparent;
-  }
-}
-.printSpacer10 {
-  display: none;
-  @media print {
-    display: block;
-    height: 10rem;
-    width: 100%;
-    background-color: transparent;
   }
 }

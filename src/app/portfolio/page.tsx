@@ -35,16 +35,14 @@ const page = () => {
               <Contact />
             </div>
 
-            <div className={styles.row}>
+            <div className={`${styles.row} `}>
               <Langs />
             </div>
 
-            <div className={styles.printSpacer10}></div>
-            <div className={styles.printSpacer5}></div>
-            <div className={styles.printSpacer5}></div>
-            <div className={styles.printSpacer5}></div>
-            <div className={styles.printSpacer}></div>
-            <div className={styles.row}>
+            <div
+              className={`${styles.row} ${styles.page_break}`}
+              style={{ marginTop: "2.2rem" }}
+            >
               <Badges />
             </div>
 
@@ -66,8 +64,7 @@ const page = () => {
             <HR />
             {/* <div className={styles.printSpacer10}></div>*/}
 
-            <div className={styles.printSpacer10}></div>
-            <div className={styles.printSpacer5}></div>
+            <div className={styles.page_break}></div>
             <Projects />
           </div>
         </div>
