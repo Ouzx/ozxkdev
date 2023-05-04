@@ -2,23 +2,21 @@
 
 .container {
   position: relative;
-  min-height: 100vh;
   overflow: hidden;
   max-width: 1600px;
   margin: 0 auto;
+  z-index: -9;
   .img {
     position: fixed;
-    bottom: 0;
+    top: 0;
     right: 0;
-    z-index: -2;
     object-fit: cover;
     height: 100%;
     width: auto;
 
-    display: none;
-
+    visibility: hidden;
     @include md{
-      display: block;
+      visibility: visible;
 
     }
   }
