@@ -5,7 +5,7 @@ import PageItem from "./PageItem/PageItem";
 import styles from "./Paginator.module.scss";
 import { useSearchParams } from "next/navigation";
 
-const ITEMS_PER_PAGE = 5;
+const ITEMS_PER_PAGE = 10;
 const PAGES_TO_SHOW = 5;
 
 const Paginator = ({ totalItems }: { totalItems: number }) => {
