@@ -2,16 +2,52 @@
     "projects": [
         {
             "title": "OZXK Blog | Full Stack React Project",
-            "description": "This project is a personal blog site that I built with React, Next.js and SASS. It features a content management system that I designed and implemented with Node.js and MongoDB. The CMS allows me to create and edit my blog posts and manage my website settings with ease. You can find the source code of this project on Github.",
+            "description": "This is a personal blog site that showcases my skills in building complex web applications using cutting-edge technologies. Using React, Next.js, and SASS, I created a fast and responsive website with a modern design that highlights my content. To make updating the site easier, I designed and implemented a content management system using Node.js and MongoDB. The CMS allows me to create and edit blog posts, as well as manage various settings on the website, all in one convenient location. If you're interested in seeing the code behind the project, you can find it on Github.",
             "link": "https://github.com/Ouzx/ozxkdev",
             "linkType": "Github",
             "image": "/favicon.png"
         },
         {
-            "title": "Freelance Wordpress Projects",
-            "description": "I have been working as a freelance Wordpress developer for the past 4 years. I have created 6 live Wordpress websites for various clients in different industries. Some of the websites I have developed include local businesses, e-commerce platforms, and learning management systems. Through these projects, I have acquired skills in SEO, caching strategies, minification and lazy loading, and UI/UX design.",
-            "link": "",
-            "image": "/wordpress.jpg"
+            "title": "Safran Plise | E-Commerce Website",
+            "description": "Safran Plise is an e-commerce and customer relationship management (CRM) website developed using WordPress. The site's user-friendly design allows customers to easily browse and purchase products, while the CRM system enables the business to manage customer interactions and track sales. The site's elegant and modern layout ensures that customers have an enjoyable and seamless shopping experience. With features such as a search bar, product categories, and product filtering, Safran Plise's e-commerce platform is tailored to meet the needs of today's online shoppers.",
+            "link": "https://safranplise.com",
+            "linkType": "Live Site",
+            "image": "/safranplise.png"
+        },
+        {
+            "title": "Zarif Akademi | Learning Management System",
+            "description": " Zarif Akademi is a learning management system (LMS) developed using WordPress. The site's intuitive design and advanced features enable educators to easily create and manage online courses, while students can enjoy a seamless learning experience. The LMS includes a range of features such as course creation, lesson plans, quizzes, assignments, and progress tracking. With Zarif Akademi's LMS, educators can create engaging and interactive online courses that help students achieve their learning objectives.",
+            "link": "https://www.zarifakademi.com",
+            "linkType": "Live Site",
+            "image": "/zarifakademi.png"
+        },
+        {
+            "title": "Karabuk Evim Nakliyat | Local Business Website",
+            "description": "Karabuk Evim Nakliyat is a local business website developed using WordPress. The site's modern and responsive design enables visitors to easily navigate and learn about the company's moving services. The website includes a contact form, enabling customers to easily get in touch and request a quote for their moving needs. With a focus on user experience and functionality, Karabuk Evim Nakliyat's website is designed to help the company stand out and attract new customers.",
+            "link": "https://karabukevimnakliyat.com",
+            "linkType": "Live Site",
+            "image": "/karabukevim.png"
+        },
+        {
+            "title": "Arel Plise | Local Business Website",
+            "description": "Arel Plise is a local business website developed using WordPress. The site's simple and elegant design showcases the company's services and enables visitors to easily navigate and learn about the business. The website includes a contact form, enabling customers to easily get in touch and request a quote for their plise needs. With a focus on user experience and functionality, Arel Plise's website is designed to help the company stand out and attract new customers.",
+            "link": "https://arelplise.com",
+            "linkType": "Live Site",
+            "image": "/arel.png"
+        },
+        {
+            "title": "Karabuk Enes Nakliyat | Local Business Website",
+            "description": "Karabuk Enes Nakliyat is a local business website developed using WordPress. The site's clean and professional design showcases the company's services and enables visitors to easily navigate and learn about the business. The website includes a contact form, enabling customers to easily get in touch and request a quote for their moving needs. With a focus on user experience and functionality, Karabuk Enes Nakliyat's website is designed to help the company stand out and attract new customers.",
+            "link": "https://karabukenesnakliyat.com",
+            "linkType": "Live Site",
+            "image": "/karabukenes.png"
+        },
+        {
+            "title": "Hidro-Pir | Industrial Business Website",
+            "description": "Hidro-Pir is an industrial business website developed using WordPress. The site's professional and modern design showcases the company's products and services, while enabling visitors to easily learn about the company's capabilities. The website includes a contact form, enabling customers to easily get in touch and request more information about the company's products and services. With a focus on user experience and functionality, Hidro-Pir's website is designed to help the company establish a strong online presence and attract new customers.",
+            "link": "https://hidropir.net",
+            "linkType": "Live Site",
+            "image": "/hidropir.png"
         }
     ]
 }
