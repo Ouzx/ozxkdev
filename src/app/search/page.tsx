@@ -6,6 +6,9 @@ import SearchBar from "../Components/Searchbar/Searchbar";
 import styles from "./page.module.scss";
 import { Posts } from "@/types/Post";
 
+import { NextSeo, NextSeoProps } from "next-seo";
+import { NEXT_SEO_DEFAULT } from "@/next-seo.config";
+
 const search = (query: string, pageIndex: number) => {
   const [success, setSuccess] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
@@ -66,8 +69,22 @@ const page = () => {
     }
   }, [searchTerm, pageIndex]);
 
+  const meta = JSON.parse(JSON.stringify(NEXT_SEO_DEFAULT)) as NextSeoProps;
+
+  if (searchTerm) {
+    meta.title = `Search results for "${searchTerm}"`;
+    meta.titleTemplate = `%s | ozxk dev blog`;
+    if (meta.openGraph) {
+      meta.openGraph.title = `Search results for "${searchTerm}"`;
+      meta.openGraph.url = `${process.env.NEXT_PUBLIC_URL}/search?term=${searchTerm}`;
+    }
+  }
+
+  const updateMeta: NextSeoProps = meta;
+
   return (
     <div className={styles.search}>
+      <NextSeo {...updateMeta} useAppDir={true} />
       {error ? (
         <>
           <h1>No results found for "{searchTerm}"</h1>
