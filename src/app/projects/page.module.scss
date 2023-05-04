@@ -1,3 +1,5 @@
+@use "../screens.scss" as *;
+
 .container {
   position: relative;
   min-height: 100vh;
@@ -5,13 +7,20 @@
   max-width: 1600px;
   margin: 0 auto;
   .img {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
     z-index: -2;
     object-fit: cover;
     height: 100%;
     width: auto;
+
+    display: none;
+
+    @include md{
+      display: block;
+
+    }
   }
 
   .wrapper {
