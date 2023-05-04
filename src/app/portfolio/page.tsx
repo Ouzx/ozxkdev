@@ -20,9 +20,28 @@ import Certifications from "./Components/Fixed/Certifications";
 import Langs from "./Components/Langs/Langs";
 import Projects from "./Components/Projects/Projects";
 
+import { NextSeo, NextSeoProps } from "next-seo";
+import { NEXT_SEO_DEFAULT } from "@/next-seo.config";
+
 const page = () => {
+  const meta = JSON.parse(JSON.stringify(NEXT_SEO_DEFAULT)) as NextSeoProps;
+
+  if (meta) {
+    meta.title = "Portfolio";
+    meta.description = "My portfolio.";
+
+    if (meta.openGraph) {
+      meta.openGraph.title = "Portfolio";
+      meta.openGraph.description = "My portfolio.";
+      meta.openGraph.url = `${process.env.NEXT_PUBLIC_URL}/portfolio`;
+    }
+  }
+
+  const updateMeta: NextSeoProps = meta;
+
   return (
     <DataProvider>
+      <NextSeo {...updateMeta} useAppDir={true} />
       <div className={styles.container}>
         <Image src={heroBG} alt="" className={styles.bg} />
         <div className={styles.content}>

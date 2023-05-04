@@ -44,7 +44,7 @@ const page = async ({
   if (meta) {
     meta.title = postData?.post?.title;
     meta.description = postData?.post?.shortContent;
-    meta.titleTemplate = `%s | ${postData?.post?.category} | ozxk dev blog`;
+    meta.titleTemplate = `%s | ${postData?.post?.category} | Ozxk Dev Blog`;
     if (meta.openGraph) {
       meta.openGraph.title = postData?.post?.title;
       meta.openGraph.description = postData?.post?.shortContent;
