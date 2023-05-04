@@ -71,9 +71,8 @@ const page = () => {
 
   const meta = JSON.parse(JSON.stringify(NEXT_SEO_DEFAULT)) as NextSeoProps;
 
-  if (searchTerm) {
+  if (searchTerm && meta) {
     meta.title = `Search results for "${searchTerm}"`;
-    meta.titleTemplate = `%s | ozxk dev blog`;
     if (meta.openGraph) {
       meta.openGraph.title = `Search results for "${searchTerm}"`;
       meta.openGraph.url = `${process.env.NEXT_PUBLIC_URL}/search?term=${searchTerm}`;
