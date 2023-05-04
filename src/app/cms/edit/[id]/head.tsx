@@ -4,7 +4,7 @@ const head = () => {
   return (
     <>
       <meta name="robots" content="noindex,nofollow" />
-      <title>CMS: Posts | ozxk's Code Chronicles: A Dev Log</title>
+      <title>CMS: Edit Post | ozxk's Code Chronicles: A Dev Log</title>
     </>
   );
 };
