@@ -2,22 +2,29 @@
 
 .container {
   position: relative;
-  overflow: hidden;
   max-width: 1600px;
   margin: 0 auto;
-  z-index: -9;
-  .img {
-    position: fixed;
+  display: flex;
+  .bannerContainer {
+    position: absolute;
     top: 0;
     right: 0;
-    object-fit: cover;
     height: 100%;
-    width: auto;
-
+    overflow: visible;
+    width: 233px;
+    background-color: black;
+    z-index: -2;
     visibility: hidden;
-    @include md{
-      visibility: visible;
 
+    .img {
+      position: absolute;
+      object-fit: cover;
+      height: auto;
+      width: 897px;
+      right: 0;
+    }
+    @include md {
+      visibility: visible;
     }
   }
 

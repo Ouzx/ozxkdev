@@ -27,7 +27,9 @@ const page = () => {
   return (
     <div className={styles.container}>
       <NextSeo {...updateMeta} useAppDir={true} />
-      <Image className={styles.img} src={banner} alt="banner" />
+      <div className={styles.bannerContainer}>
+        <Image className={styles.img} src={banner} alt="banner" />
+      </div>
       <div className={styles.wrapper}>
         <h1 className={styles.title}>Projects</h1>
         <div className={styles.projects}>
