@@ -7,6 +7,10 @@ $border-color: #e6e6e6;
   @extend %not-selected;
   position: relative;
   overflow: hidden; // add this line
+
+  &:hover {
+    border-color: $accent;
+  }
 }
 
 .loading {
