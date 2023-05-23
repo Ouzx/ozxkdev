@@ -45,7 +45,7 @@ const MainContent = () => {
   const [category, setCategory] = useState<string | null>(null);
   const [pageIndex, setPageIndex] = useState<number>(1);
 
-  const searchParams = useSearchParams();
+  const searchParams = useSearchParams()!;
   const _category = searchParams.get("category") || "All";
   const _pageIndex = searchParams.get("page");
 

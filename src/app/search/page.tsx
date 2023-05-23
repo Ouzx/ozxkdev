@@ -48,7 +48,7 @@ const page = () => {
   const [searchTerm, setSearchTerm] = useState<string | null>(null);
   const [pageIndex, setPageIndex] = useState<number>(1);
 
-  const searchParams = useSearchParams();
+  const searchParams = useSearchParams()!;
   const _searchTerm = searchParams.get("term");
   const _pageIndex = searchParams.get("page");
 
@@ -58,7 +58,7 @@ const page = () => {
   );
 
   useEffect(() => {
-    setSearchTerm(_searchTerm);
+    setSearchTerm(_searchTerm!);
     const _page = parseInt(_pageIndex || "1");
     setPageIndex(_page);
   }, [searchParams]);

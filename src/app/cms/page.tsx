@@ -52,7 +52,7 @@ const page = () => {
   const [token] = useAccessToken();
 
   const [pageIndex, setPageIndex] = useState<number>(1);
-  const searchParams = useSearchParams();
+  const searchParams = useSearchParams()!;
   const _pageIndex = searchParams.get("page");
 
   const { success, loading, error, postData, fetchPost } = getPosts(pageIndex);
