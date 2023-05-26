@@ -2,7 +2,7 @@
 
 Welcome to the OZXK.DEV blog, where readers can enjoy reading blog posts and interacting with the blog's features. It was built using Next, React, TypeScript, and SCSS.
 
-For the backend side of this project: ![Repository](https://github.com/Ouzx/ozxkdev-backend)
+For the backend side of this project: https://github.com/Ouzx/ozxkdev-backend
 
 ## Features 🌟
 
