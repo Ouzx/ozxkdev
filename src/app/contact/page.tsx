@@ -2,26 +2,34 @@ import React from "react";
 import styles from "./page.module.scss";
 import Contact from "./Components/Form/Contact";
 
-import { NextSeo, NextSeoProps } from "next-seo";
 import { NEXT_SEO_DEFAULT } from "@/next-seo.config";
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Contact",
+    description: "Contact me for any questions or feedback.",
+    openGraph: {
+      title: "Contact",
+      description: "Contact me for any questions or feedback.",
+      url: `${process.env.NEXT_PUBLIC_URL}/contact`,
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_URL}/images/contact.jpg`,
+          width: 800,
+          height: 600,
+          alt: "Contact",
+        },
+      ],
+      siteName: "ozxk dev blog",
+      locale: "en_US",
+    },
+  };
+}
 
 const page = () => {
-  const meta = JSON.parse(JSON.stringify(NEXT_SEO_DEFAULT)) as NextSeoProps;
-
-  if (meta) {
-    meta.title = "Contact";
-    meta.description = "Contact me for any questions or feedback.";
-    if (meta.openGraph) {
-      meta.openGraph.title = "Projects";
-      meta.openGraph.description = "Contact me for any questions or feedback.";
-      meta.openGraph.url = `${process.env.NEXT_PUBLIC_URL}/contact`;
-    }
-  }
-
-  const updateMeta: NextSeoProps = meta;
   return (
     <div className={styles.container}>
-      <NextSeo {...updateMeta} useAppDir={true} />
       <h2>Contact</h2>
       <p>
         Thank you for visiting my website! I would love to hear from you.

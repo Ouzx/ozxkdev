@@ -10,14 +10,13 @@ import Share from "./Components/Share/Share";
 import NextPrev from "./Components/NextPrev/NextPrev";
 
 import { ArticleJsonLd } from "next-seo";
-import { NextSeo, NextSeoProps } from "next-seo";
-import { NEXT_SEO_DEFAULT } from "@/next-seo.config";
 
 import Content from "./Components/Content/Content";
 import { PostMain } from "@/types/Post";
 import { notFound } from "next/navigation";
 import LoadIndicator from "@/app/Components/LoadIndicator/LoadIndicator";
 import ScrollTop from "@/Components/ScrollTop";
+import { Metadata } from "next";
 
 const getPost = async (slug: string, category: string): Promise<PostMain> => {
   return await fetch(process.env.API + `/post/${category}/${slug}`, {
@@ -28,6 +27,35 @@ const getPost = async (slug: string, category: string): Promise<PostMain> => {
       console.log(err);
     });
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { category: string; slug: string };
+}): Promise<Metadata> {
+  const { category, slug } = params;
+  const postData = await getPost(slug, category);
+
+  return {
+    title: postData?.post?.title,
+    description: postData?.post?.shortContent,
+    openGraph: {
+      title: postData?.post?.title,
+      description: postData?.post?.shortContent,
+      url: `${process.env.NEXT_PUBLIC_URL}/post/${category}/${slug}`,
+      images: [
+        {
+          url: postData?.post?.thumbnail,
+          width: 800,
+          height: 600,
+          alt: postData?.post?.title,
+        },
+      ],
+      siteName: "ozxk dev blog",
+      locale: "en_US",
+    },
+  };
+}
 
 const page = async ({
   params,
@@ -40,42 +68,12 @@ const page = async ({
   if (!postData || !postData?.post) {
     notFound();
   }
-  const meta = JSON.parse(JSON.stringify(NEXT_SEO_DEFAULT)) as NextSeoProps;
-  if (meta) {
-    meta.title = postData?.post?.title;
-    meta.description = postData?.post?.shortContent;
-    meta.titleTemplate = `%s | ${postData?.post?.category} | Ozxk Dev Blog`;
-    if (meta.openGraph) {
-      meta.openGraph.title = postData?.post?.title;
-      meta.openGraph.description = postData?.post?.shortContent;
-      meta.openGraph.url = `${process.env.NEXT_PUBLIC_URL}/post/${category}/${slug}`;
-      meta.openGraph.images = [
-        {
-          url: postData?.post?.thumbnail,
-          width: 800,
-          height: 600,
-          alt: postData?.post?.title,
-        },
-      ];
-      meta.openGraph.siteName = "ozxk dev blog";
-      meta.openGraph.locale = "en_US";
-      meta.openGraph.type = "article";
-      if (meta.openGraph.article) {
-        meta.openGraph.article.publishedTime = postData?.post?.createdAt;
-        meta.openGraph.article.authors = [postData?.post?.author];
-        meta.openGraph.article.section = postData?.post?.category;
-        meta.openGraph.article.tags = postData?.post?.tags;
-      }
-    }
-  }
-  const updateMeta: NextSeoProps = meta;
 
   // get url
   const url = `${process.env.NEXT_PUBLIC_URL}/post/${category}/${slug}`;
   return (
     <Suspense fallback={<LoadIndicator />}>
       <ScrollTop />
-      <NextSeo {...updateMeta} useAppDir={true} />
       <div className={styles.post}>
         <h1>{postData?.post?.title}</h1>
         <ArticleJsonLd

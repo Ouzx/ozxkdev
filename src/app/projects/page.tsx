@@ -5,28 +5,33 @@ import styles from "./page.module.scss";
 import banner from "@/assets/Banner.png";
 import ProjectList from "./Components/ProjectList/ProjectList";
 
-import { NextSeo, NextSeoProps } from "next-seo";
-import { NEXT_SEO_DEFAULT } from "@/next-seo.config";
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Projects",
+    description: "A list of projects I have worked on.",
+    openGraph: {
+      title: "Projects",
+      description: "A list of projects I have worked on.",
+      url: `${process.env.NEXT_PUBLIC_URL}/projects`,
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_URL}/images/projects.jpg`,
+          width: 800,
+          height: 600,
+          alt: "Projects",
+        },
+      ],
+      siteName: "ozxk dev blog",
+      locale: "en_US",
+    },
+  };
+}
 
 const page = () => {
-  const meta = JSON.parse(JSON.stringify(NEXT_SEO_DEFAULT)) as NextSeoProps;
-
-  if (meta) {
-    meta.title = "Projects";
-    meta.description = "A list of projects I have worked on.";
-
-    if (meta.openGraph) {
-      meta.openGraph.title = "Projects";
-      meta.openGraph.description = "A list of projects I have worked on.";
-      meta.openGraph.url = `${process.env.NEXT_PUBLIC_URL}/projects`;
-    }
-  }
-
-  const updateMeta: NextSeoProps = meta;
-
   return (
     <div className={styles.container}>
-      <NextSeo {...updateMeta} useAppDir={true} />
       <div className={styles.bannerContainer}>
         <Image className={styles.img} src={banner} alt="banner" />
       </div>
