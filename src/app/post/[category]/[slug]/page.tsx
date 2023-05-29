@@ -28,6 +28,14 @@ const getPost = async (slug: string, category: string): Promise<PostMain> => {
     });
 };
 
+function calculateEstimatedTime(content: string) {
+  const wordsPerMinute = 200; // Average reading speed in words per minute
+  const words = content.split(" ").length;
+  const estimatedTime = Math.ceil(words / wordsPerMinute);
+
+  return estimatedTime;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -53,6 +61,7 @@ export async function generateMetadata({
       ],
       siteName: "ozxk dev blog",
       locale: "en_US",
+      duration: calculateEstimatedTime(postData?.post?.content),
     },
   };
 }
