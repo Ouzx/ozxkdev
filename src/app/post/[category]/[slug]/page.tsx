@@ -63,6 +63,20 @@ export async function generateMetadata({
       locale: "en_US",
       duration: calculateEstimatedTime(postData?.post?.content),
     },
+    twitter: {
+      card: "summary_large_image",
+      site: "@Ozx_K",
+      title: postData?.post?.title,
+      description: postData?.post?.shortContent,
+      images: [
+        {
+          url: postData?.post?.thumbnail,
+          width: 800,
+          height: 600,
+          alt: postData?.post?.title,
+        },
+      ],
+    },
   };
 }
 
