@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
       url: `${process.env.NEXT_PUBLIC_URL}`,
       images: [
         {
-          url: `${process.env.NEXT_PUBLIC_URL}/images/og-image.png`,
+          url: `${process.env.NEXT_PUBLIC_URL}/og-image.png`,
           width: 1200,
           height: 630,
           alt: "og-image",
@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
         "Get an inside look at the world of software development through ozxk's eyes",
       images: [
         {
-          url: `${process.env.NEXT_PUBLIC_URL}/images/og-image.png`,
+          url: `${process.env.NEXT_PUBLIC_URL}/og-image.png`,
           width: 1200,
           height: 630,
           alt: "og-image",
