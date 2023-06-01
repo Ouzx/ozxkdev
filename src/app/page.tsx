@@ -24,8 +24,9 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       site: "@Ozx_K",
-      title:
+      description:
         "Get an inside look at the world of software development through ozxk's eyes",
+      title: "Ozxk Dev Blog",
       images: [
         {
           url: `${process.env.NEXT_PUBLIC_URL}/og-image.png`,
