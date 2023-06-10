@@ -1,6 +1,12 @@
 {
     "projects": [
         {
+            "title": "Mailio - Personal Ai E-mail assistant",
+            "description": "Mailio is an innovative chat and email assistant designed to optimize professional communication. With its intelligent features and real-time suggestions, Mailio facilitates the composition of effective messages, ensuring clarity and professionalism in interactions. By streamlining workflows, saving time, and enhancing messaging skills, Mailio empowers users to maximize their communication efficiency.",
+            "link": "",
+            "image": "/Logo.png"
+        },
+        {
             "title": "OZXK Blog | Full Stack React Project",
             "description": "This is a personal blog site that showcases my skills in building complex web applications using cutting-edge technologies. Using React, Next.js, and SASS, I created a fast and responsive website with a modern design that highlights my content. To make updating the site easier, I designed and implemented a content management system using Node.js and MongoDB. The CMS allows me to create and edit blog posts, as well as manage various settings on the website, all in one convenient location. If you're interested in seeing the code behind the project, you can find it on Github.",
             "link": "https://github.com/Ouzx/ozxkdev",

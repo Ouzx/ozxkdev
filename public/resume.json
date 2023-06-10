@@ -4,7 +4,7 @@
     "Name": "Oğuzhan Kandakoğlu",
     "BirthDate": "11 - 24 - 1999",
     "JobTitle": "Full Stack Developer",
-    "ResumeFileName": "https://drive.google.com/file/d/1QoVEUfpcl2U77gcqOsu_Dw2ocl7d3wYa/view?usp=sharing",
+    "ResumeFileName": "https://drive.google.com/file/d/1DQeBoNY8VDkNcqPGY4fC3GSyWhjMoMxT/view?usp=drive_link",
     "Social": {
         "linkedin": "https://linkedin.com/in/ozxk",
         "twitter": "https://twitter.com/Ozx_K",
@@ -12,26 +12,26 @@
         "email": "mailto:oguzhankandakoglu@gmail.com"
     },
     "HI": "Oğuz",
-    "Description": "I am a full stack web developer with a passion for creating web applications using technologies such as <b>JavaScript, React,</b> and <b>Node.js</b>. I have gained a lot of experience and knowledge in various web development domains throughout my career. I always aim to provide an outstanding user experience with my web applications, and I have excellent problem-solving skills and teamwork abilities. I keep myself updated with the latest trends and innovations in technology, and I constantly look for ways to enhance the quality and performance of my work.",
+    "Description": "Full stack web developer with a passion for creating web applications using technologies such as <b>JavaScript</b>, <b>React</b>, and <b>Node.js</b>. Experienced in various web development domains and committed to delivering outstanding user experiences. Strong problem-solving skills and a collaborative mindset. Dedicated to staying updated with the latest trends and innovations to enhance the quality and performance of work.",
     "Contact": {
         "email": "oguzhankandakoglu@gmail.com",
         "phone": "(+90)-546-488-9884",
         "phoneLink": "+905464889884",
         "address": "Ankara, Turkey",
-        "availability": "Available to change countries/move"
+        "availability": "Available to relocate"
     },
     "Experience": [
         {
             "title": "Game Developer & Co-Founder",
             "company": "Axolot Games",
             "date": "March 2022 - October 2022",
-            "description": "I developed several hyper-casual games for <b>Android</b> and <b>iOS</b> platforms using <b>Unity</b> and <b>C#</b> as a Game Developer. I also co-founded the company and took charge of the apps' <b>KPI and the team management</b>. We worked with several companies from several countries."
+            "description": "Developed several hyper-casual games for <b>Android</b> and <b>iOS</b> platforms using <b>Unity</b> and <b>C#</b>. Co-founded the company and managed apps' key performance indicators (KPIs) and team."
         },
         {
             "title": "Web Developer Intern",
             "company": "VHS Elektronik",
             "date": "June 2021 - September 2021",
-            "description": "I contributed to the development and maintenance of web applications using <b>JavaScript</b> and <b>React</b>, as well as database management using <b>T-SQL</b> and <b>PL-SQL</b>. I worked with a team to build a web application for <b>one of Turkey's largest critical infrastructures.</b>"
+            "description": "Contributed to the development and maintenance of web applications using <b>JavaScript</b> and <b>React</b>. Managed databases using <b>T-SQL</b> and <b>PL-SQL</b>. Collaborated with a team to build a web application for one of Turkey's largest critical infrastructures."
         }
     ],
     "Education": [
@@ -73,16 +73,23 @@
     ],
     "ProjectList": [
         {
+            "title": "Mailio - Personal Ai E-mail assistant",
+            "description": "Mailio is an innovative chat and email assistant designed to optimize professional communication. With its intelligent features and real-time suggestions, Mailio facilitates the composition of effective messages, ensuring clarity and professionalism in interactions. By streamlining workflows, saving time, and enhancing messaging skills, Mailio empowers users to maximize their communication efficiency.",
+            "link": "",
+            "img": "/Logo.png"
+        },
+        {
             "title": "OZXK Blog | Full Stack React Project",
-            "description": "This project is a personal blog site that I built with React, Next.js and SASS. It features a content management system that I designed and implemented with Node.js and MongoDB. The CMS allows me to create and edit my blog posts and manage my website settings with ease. You can find the source code of this project on Github.",
+            "description": "This project involved the creation of a personal blog site using React, Next.js, Node.js and SASS. The implementation also included the development of a content management system (CMS) utilizing Node.js and MongoDB. The CMS allows for seamless creation and editing of blog posts, as well as efficient management of website settings. The source code for this project can be found on GitHub.",
             "link": "https://github.com/Ouzx/ozxkdev",
             "linkType": "Github",
             "img": "/favicon.png"
         },
         {
             "title": "Freelance Wordpress Projects",
-            "description": "I have been working as a freelance Wordpress developer for the past 4 years. I have created 6 live Wordpress websites for various clients in different industries. Some of the websites I have developed include local businesses, e-commerce platforms, and learning management systems. Through these projects, I have acquired skills in SEO, caching strategies, minification and lazy loading, and UI/UX design.",
-            "link": "",
+            "description": "Developed and launched 6 live WordPress websites for diverse clients across various industries. Created websites for local businesses, e-commerce platforms, and learning management systems. Acquired expertise in SEO implementation, caching strategies, minification and lazy loading techniques, and UI/UX design principles. Collaborated closely with clients to understand their requirements and deliver customized solutions. Ensured websites were responsive, user-friendly, and optimized for performance.",
+            "link": "https://www.ozxk.dev/projects",
+            "linkType": "Portfolio",
             "img": "/wordpress.jpg"
         }
     ]

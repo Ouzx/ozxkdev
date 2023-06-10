@@ -116,6 +116,12 @@ export default [
     className={styles.tagStyle}
   />,
   <img
+    src="https://img.shields.io/badge/-PostgreSQL-31638C?style=flat-square&logo=postgresql&logoColor=ffffff"
+    alt="PostgreSQL"
+    key={"PostgreSQL"}
+    className={styles.tagStyle}
+  />,
+  <img
     src="https://img.shields.io/badge/-Netlify-%2300C7B7?style=flat-square&logo=netlify&logoColor=ffffff"
     alt="Netlify"
     key={"Netlify"}
