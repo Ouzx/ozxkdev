@@ -7,13 +7,13 @@ const Nav = () => {
         <Link href={"/"}>Home</Link>
       </li>
       <li>
-        <Link href={"/projects"}>Projects</Link>
+        <Link href={"/portfolio"}>Portfolio</Link>
       </li>
       <li>
         <Link href={"/contact"}>Contact</Link>
       </li>
       <li>
-        <Link href={"/portfolio"}>Portfolio</Link>
+        <Link href={"/resume"}>Resume</Link>
       </li>
     </ul>
   );

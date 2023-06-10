@@ -1,22 +1,26 @@
 import React from "react";
+import Image from "next/image";
+
+import styles from "./page.module.scss";
+import banner from "@/assets/Banner.png";
+import ProjectList from "./Components/ProjectList/ProjectList";
 
 import { Metadata } from "next";
-import PageContent from "./pageContent";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Portfolio",
-    description: "My portfolio.",
+    description: "A list of projects I have worked on.",
     openGraph: {
       title: "Portfolio",
-      description: "My portfolio.",
+      description: "A list of projects I have worked on.",
       url: `${process.env.NEXT_PUBLIC_URL}/portfolio`,
       images: [
         {
-          url: `${process.env.NEXT_PUBLIC_URL}/images/portfolio.jpg`,
+          url: `${process.env.NEXT_PUBLIC_URL}/og-image.png`,
           width: 800,
           height: 600,
-          alt: "Portfolio",
+          alt: "Projects",
         },
       ],
       siteName: "ozxk dev blog",
@@ -27,9 +31,17 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const page = () => {
   return (
-    <>
-      <PageContent />
-    </>
+    <div className={styles.container}>
+      <div className={styles.bannerContainer}>
+        <Image className={styles.img} src={banner} alt="banner" />
+      </div>
+      <div className={styles.wrapper}>
+        <h1 className={styles.title}>Portfolio</h1>
+        <div className={styles.projects}>
+          <ProjectList />
+        </div>
+      </div>
+    </div>
   );
 };
 
