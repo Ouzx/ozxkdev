@@ -1,0 +1,13 @@
+.container {
+	background-color: #2d2d2d;
+	.top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1em;
+		padding-bottom: 0.4em;
+
+		color: white;
+		font-weight: bold;
+	}
+}
