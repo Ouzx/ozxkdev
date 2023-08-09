@@ -16,8 +16,8 @@ const style = {
 	},
 	warning: {
 		container: {
-			backgroundColor: "#fff3cd",
-			border: "1px solid #ffeeba",
+			backgroundColor: "#C4D7F5",
+			border: "1px solid #C4D7F5",
 			borderRadius: "0.5rem",
 			padding: "1rem",
 			boxShadow: "0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.2)",
@@ -25,12 +25,14 @@ const style = {
 		},
 		icon: {
 			marginRight: "0.5rem",
+			width: 0,
 		},
 		title: {
 			fontSize: "1.2rem",
 			fontWeight: "bold",
 		},
 		message: {
+			color: "#2B2F36",
 			lineHeight: "1.6em",
 			letterSpacing: "0.04em",
 			fontWeight: "500",
