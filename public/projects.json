@@ -1,6 +1,12 @@
 {
     "projects": [
         {
+            "title": "What Should I Watch - Ai Movie Recommendation App",
+            "description": "'What Should I Watch', an AI-driven platform that offers personalized movie recommendations based on users' emotions and preferences. Developed user-friendly interface, advanced algorithms, and integrated with popular streaming platforms.",
+            "link": "",
+            "image": "/wsiw-wide.png"
+        },
+        {
             "title": "Mailio - Personal Ai E-mail assistant",
             "description": "Mailio is an innovative chat and email assistant designed to optimize professional communication. With its intelligent features and real-time suggestions, Mailio facilitates the composition of effective messages, ensuring clarity and professionalism in interactions. By streamlining workflows, saving time, and enhancing messaging skills, Mailio empowers users to maximize their communication efficiency.",
             "link": "",
