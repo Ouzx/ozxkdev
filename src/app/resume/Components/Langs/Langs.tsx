@@ -7,7 +7,7 @@ const Langs = () => {
 	const { Languages } = useDataContext();
 	return (
 		<div className={styles.container}>
-			<Title title="Sprachen" />
+			<Title title="FREMDSPRACHEN" />
 			<HR />
 			{Languages?.map((lang, i) => (
 				<div
