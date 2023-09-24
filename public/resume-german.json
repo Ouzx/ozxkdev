@@ -1,0 +1,108 @@
+{
+    "ProfilePic": "PP.png",
+    "ProfilePicHover": "PP-glassed.png",
+    "Name": "Oğuzhan Kandakoğlu",
+    "BirthDate": "24. November 1999",
+    "JobTitle": "Full Stack Entwickler",
+    "ResumeFileName": "https://drive.google.com/file/d/1tTdQzfGBRjvrohaNZa1AhMMP1O-Z8rSj/view?usp=drive_link",
+    "Social": {
+        "linkedin": "https://linkedin.com/in/ozxk",
+        "twitter": "https://twitter.com/Ozx_K",
+        "github": "https://github.com/Ouzx",
+        "email": "mailto:oguzhankandakoglu@gmail.com"
+    },
+    "HI": "Oğuz",
+    "Description": "Full-Stack Webentwickler mit Leidenschaft für die Erstellung von Webanwendungen unter Verwendung von Technologien wie <b>JavaScript</b>, <b>React</b> und <b>Node.js</b>. Erfahren in verschiedenen Bereichen der Webentwicklung und engagiert, herausragende Benutzererfahrungen zu liefern. Starke Problemlösungsfähigkeiten und eine kooperative Denkweise. Hingabe, stets auf dem neuesten Stand der Trends und Innovationen zu bleiben, um die Qualität und Leistung der Arbeit zu verbessern.",
+    "Contact": {
+        "email": "oguzhankandakoglu@gmail.com",
+        "phone": "(+90)-546-488-9884",
+        "phoneLink": "+905464889884",
+        "address": "Ankara, Türkei",
+        "availability": "Bereit zur Umzugsbereitschaft"
+    },
+    "Experience": [
+        {
+            "title": "Full Stack Entwickler",
+            "company": "Junius Tech",
+            "date": "März 2023 - heute",
+            "description": "Entwicklung und Pflege von Webanwendungen mit verschiedenen Teams unter Verwendung von <b>Next.js</b> und <b>Firebase</b>. Hauptsächlich auf <v>AI-Anwendungen</v> fokussiert, Nutzung von <b>modernsten Technologien</b> zur Schaffung innovativer Lösungen."
+        },
+        {
+            "title": "Spielentwickler & Mitbegründer",
+            "company": "Axolot Games",
+            "date": "März 2022 - Oktober 2022",
+            "description": "Entwicklung mehrerer Hyper-Casual-Spiele für Plattformen wie <b>Android</b> und <b>iOS</b> unter Verwendung von <b>Unity</b> und <b>C#</b>. Mitbegründung des Unternehmens und Verwaltung der Leistungskennzahlen (KPIs) und des Teams."
+        },
+        {
+            "title": "Webentwickler Praktikant",
+            "company": "VHS Elektronik",
+            "date": "Juni 2021 - September 2021",
+            "description": "Beitrag zur Entwicklung und Wartung von Webanwendungen unter Verwendung von <b>JavaScript</b> und <b>React</b>. Verwaltung von Datenbanken mit <b>T-SQL</b> und <b>PL-SQL</b>. Zusammenarbeit im Team für den Aufbau einer Webanwendung für eine der größten kritischen Infrastrukturen in der Türkei."
+        }
+    ],
+    "Education": [
+        {
+            "title": "Bachelor in Informatik",
+            "company": "Universität KIRIKKALE",
+            "date": "2018 - 2022",
+            "description": "Abgeschlossenes Studium in Webentwicklung, Softwareentwicklung und Informatik. Mit Auszeichnung abgeschlossen.",
+            "GPA": "Notendurchschnitt: 3,09 / 4,00"
+        }
+    ],
+    "Languages": [
+        {
+            "title": "Englisch",
+            "level": "Fließend"
+        },
+        {
+            "title": "Deutsch",
+            "level": "Anfänger"
+        },
+        {
+            "title": "Türkisch",
+            "level": "Muttersprache"
+        }
+    ],
+    "Certifications": [
+        {
+            "title": "Develhope Full Stack Webentwicklungsbootcamp",
+            "date": "Juni 2023",
+            "description": "Das Develhope Full Stack Webentwicklungsbootcamp ist ein intensives 6-monatiges Programm, das den Studierenden die Fähigkeiten und das Wissen vermittelt, um ein Full-Stack Webentwickler zu werden.",
+            "company": "Develhope"
+        },
+        {
+            "title": "AZ-900: Microsoft Azure Grundlagen",
+            "date": "Dezember 2022",
+            "description": "Die Microsoft Azure Fundamentals-Zertifizierung ist eine Einstiegszertifizierung, die grundlegendes Wissen über Cloud-Konzepte, Azure-Dienste, Sicherheit, Datenschutz, Compliance und Vertrauen vermittelt.",
+            "company": "Microsoft"
+        }
+    ],
+    "ProjectList": [
+        {
+            "title": "Was Soll Ich Sehen - AI Filmempfehlungs-App",
+            "description": "'Was Soll Ich Sehen' ist eine KI-gesteuerte Plattform, die personalisierte Filmempfehlungen basierend auf den Emotionen und Vorlieben der Benutzer bietet. Entwicklung einer benutzerfreundlichen Oberfläche, fortschrittlicher Algorithmen und Integration mit beliebten Streaming-Plattformen.",
+            "link": "",
+            "img": "/wsiw.png"
+        },
+        {
+            "title": "Mailio - Persönlicher AI E-Mail-Assistent",
+            "description": "Mailio ist ein innovativer Chat- und E-Mail-Assistent, der entwickelt wurde, um die berufliche Kommunikation zu optimieren. Mit seinen intelligenten Funktionen und Echtzeitvorschlägen erleichtert Mailio die Verfassung effektiver Nachrichten und gewährleistet Klarheit und Professionalität in der Interaktion. Durch die Optimierung von Arbeitsabläufen, die Zeitersparnis und die Verbesserung der Messaging-Fähigkeiten ermöglicht Mailio den Benutzern, ihre Kommunikationseffizienz zu maximieren.",
+            "link": "",
+            "img": "/Logo.png"
+        },
+        {
+            "title": "OZXK Blog | Full Stack React Projekt",
+            "description": "Dieses Projekt umfasste die Erstellung einer persönlichen Blog-Website mit React, Next.js, Node.js und SASS. Die Umsetzung umfasste auch die Entwicklung eines Content-Management-Systems (CMS) unter Verwendung von Node.js und MongoDB. Das CMS ermöglicht ein nahtloses Erstellen und Bearbeiten von Blog-Beiträgen sowie eine effiziente Verwaltung von Website-Einstellungen. Der Quellcode für dieses Projekt finden Sie auf GitHub.",
+            "link": "https://github.com/Ouzx/ozxkdev",
+            "linkType": "Github",
+            "img": "/favicon.png"
+        },
+        {
+            "title": "Freiberufliche Wordpress-Projekte",
+            "description": "Entwicklung und Bereitstellung von 6 live WordPress-Websites für verschiedene Kunden aus verschiedenen Branchen. Erstellung von Websites für lokale Unternehmen, E-Commerce-Plattformen und Lernmanagement-Systeme. Erlangung von Expertise in der Umsetzung von SEO, Caching-Strategien, Minifizierung und Lazy-Loading-Techniken sowie UI/UX-Designprinzipien. Enge Zusammenarbeit mit Kunden, um deren Anforderungen zu verstehen und maßgeschneiderte Lösungen zu liefern. Sicherstellung, dass die Websites reaktionsfähig, benutzerfreundlich und auf Leistung optimiert sind.",
+            "link": "https://www.ozxk.dev/portfolio",
+            "linkType": "Portfolio",
+            "img": "/wordpress.jpg"
+        }
+    ]
+}

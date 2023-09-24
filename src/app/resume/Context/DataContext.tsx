@@ -5,17 +5,17 @@ import { Resume } from "@/types/Resume";
 const DataContext = React.createContext({} as Resume);
 
 export const DataProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
+	children,
 }) => {
-  const [data, setData] = useState<Resume>({} as Resume);
-  useEffect(() => {
-    fetch("resume.json")
-      .then((res) => res.json())
-      .then((data) => setData(data))
-      .catch((err) => console.error(err));
-  }, []);
+	const [data, setData] = useState<Resume>({} as Resume);
+	useEffect(() => {
+		fetch("resume-german.json")
+			.then((res) => res.json())
+			.then((data) => setData(data))
+			.catch((err) => console.error(err));
+	}, []);
 
-  return <DataContext.Provider value={data}>{children}</DataContext.Provider>;
+	return <DataContext.Provider value={data}>{children}</DataContext.Provider>;
 };
 
 export const useDataContext = () => useContext(DataContext);
