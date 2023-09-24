@@ -22,6 +22,12 @@
     },
     "Experience": [
         {
+            "title": "Full Stack Developer",
+            "company": "Junius Tech",
+            "date": "March 2023 - Present",
+            "description": "Developing and maintaining web applications with multiple teams using <b>Next.js</b> and <b>Firebase</b>. Primarily focused on <v>AI applications</v>, leveraging <b>cutting-edge technologies</b> to create innovative solutions."
+        },
+        {
             "title": "Game Developer & Co-Founder",
             "company": "Axolot Games",
             "date": "March 2022 - October 2022",
@@ -61,7 +67,7 @@
         {
             "title": "Develhope Full Stack Web Development Bootcamp",
             "date": "June 2023",
-            "description": "",
+            "description": "Develhope Full Stack Web Development Bootcamp is a 6-month intensive program that provides students with the skills and knowledge to become a full stack web developer.",
             "company": "Develhope"
         },
         {
