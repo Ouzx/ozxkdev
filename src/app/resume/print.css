@@ -1,0 +1,25 @@
+@page {
+	size: A4;
+	margin: 2.5em;
+}
+
+@media print {
+	html,
+	body,
+	body * {
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+
+		visibility: hidden;
+	}
+
+	#pageP,
+	#pageP * {
+		visibility: visible;
+	}
+}
+#pageP,
+#pageP * {
+	page-break-inside: avoid;
+	visibility: visible;
+}
