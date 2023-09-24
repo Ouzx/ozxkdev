@@ -8,7 +8,7 @@ const Certifications = () => {
 	return (
 		<>
 			<TimeBar
-				title={"Zertifizierungen"}
+				title={"Zertifikat"}
 				jobs={jobs satisfies Jobs}
 			/>
 		</>

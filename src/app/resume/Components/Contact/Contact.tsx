@@ -53,7 +53,7 @@ const Contact = () => {
 			<HR />
 
 			<div className={styles.line}>
-				<p>Availability</p>
+				<p>Verfügbarkeit</p>
 				<p>{Contact?.availability}</p>
 			</div>
 		</div>

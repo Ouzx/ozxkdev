@@ -8,7 +8,7 @@ const Education = () => {
 	return (
 		<>
 			<TimeBar
-				title={"Bildung"}
+				title={"Ausbildung"}
 				jobs={jobs satisfies Jobs}
 			/>
 		</>
