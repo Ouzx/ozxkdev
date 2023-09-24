@@ -96,13 +96,6 @@
             "link": "https://github.com/Ouzx/ozxkdev",
             "linkType": "Github",
             "img": "/favicon.png"
-        },
-        {
-            "title": "Freiberufliche Wordpress-Projekte",
-            "description": "Entwicklung und Bereitstellung von 6 live WordPress-Websites für verschiedene Kunden aus verschiedenen Branchen. Erstellung von Websites für lokale Unternehmen, E-Commerce-Plattformen und Lernmanagement-Systeme. Erlangung von Expertise in der Umsetzung von SEO, Caching-Strategien, Minifizierung und Lazy-Loading-Techniken sowie UI/UX-Designprinzipien. Enge Zusammenarbeit mit Kunden, um deren Anforderungen zu verstehen und maßgeschneiderte Lösungen zu liefern. Sicherstellung, dass die Websites reaktionsfähig, benutzerfreundlich und auf Leistung optimiert sind.",
-            "link": "https://www.ozxk.dev/portfolio",
-            "linkType": "Portfolio",
-            "img": "/wordpress.jpg"
         }
     ]
 }
