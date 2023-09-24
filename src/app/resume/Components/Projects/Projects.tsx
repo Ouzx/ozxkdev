@@ -7,7 +7,7 @@ const Projects = () => {
 	const { ProjectList } = useDataContext();
 	return (
 		<>
-			<h3>Projects</h3>
+			<h3>Projekte</h3>
 			{ProjectList?.map((project, index) => (
 				<ProjectCard
 					key={index + project.title}

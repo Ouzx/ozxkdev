@@ -68,11 +68,11 @@ const pageContent = () => {
 						<Education />
 						<HR />
 						{/* <div className={styles.printSpacer}></div> */}
+						<div className={styles.page_break}></div>
 						<Certifications />
 						<HR />
 						{/* <div className={styles.printSpacer10}></div>*/}
 						{/* <div className={styles.printSpacer}></div> */}
-						<div className={styles.page_break}></div>
 						<Projects />
 					</div>
 				</div>

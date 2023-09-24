@@ -15,7 +15,7 @@ const Badges = () => {
 				end={20}
 			/>
 			<Section
-				title={"Others"}
+				title={"Andere"}
 				start={20}
 				end={41}
 			/>

@@ -3,13 +3,16 @@ import { useDataContext } from "../../Context/DataContext";
 import TimeBar, { Jobs } from "../TimeBar/TimeBar";
 
 const Certifications = () => {
-  const { Certifications } = useDataContext();
-  const jobs = { jobs: Certifications };
-  return (
-    <>
-      <TimeBar title={"Certifications"} jobs={jobs satisfies Jobs} />
-    </>
-  );
+	const { Certifications } = useDataContext();
+	const jobs = { jobs: Certifications };
+	return (
+		<>
+			<TimeBar
+				title={"Zertifizierungen"}
+				jobs={jobs satisfies Jobs}
+			/>
+		</>
+	);
 };
 
 export default Certifications;
