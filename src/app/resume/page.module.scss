@@ -4,158 +4,162 @@
 $main-bg: rgb(192 227 231);
 $transparent-bg: rgb(255, 255, 255, 0.85);
 %shadow {
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-  @media print {
-    box-shadow: 0;
-  }
+	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+	@media print {
+		box-shadow: 0;
+	}
 }
 
 .container {
-  position: relative;
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  span,
-  a,
-  div {
-    line-height: 1.5em;
-    letter-spacing: 0.04em;
-  }
-  .bg {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: auto;
-    z-index: -1;
+	position: relative;
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	span,
+	a,
+	div {
+		line-height: 1.5em;
+		letter-spacing: 0.04em;
+	}
+	.bg {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: auto;
+		z-index: -1;
 
-    @media print {
-      display: none;
-    }
-  }
+		@media print {
+			display: none;
+		}
+	}
 
-  .content {
-    display: grid;
-    grid-template-columns: 1fr;
-    @include xl {
-      grid-template-columns: 0.25fr 1fr;
-    }
-    @media print {
-      grid-template-columns: 0.25fr 1fr;
-    }
-    gap: 1rem;
-    max-width: 75rem;
+	.content {
+		display: grid;
+		grid-template-columns: 1fr;
+		@include xl {
+			grid-template-columns: 0.25fr 1fr;
+		}
+		@media print {
+			grid-template-columns: 0.25fr 1fr;
+		}
+		gap: 1rem;
+		max-width: 75rem;
 
-    margin: 0 auto;
+		margin: 0 auto;
 
-    padding-top: 2rem;
-    @media print {
-      padding-top: 0;
-      padding-left: 1rem;
-    }
+		padding-top: 2rem;
+		@media print {
+			padding-top: 0;
+			padding-left: 1rem;
+		}
 
-    .side {
-      .row {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 2rem;
-        margin-bottom: 1rem;
-        @extend %shadow;
+		.side {
+			.row {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				padding: 2rem;
+				margin-bottom: 1rem;
+				@extend %shadow;
 
-        background-color: $transparent-bg;
+				background-color: $transparent-bg;
 
-        @media screen and (max-width: 1200px) {
-          &:nth-child(2),
-          &:nth-child(3),
-          &:nth-child(4) {
-            width: 33vw;
-            height: 600px;
-            vertical-align: top;
-            display: inline-flex;
-            box-shadow: none;
-            align-items: flex-start;
-            justify-content: flex-start;
-          }
-        }
+				@media screen and (max-width: 1200px) {
+					&:nth-child(2),
+					&:nth-child(3),
+					&:nth-child(4) {
+						width: 33vw;
+						height: 600px;
+						vertical-align: top;
+						display: inline-flex;
+						box-shadow: none;
+						align-items: flex-start;
+						justify-content: flex-start;
+					}
+				}
 
-        @media screen and (max-width: 900px) {
-          &:nth-child(2),
-          &:nth-child(3) {
-            width: 50vw;
-            height: 600px;
-            vertical-align: top;
-            display: inline-flex;
-            box-shadow: none;
-            align-items: flex-start;
-            justify-content: flex-start;
-          }
-          &:nth-child(4) {
-            width: 100%;
-            height: auto;
-            vertical-align: top;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-          }
-        }
+				@media screen and (max-width: 900px) {
+					&:nth-child(2),
+					&:nth-child(3) {
+						width: 50vw;
+						height: 600px;
+						vertical-align: top;
+						display: inline-flex;
+						box-shadow: none;
+						align-items: flex-start;
+						justify-content: flex-start;
+					}
+					&:nth-child(4) {
+						width: 100%;
+						height: auto;
+						vertical-align: top;
+						display: inline-flex;
+						align-items: center;
+						justify-content: center;
+						box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+					}
+				}
 
-        @media screen and (max-width: 600px) {
-          &:nth-child(2),
-          &:nth-child(3),
-          &:nth-child(4) {
-            width: 100%;
-            height: auto;
-            vertical-align: top;
-            display: inline-flex;
-            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-          }
-        }
-      }
-      .buttons {
-        @media screen and (max-width: 1200px) {
-          flex-direction: row;
-          gap: 2rem;
-          margin: auto 0;
-        }
+				@media screen and (max-width: 600px) {
+					&:nth-child(2),
+					&:nth-child(3),
+					&:nth-child(4) {
+						width: 100%;
+						height: auto;
+						vertical-align: top;
+						display: inline-flex;
+						box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+					}
+				}
+			}
+			.buttons {
+				@media screen and (max-width: 1200px) {
+					flex-direction: row;
+					gap: 2rem;
+					margin: auto 0;
+				}
 
-        @media screen and (max-width: 600px) {
-          flex-direction: column;
-          gap: 0;
-        }
+				@media screen and (max-width: 600px) {
+					flex-direction: column;
+					gap: 0;
+				}
 
-        @media print {
-          display: none;
-        }
-      }
-    }
-    .main {
-      background-color: $transparent-bg;
-      padding: 2rem;
-      @extend %shadow;
-    }
-  }
+				@media print {
+					display: none;
+				}
+			}
+		}
+		.main {
+			background-color: $transparent-bg;
+			padding: 2rem;
+			@extend %shadow;
+		}
+	}
+}
+
+.container * {
+	page-break-inside: avoid;
 }
 
 .page_break {
-  @media print {
-    page-break-before: always;
-    margin-top: 4rem;
-  }
+	@media print {
+		page-break-before: always;
+		margin-top: 4rem;
+	}
 }
 
 .printSpacer {
-  display: none;
+	display: none;
 
-  @media print {
-    display: block;
-    width: 100%;
-    background-color: transparent;
-    height: 1rem;
-  }
+	@media print {
+		display: block;
+		width: 100%;
+		background-color: transparent;
+		height: 1rem;
+	}
 }

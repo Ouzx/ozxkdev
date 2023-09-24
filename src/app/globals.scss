@@ -9,53 +9,53 @@ $border-color: #e5e7eb;
 @use "./screens.scss" as screens;
 
 .app * {
-  box-sizing: border-box;
-  // padding: 0;
-  margin: 0;
+	box-sizing: border-box;
+	// padding: 0;
+	margin: 0;
 
-  // change selection color to accent
-  ::selection {
-    background: $accent;
-    color: $black-bg;
-  }
+	// change selection color to accent
+	::selection {
+		background: $accent;
+		color: $black-bg;
+	}
 
-  max-width: 100vw;
-  // TODO: Check this out
-  // overflow-x: hidden;
-  font-family: var(--font-montserrat);
+	max-width: 100vw;
+	// TODO: Check this out
+	// overflow-x: hidden;
+	font-family: var(--font-montserrat);
 }
 
 .app div,
 .app p,
 .app span {
-  font-family: var(--font-raleway);
+	font-family: var(--font-raleway);
 }
 
 .app a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 .layout {
-  display: grid;
-  min-height: 100vh;
-  min-height: 100dvh;
-  grid-template-rows: auto 1fr auto;
+	display: grid;
+	min-height: 100vh;
+	min-height: 100dvh;
+	grid-template-rows: auto 1fr auto;
 }
 
 @mixin width-maker($xl: 1200px) {
-  margin-left: auto;
-  margin-right: auto;
-  // @include screens.lg {
-  //   max-width: $lg;
-  // }
+	margin-left: auto;
+	margin-right: auto;
+	// @include screens.lg {
+	//   max-width: $lg;
+	// }
 
-  @include screens.xl {
-    max-width: $xl;
-  }
+	@include screens.xl {
+		max-width: $xl;
+	}
 }
 
 %basic-text {
-  line-height: 1.5em;
-  letter-spacing: 0.04em;
+	line-height: 1.5em;
+	letter-spacing: 0.04em;
 }
